@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Notice Board | PM SHRI SCHOOL</title>
+
+  <link rel="stylesheet" href="notice.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050816;
+    overflow-x:hidden;
+    color:white;
+}
+
+
+
+/* TOP LIGHT */
+
+.top-light{
+    position:fixed;
+    top:-100px;
+    left:50%;
+    transform:translateX(-50%);
+    width:500px;
+    height:250px;
+    background:radial-gradient(circle, rgba(0,140,255,0.8), transparent 70%);
+    filter:blur(60px);
+    z-index:-1;
+}
+
+
+
+/* HERO SECTION */
+
+.notice-hero{
+    position:relative;
+    height:45vh;
+    background:linear-gradient(135deg,#001d3d,#003566,#001845);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.hero-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left, rgba(255,140,0,0.25), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0,140,255,0.25), transparent 30%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:65px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+    color:white;
+    text-shadow:
+    0 0 10px #00aaff,
+    0 0 20px #00aaff,
+    0 0 40px #ff8800;
+}
+
+.hero-content p{
+    font-size:20px;
+    color:#ddd;
+}
+
+
+
+/* NEW BADGE */
+
+.new-badge{
+    margin:auto;
+    margin-top:25px;
+    width:140px;
+    padding:12px 20px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff7b00,#ffaa00);
+    color:white;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    box-shadow:
+    0 0 15px #ff8800,
+    0 0 35px #ff8800;
+    animation:pulse 1.5s infinite;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    background:white;
+    border-radius:50%;
+    animation:blink 1s infinite;
+}
+
+
+
+/* NOTICE SECTION */
+
+.notice-section{
+    padding:70px 20px 120px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.notice-card{
+    position:relative;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:35px;
+    border-radius:25px;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.notice-card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+
+
+/* GLOW EFFECTS */
+
+.glow-blue{
+    box-shadow:
+    0 0 20px rgba(0,140,255,0.5),
+    0 0 50px rgba(0,140,255,0.3);
+}
+
+.glow-orange{
+    box-shadow:
+    0 0 20px rgba(255,136,0,0.5),
+    0 0 50px rgba(255,136,0,0.3);
+}
+
+.notice-card h2{
+    font-size:28px;
+    margin-bottom:18px;
+    color:white;
+}
+
+.notice-card p{
+    color:#ddd;
+    line-height:1.8;
+    font-size:16px;
+}
+
+
+
+/* LIGHT EFFECT */
+
+.light-effect{
+    position:absolute;
+    top:-50px;
+    right:-50px;
+    width:180px;
+    height:180px;
+    background:radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    animation:rotateLight 8s linear infinite;
+}
+
+
+
+/* TAG */
+
+.new-tag{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 22px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#008cff,#ff8800);
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    box-shadow:
+    0 0 15px #008cff,
+    0 0 25px #ff8800;
+}
+
+
+
+/* INFO BOX */
+
+.info-box{
+    padding:0 20px 130px;
+}
+
+.info-card{
+    max-width:1000px;
+    margin:auto;
+    background:linear-gradient(135deg,#001845,#003566);
+    border-radius:30px;
+    padding:50px;
+    text-align:center;
+    box-shadow:
+    0 0 30px rgba(0,140,255,0.4),
+    0 0 60px rgba(255,136,0,0.2);
+}
+
+.info-card h2{
+    font-size:38px;
+    margin-bottom:25px;
+    color:white;
+    text-shadow:
+    0 0 10px #00aaff,
+    0 0 20px #ff8800;
+}
+
+.info-card p{
+    color:#ddd;
+    line-height:2;
+    font-size:18px;
+}
+
+
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:78px;
+    background:rgba(5,10,25,0.95);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+}
+
+.nav-item{
+    text-decoration:none;
+    color:#ccc;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+}
+
+.nav-item span{
+    font-size:24px;
+    margin-bottom:4px;
+}
+
+.nav-item p{
+    font-size:13px;
+}
+
+.nav-item:hover{
+    color:#00aaff;
+    transform:translateY(-5px);
+}
+
+.active{
+    color:#ff9900;
+}
+
+
+
+/* ANIMATIONS */
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.2;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+@keyframes rotateLight{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:40px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .notice-card h2{
+        font-size:24px;
+    }
+
+    .info-card{
+        padding:35px 25px;
+    }
+
+    .info-card h2{
+        font-size:28px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero-content h1{
+        font-size:30px;
+    }
+
+    .new-badge{
+        width:120px;
+        font-size:14px;
+    }
+
+    .notice-card{
+        padding:28px;
+    }
+
+    .info-card p{
+        font-size:16px;
+    }
+
+}</style>
+</head>
+
+<body>
+
+
+
+<!-- TOP GLOW -->
+
+<div class="top-light"></div>
+
+
+
+<!-- HEADER -->
+
+<section class="notice-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>NOTICE BOARD</h1>
+
+        <p>
+            PM SHRI GOVERNMENT HIGHER SECONDARY SCHOOL CHORAHATA
+        </p>
+
+        <div class="new-badge">
+            <span class="dot"></span>
+            NEW
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- NOTICE CARDS -->
+
+<section class="notice-section">
+
+    <div class="notice-card glow-blue">
+
+        <div class="light-effect"></div>
+
+        <h2>Summer Camp Registration Open</h2>
+
+        <p>
+            Students can register for summer camp activities and competitions.
+        </p>
+
+        <span class="new-tag">NEW</span>
+
+    </div>
+
+
+
+    <div class="notice-card glow-orange">
+
+        <div class="light-effect"></div>
+
+        <h2>IT & ITES Classes Started</h2>
+
+        <p>
+            Digital and technical classes are now available for students.
+        </p>
+
+        <span class="new-tag">NEW</span>
+
+    </div>
+
+
+
+    <div class="notice-card glow-blue">
+
+        <div class="light-effect"></div>
+
+        <h2>Board Exam Preparation Classes</h2>
+
+        <p>
+            Special classes are running for board examination preparation.
+        </p>
+
+        <span class="new-tag">LIVE</span>
+
+    </div>
+
+
+
+    <div class="notice-card glow-orange">
+
+        <div class="light-effect"></div>
+
+        <h2>Smart Electronic Classes Available</h2>
+
+        <p>
+            Students can now learn through smart electronic classrooms.
+        </p>
+
+        <span class="new-tag">UPDATED</span>
+
+    </div>
+
+</section>
+
+
+
+<!-- GLOWING INFO -->
+
+<section class="info-box">
+
+    <div class="info-card">
+
+        <h2>IMPORTANT INFORMATION</h2>
+
+        <p>
+            All students are advised to regularly check the notice board for latest updates, activities, exams and school programs.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- BOTTOM NAVIGATION -->
+
+<div class="bottom-nav">
+
+    <a href="index.html" class="nav-item">
+        <span>🏠</span>
+        <p>Home</p>
+    </a>
+
+    <a href="result.html" class="nav-item">
+        <span>📘</span>
+        <p>Results</p>
+    </a>
+
+    <a href="notice.html" class="nav-item active">
+        <span>📢</span>
+        <p>Notice</p>
+    </a>
+
+    <a href="achivements.html" class="nav-item">
+        <span>🏆</span>
+        <p>Achievements</p>
+    </a>
+
+</div>
+
+
+
+</body>
+</html>
