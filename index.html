@@ -453,8 +453,27 @@ footer p{
     .nav-item span{
         font-size:22px;
     }
+  
 
-}</style>
+}
+#class10-open-btn{
+    padding:18px 45px;
+    font-size:22px;
+    font-weight:bold;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(45deg,#ff416c,#ff4b2b);
+    box-shadow:0 10px 25px rgba(255,75,43,0.4);
+    transition:0.4s ease;
+}
+
+#class10-open-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 15px 35px rgba(255,75,43,0.6);
+}
+</style>
 </head>
 
 <body>
@@ -511,8 +530,10 @@ footer p{
       </div>
 
       <div class="content-card">
-        <a href="class 10 content.html">
-    <button>Open Class 10 Content</button>
+       <a href="class 10 content.html">
+    <button id="class10-open-btn">
+        📚 Open Class 10 Content
+    </button>
 </a>
         <p>Board Preparation Materials</p>
       </div>
