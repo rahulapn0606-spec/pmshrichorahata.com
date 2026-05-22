@@ -524,9 +524,23 @@ footer p{
         Quality Education • Digital Learning • Smart Future
       </p>
 
-     <button onclick="document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'})">
+    <button onclick="scrollToResults()">
     WELCOME
 </button>
+
+<script>
+function scrollToResults() {
+    const el = document.getElementById('results');
+    const offset = 80; // yaha adjust karo (header ke hisaab se)
+
+    const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+        top: top,
+        behavior: 'smooth'
+    });
+}
+</script>
     </div>
 
   </section>
