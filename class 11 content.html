@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM SHRI CHORAHATA - Class 11 Content</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#333;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#003366,#00509d);
+      color:white;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ffd700;
+    }
+
+    .hero{
+      background:url('https://www.uxdt.nic.in/wp-content/uploads/2025/04/auto-draft-inner-banner.jpg') center/cover no-repeat;
+      height:350px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.55);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:1;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:50px;
+      margin-bottom:10px;
+    }
+
+    .hero-content p{
+      font-size:20px;
+    }
+
+    .subjects{
+      padding:60px 20px;
+      max-width:1300px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:38px;
+      color:#003366;
+    }
+
+    .subject-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .subject-card{
+      background:white;
+      border-radius:20px;
+      padding:30px 25px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s ease;
+    }
+
+    .subject-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .subject-card h3{
+      color:#00509d;
+      margin-bottom:15px;
+      font-size:28px;
+    }
+
+    .subject-card p{
+      margin-bottom:25px;
+      color:#555;
+      font-size:15px;
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      padding:12px;
+      margin-bottom:12px;
+      background:#00509d;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#003366;
+      transform:scale(1.03);
+    }
+
+    .resources{
+      background:white;
+      padding:60px 20px;
+      margin-top:40px;
+    }
+
+    .resource-box{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .resource-item{
+      background:#f4f7fb;
+      padding:25px;
+      border-left:5px solid #00509d;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .resource-item:hover{
+      transform:translateY(-5px);
+    }
+
+    .resource-item h4{
+      margin-bottom:10px;
+      color:#003366;
+    }
+
+    footer{
+      background:#003366;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    footer a{
+      color:#ffd700;
+      text-decoration:none;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      nav{
+        margin-top:10px;
+      }
+
+      nav a{
+        display:inline-block;
+        margin:8px;
+      }
+
+      .hero-content h1{
+        font-size:34px;
+      }
+
+      .hero-content p{
+        font-size:16px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">PM SHRI CHORAHATA</div>
+
+    <nav>
+      <a href="https://rahulapn0606-spec.github.io/pmshrichorahata.com/">Home</a>
+      <a href="#subjects">Streams</a>
+      <a href="#resources">Resources</a>
+      <a href="#footer">Contact</a>
+    </nav>
+
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>Class 11 Study Content</h1>
+      <p>Notes, PDFs, Important Questions & Study Materials</p>
+    </div>
+
+  </section>
+
+  <section class="subjects" id="subjects">
+
+    <h2 class="section-title">Choose Your Stream</h2>
+
+    <div class="subject-grid">
+
+      <!-- Maths -->
+
+      <div class="subject-card">
+
+        <h3>Maths Stream</h3>
+
+        <p>PCM subjects, formulas, numericals and study material.</p>
+
+        <a href="physics11.html" class="btn">Physics</a>
+
+        <a href="chemistry11.html" class="btn">Chemistry</a>
+
+        <a href="maths11.html" class="btn">Mathematics</a>
+
+        <a href="english11.html" class="btn">English</a>
+
+        <a href="cs11.html" class="btn">Computer Science</a>
+
+      </div>
+
+      <!-- Bio -->
+
+      <div class="subject-card">
+
+        <h3>Bio Stream</h3>
+
+        <p>PCB subjects, diagrams, NEET preparation and notes.</p>
+
+        <a href="physics11.html" class="btn">Physics</a>
+
+        <a href="chemistry11.html" class="btn">Chemistry</a>
+
+        <a href="biology11.html" class="btn">Biology</a>
+
+        <a href="english11.html" class="btn">English</a>
+
+        <a href="hindi11.html" class="btn">Hindi</a>
+
+      </div>
+
+      <!-- Arts -->
+
+      <div class="subject-card">
+
+        <h3>Arts Stream</h3>
+
+        <p>Humanities subjects, important questions and notes.</p>
+
+        <a href="history11.html" class="btn">History</a>
+
+        <a href="geography11.html" class="btn">Geography</a>
+
+        <a href="political11.html" class="btn">Political Science</a>
+
+        <a href="economics11.html" class="btn">Economics</a>
+
+        <a href="english11.html" class="btn">English</a>
+
+      </div>
+
+      <!-- Commerce -->
+
+      <div class="subject-card">
+
+        <h3>Commerce Stream</h3>
+
+        <p>Accounts, business studies and commerce study materials.</p>
+
+        <a href="accounts11.html" class="btn">Accountancy</a>
+
+        <a href="business11.html" class="btn">Business Studies</a>
+
+        <a href="economics11.html" class="btn">Economics</a>
+
+        <a href="english11.html" class="btn">English</a>
+
+        <a href="maths11.html" class="btn">Mathematics</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="resources" id="resources">
+
+    <h2 class="section-title">Study Resources</h2>
+
+    <div class="resource-box">
+
+      <div class="resource-item">
+        <h4>📘 Notes & PDFs</h4>
+        <p>Download chapter-wise notes and PDF study materials.</p>
+      </div>
+
+      <div class="resource-item">
+        <h4>📝 Important Questions</h4>
+        <p>Board exam important questions with solutions.</p>
+      </div>
+
+      <div class="resource-item">
+        <h4>🎥 Video Lectures</h4>
+        <p>Educational videos for better understanding.</p>
+      </div>
+
+      <div class="resource-item">
+        <h4>📅 Online Tests</h4>
+        <p>Practice tests and improve your preparation.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer id="footer">
+
+    <p>© 2026 PM SHRI CHORAHATA | All Rights Reserved</p>
+
+    <p>
+      Website:
+      <a href="https://rahulapn0606-spec.github.io/pmshrichorahata.com/">
+        Visit PM SHRI CHORAHATA
+      </a>
+    </p>
+
+  </footer>
+
+</body>
+</html>
