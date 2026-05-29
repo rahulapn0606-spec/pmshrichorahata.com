@@ -27,9 +27,7 @@ body{
   box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
-h2,h3{
-  text-align:center;
-}
+h2,h3{text-align:center;}
 
 input{
   width:100%;
@@ -52,9 +50,7 @@ button{
   margin-top:10px;
 }
 
-button:hover{
-  background:#00a2d6;
-}
+button:hover{background:#00a2d6;}
 
 .option{
   padding:12px;
@@ -62,24 +58,13 @@ button:hover{
   background:rgba(255,255,255,0.15);
   border-radius:8px;
   cursor:pointer;
-  transition:0.3s;
 }
 
-.option:hover{
-  background:rgba(255,255,255,0.25);
-}
+.option:hover{background:rgba(255,255,255,0.25);}
 
-.correct{
-  background:green !important;
-}
-
-.wrong{
-  background:red !important;
-}
-
-.hidden{
-  display:none;
-}
+.correct{background:green !important;}
+.wrong{background:red !important;}
+.hidden{display:none;}
 
 .top{
   display:flex;
@@ -89,9 +74,7 @@ button:hover{
   font-weight:bold;
 }
 
-#resultBox{
-  text-align:center;
-}
+#resultBox{text-align:center;}
 
 </style>
 </head>
@@ -106,9 +89,7 @@ button:hover{
 <h2>Student Details</h2>
 
 <input type="text" id="name" placeholder="Enter Name">
-
 <input type="text" id="cls" placeholder="Enter Class">
-
 <input type="text" id="roll" placeholder="Enter Roll No">
 
 <button onclick="startQuiz()">Start Quiz</button>
@@ -119,21 +100,15 @@ button:hover{
 <div id="quizBox" class="hidden">
 
 <div class="top">
-
 <div>✔ Correct: <span id="correct">0</span></div>
-
 <div>❌ Wrong: <span id="wrong">0</span></div>
-
 <div>⏱ Time: <span id="time">30</span>s</div>
-
 </div>
 
 <h3 id="q"></h3>
-
 <div id="options"></div>
 
 <button onclick="nextQ()">Next Question</button>
-
 </div>
 
 <!-- RESULT BOX -->
@@ -144,115 +119,85 @@ button:hover{
 <script>
 
 // ================= QUESTIONS =================
-
 let qList = [
-
 {q:"रासायनिक अभिक्रिया में क्या बनता है?",o:["तत्व","नए पदार्थ","गैस","जल"],a:1},
-
 {q:"जंग लगना कौन सी अभिक्रिया है?",o:["संयोजन","ऑक्सीकरण","वियोजन","विस्थापन"],a:1},
-
 {q:"Mg जलाने पर क्या बनता है?",o:["MgO","MgCl2","MgSO4","MgCO3"],a:0},
-
 {q:"CuO का रंग क्या होता है?",o:["नीला","काला","हरा","सफेद"],a:1},
-
 {q:"Fe + CuSO4 → ?",o:["FeSO4 + Cu","FeO","Cu","Fe2O3"],a:0}
-
 ];
 
-// AUTO 50 QUESTIONS
+// 50 QUESTIONS AUTO
 while(qList.length < 50){
 qList.push(qList[qList.length % 5]);
 }
 
 // ================= VARIABLES =================
-
-let i = 0;
-
-let correct = 0;
-
-let wrong = 0;
-
-let lock = false;
-
+let i=0;
+let correct=0;
+let wrong=0;
+let lock=false;
 let timer;
-
-let time = 30;
+let time=30;
 
 // ================= START QUIZ =================
-
 function startQuiz(){
 
-if(
-document.getElementById("name").value == "" ||
-document.getElementById("cls").value == "" ||
-document.getElementById("roll").value == ""
-){
+let n=document.getElementById("name").value;
+let c=document.getElementById("cls").value;
+let r=document.getElementById("roll").value;
+
+if(!n || !c || !r){
 alert("Please fill all details");
 return;
 }
 
 document.getElementById("startBox").classList.add("hidden");
-
 document.getElementById("quizBox").classList.remove("hidden");
 
 loadQ();
-
 startTimer();
-
 }
 
 // ================= TIMER =================
-
 function startTimer(){
 
 clearInterval(timer);
+time=30;
 
-time = 30;
+document.getElementById("time").innerText=time;
 
-document.getElementById("time").innerText = time;
-
-timer = setInterval(()=>{
+timer=setInterval(()=>{
 
 time--;
+document.getElementById("time").innerText=time;
 
-document.getElementById("time").innerText = time;
-
-if(time <= 0){
-
-clearInterval(timer);
-
+if(time<=0){
 nextQ();
-
 }
 
 },1000);
-
 }
 
 // ================= LOAD QUESTION =================
-
 function loadQ(){
 
-lock = false;
+lock=false;
 
-let q = qList[i];
+let q=qList[i];
 
-document.getElementById("q").innerText =
-(i + 1) + ". " + q.q;
+document.getElementById("q").innerText=(i+1)+". "+q.q;
 
-let box = document.getElementById("options");
-
-box.innerHTML = "";
+let box=document.getElementById("options");
+box.innerHTML="";
 
 q.o.forEach((opt,idx)=>{
 
-let div = document.createElement("div");
+let div=document.createElement("div");
+div.className="option";
+div.innerText=opt;
 
-div.className = "option";
-
-div.innerText = opt;
-
-div.onclick = ()=>select(idx,div);
+div.onclick=()=>select(idx,div);
 
 box.appendChild(div);
 
@@ -260,94 +205,61 @@ box.appendChild(div);
 
 }
 
-// ================= SELECT OPTION =================
-
+// ================= SELECT =================
 function select(idx,el){
 
 if(lock) return;
+lock=true;
 
-lock = true;
-
-let q = qList[i];
-
-let all = document.querySelectorAll(".option");
+let q=qList[i];
+let all=document.querySelectorAll(".option");
 
 all.forEach((e,ii)=>{
-
-if(ii == q.a){
-
+if(ii==q.a){
 e.classList.add("correct");
-
 }
-
 });
 
-if(idx == q.a){
-
+if(idx==q.a){
 correct++;
-
-document.getElementById("correct").innerText = correct;
-
+document.getElementById("correct").innerText=correct;
 }else{
-
 wrong++;
-
-document.getElementById("wrong").innerText = wrong;
-
+document.getElementById("wrong").innerText=wrong;
 el.classList.add("wrong");
-
 }
 
 }
 
-// ================= NEXT QUESTION =================
-
+// ================= NEXT =================
 function nextQ(){
 
 i++;
 
-if(i >= 50){
-
+if(i>=50){
 finish();
-
 return;
-
 }
 
 loadQ();
-
 startTimer();
-
 }
 
 // ================= SEND RESULT =================
-
 function sendResult(){
 
-fetch("https://script.google.com/macros/s/AKfycbzT6mvdhaWs0sh_nw8f9FZpFKQcodUXFWq0bHCbU2ayfgrw6k_2MezvU3-XADl9WRyB/exec", {
+fetch("https://script.google.com/macros/s/AKfycbyxbBm9WPio_QRR2vhyEmoAyGFF429UL70f2X_NiURJZmMvNxYA5ic57caKjUtx-Vu7/exec", {
 
 method:"POST",
 
-headers:{
-"Content-Type":"application/json"
-},
-
 body: JSON.stringify({
-
 name: document.getElementById("name").value,
-
 cls: document.getElementById("cls").value,
-
 roll: document.getElementById("roll").value,
-
 correct: correct,
-
 wrong: wrong,
-
-score: correct + "/50",
-
+score: correct+"/50",
 time: new Date().toLocaleString()
-
 })
 
 });
@@ -355,37 +267,25 @@ time: new Date().toLocaleString()
 }
 
 // ================= FINISH =================
-
 function finish(){
 
 clearInterval(timer);
 
 document.getElementById("quizBox").classList.add("hidden");
-
 document.getElementById("resultBox").classList.remove("hidden");
 
-document.getElementById("resultBox").innerHTML = `
-
+document.getElementById("resultBox").innerHTML=`
 <h2>Quiz Completed</h2>
-
 <p><b>Name:</b> ${document.getElementById("name").value}</p>
-
 <p><b>Class:</b> ${document.getElementById("cls").value}</p>
-
-<p><b>Roll No:</b> ${document.getElementById("roll").value}</p>
-
+<p><b>Roll:</b> ${document.getElementById("roll").value}</p>
 <hr>
-
 <h3>✔ Correct: ${correct}</h3>
-
 <h3>❌ Wrong: ${wrong}</h3>
-
 <h2>🏆 Score: ${correct}/50</h2>
-
 `;
 
 sendResult();
-
 }
 
 </script>
