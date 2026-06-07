@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📸 My Gallery</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:25px;
+    background:linear-gradient(
+        135deg,
+        #000000,
+        #001f5c,
+        #00b140
+    );
+}
+
+h1{
+    text-align:center;
+    color:white;
+    font-size:3rem;
+    margin-bottom:35px;
+    text-shadow:0 0 20px #00ff88;
+}
+
+.gallery{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:25px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 25px rgba(0,255,136,0.25);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 35px rgba(0,255,136,0.7);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+}
+
+.caption{
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:20px;
+    font-weight:600;
+}
+
+.home-btn{
+    display:block;
+    width:260px;
+    margin:40px auto 0;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    padding:16px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#00ff88,#0099ff);
+    box-shadow:0 0 25px rgba(0,255,136,0.5);
+    transition:0.3s;
+}
+
+.home-btn:hover{
+    transform:scale(1.05);
+}
+
+@media(max-width:700px){
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .card img{
+        height:250px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>📸 MY GALLERY</h1>
+
+<div class="gallery">
+
+    <div class="card">
+        <img src="photo1.jpg" alt="Photo 1">
+        <div class="caption">
+            यहाँ Photo 1 का विवरण लिखें
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="photo2.jpg" alt="Photo 2">
+        <div class="caption">
+            यहाँ Photo 2 का विवरण लिखें
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="photo3.jpg" alt="Photo 3">
+        <div class="caption">
+            यहाँ Photo 3 का विवरण लिखें
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="photo4.jpg" alt="Photo 4">
+        <div class="caption">
+            यहाँ Photo 4 का विवरण लिखें
+        </div>
+    </div>
+
+</div>
+
+<a href="index.html" class="home-btn">
+    🏠 HOME
+</a>
+
+</body>
+</html>
