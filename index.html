@@ -639,30 +639,57 @@ footer p{
 
   </section>
 <a href="gallery.html" class="gallery-btn">
-    📸 Gallery
+    ✨ OPEN GALLERY ✨
 </a>
 
 <style>
 .gallery-btn{
-    display:inline-block;
-    padding:14px 32px;
-    background:linear-gradient(135deg,#ff512f,#dd2476);
-    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:320px;
+    height:90px;
+    margin:40px auto;
+
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:2px;
+
     text-decoration:none;
-    font-size:18px;
-    font-weight:600;
-    border-radius:50px;
-    box-shadow:0 8px 20px rgba(221,36,118,0.4);
-    transition:all 0.3s ease;
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff0080,
+        #ff4d4d,
+        #ff9900,
+        #ffd700
+    );
+
+    border-radius:25px;
+    box-shadow:
+        0 10px 30px rgba(255,0,128,.5),
+        0 0 40px rgba(255,153,0,.4);
+
+    transition:all .3s ease;
+    animation:glow 2s infinite alternate;
 }
 
 .gallery-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 25px rgba(221,36,118,0.6);
+    transform:scale(1.08);
+    box-shadow:
+        0 15px 40px rgba(255,0,128,.7),
+        0 0 60px rgba(255,215,0,.7);
 }
 
-.gallery-btn:active{
-    transform:scale(0.96);
+@keyframes glow{
+    from{
+        filter:brightness(1);
+    }
+    to{
+        filter:brightness(1.25);
+    }
 }
 </style>
 
