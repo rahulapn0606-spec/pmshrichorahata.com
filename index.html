@@ -638,21 +638,31 @@ footer p{
     </div>
 
   </section>
-
-<a href="gallery.html" class="btn">Gallery में जाएँ</a>
+<a href="gallery.html" class="gallery-btn">
+    📸 Gallery
+</a>
 
 <style>
-.btn{
+.gallery-btn{
     display:inline-block;
-    padding:12px 24px;
-    background:#007bff;
+    padding:14px 32px;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
     color:white;
     text-decoration:none;
-    border-radius:8px;
     font-size:18px;
+    font-weight:600;
+    border-radius:50px;
+    box-shadow:0 8px 20px rgba(221,36,118,0.4);
+    transition:all 0.3s ease;
 }
-.btn:hover{
-    background:#0056b3;
+
+.gallery-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(221,36,118,0.6);
+}
+
+.gallery-btn:active{
+    transform:scale(0.96);
 }
 </style>
 
