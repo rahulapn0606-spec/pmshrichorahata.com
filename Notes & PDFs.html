@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Study Material</title>
+
+<style>
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.pdf-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pdf-card h3{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+}
+
+.buttons a:first-child{
+    background:#2196f3;
+}
+
+.buttons a:last-child{
+    background:#4caf50;
+}
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#000,#001f5c,#00b140);
+    min-height:100vh;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.pdf-card{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:20px;
+    color:white;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.pdf-card h3{
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+}
+
+.buttons a{
+    text-decoration:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+    background:#0099ff;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.buttons a:hover{
+    transform:scale(1.05);
+}
+
+.buttons a:last-child{
+    background:#00b140;
+}
+</style>
+</head>
+<body>
+
+<h1>📚 Class 10 Study Material</h1>
+
+<div class="container" id="pdfContainer"></div>
+
+<script>
+const pdfs = [
+"10th Emplloyability Skills Notes 2021-22 - Copy.pdf",
+"10th IT PAPER 2023 - Copy - Copy (2).pdf",
+"10th Notes DDEO.pdf",
+"Adobe Scan Feb 12, 2026 - Copy - Copy (3).pdf",
+"Chapter 11,12 Class 10 - Copy (2).pdf",
+"Class 10 English Marking Scheme - Copy - Copy (3).pdf",
+"Class 10 Social Science Marking Schemes - Copy - Copy (3).pdf",
+"Complete_Sanskrit_1_liner (1) - Copy - Copy.pdf",
+"Complete_Social Science_10_liner.pdf",
+"Complete_Social Science_Formula.pdf",
+"English Grammar Do As Directed - Copy.pdf",
+"Keshav Sample Papers 2025, Social science.pdf",
+"Marking Scheme - Copy - Copy.pdf",
+"One liner Scince - Copy.pdf",
+"Parikshabodh Class 10th Objectives.pdf",
+"Probability Class 10th - Copy - Copy (2).pdf",
+"SANSKRIT answersheet - Copy - Copy (2).pdf",
+"SANSKRIT copy - Copy - Copy.pdf",
+"SOCIAL SCIENCE copy.pdf",
+"mp-board-class-10-english-102508-set-a-2025 - Copy (2).pdf",
+"mp-board-class-10-english-s-102-2022 - Copy - Copy (2).pdf",
+"mp-board-class-10-english-t-0652-set-a-2024 - Copy.pdf",
+"mp-board-class-10-half-yearly-english-1002-131125-2026 - Copy (2).pdf",
+"mp-board-class-10-half-yearly-sanskrit-1003-101125-2026 - Copy - Copy.pdf",
+"mp-board-class-10-half-yearly-social-science-1006-131125-2026.pdf",
+"mp-board-class-10-half-yearly-social-science-1056-111125-2026.pdf",
+"mp-board-class-10-hy-english-1003-171224-2025 (2) - Copy - Copy.pdf",
+"mp-board-class-10-hy-english-set-a-010424-2024 - Copy - Copy (2).pdf",
+"mp-board-class-10-hy-sanskrit-1005-301224-2025 - Copy - Copy (3).pdf",
+"mp-board-class-10-hy-social-science-1011-171224-2025.pdf",
+"mp-board-class-10-hy-social-science-set-a-010424-2024.pdf",
+"mp-board-class-10-it-ites-102518-set-c-2025 (2) - Copy - Copy.pdf",
+"mp-board-class-10-it-ites-j-515-set-b-2023 - Copy - Copy (3).pdf",
+"mp-board-class-10-it-ites-s-114-2022 - Copy - Copy (2).pdf",
+"mp-board-class-10-it-ites-t0666-set-a-2024.pdf",
+"mp-board-class-10-pb-english-180425-2025 - Copy.pdf",
+"mp-board-class-10-pb-hindi-180425-2025.pdf",
+"mp-board-class-10-pb-sanskrit-060423-2022 - Copy - Copy.pdf",
+"mp-board-class-10-qtr-sanskrit-1022-b-2023 - Copy (2).pdf",
+"mp-board-class-10-sanskrit-102512-set-a-2025 - Copy (2).pdf",
+"mp-board-class-10-sanskrit-j-503-set-a-2023 - Copy - Copy (3).pdf",
+"mp-board-class-10-sanskrit-s-103-2022 - Copy (2).pdf",
+"mp-board-class-10-sanskrit-t-0653-set-a-2024.pdf",
+"mp-board-class-10-social-science-102516-set-a-2025.pdf",
+"mp-board-class-10-social-science-j-511-set-a-2023.pdf",
+"mp-board-class-10-social-science-s-111-2022 - Copy (2) - Copy - Copy.pdf",
+"mp-board-class-10-social-science-t-0661-2024.pdf",
+"science - Copy - Copy (3).pdf",
+"stats - Copy - Copy (2).pdf"
+];
+
+const container = document.getElementById("pdfContainer");
+
+pdfs.forEach(pdf => {
+  const card = document.createElement("div");
+  card.className = "pdf-card";
+
+  card.innerHTML = `
+    <h3>${pdf.replace(".pdf","")}</h3>
+    <div class="buttons">
+      <a href="pdfs/${pdf}" target="_blank">👁 View</a>
+      <a href="pdfs/${pdf}" download>⬇ Download</a>
+    </div>
+  `;
+
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
