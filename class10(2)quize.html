@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz App</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#000428,#004e92);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.box{
+  width:95%;
+  max-width:800px;
+  background:rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+h2,h3{text-align:center;}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+}
+
+button{
+  padding:12px 20px;
+  background:#00c6ff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:16px;
+  width:100%;
+  margin-top:10px;
+}
+
+button:hover{background:#00a2d6;}
+
+.option{
+  padding:12px;
+  margin:10px 0;
+  background:rgba(255,255,255,0.15);
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.option:hover{background:rgba(255,255,255,0.25);}
+
+.correct{background:green !important;}
+.wrong{background:red !important;}
+.hidden{display:none;}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+#resultBox{text-align:center;}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<!-- START BOX -->
+<div id="startBox">
+
+<h2>Student Details</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<input type="text" id="cls" placeholder="Enter Class">
+<input type="text" id="roll" placeholder="Enter Roll No">
+
+<button onclick="startQuiz()">Start Quiz</button>
+
+</div>
+
+<!-- QUIZ BOX -->
+<div id="quizBox" class="hidden">
+
+<div class="top">
+<div>✔ Correct: <span id="correct">0</span></div>
+<div>❌ Wrong: <span id="wrong">0</span></div>
+<div>⏱ Time: <span id="time">30</span>s</div>
+</div>
+
+<h3 id="q"></h3>
+<div id="options"></div>
+
+<button onclick="nextQ()">Next Question</button>
+</div>
+
+<!-- RESULT BOX -->
+<div id="resultBox" class="hidden"></div>
+
+</div>
+
+<script>
+
+// ================= QUESTIONS =================
+let qList = [
+// CHAPTER 2 : अम्ल, क्षारक एवं लवण
+
+{q:"खट्टा स्वाद किसका गुण है?",o:["क्षारक","लवण","अम्ल","धातु"],a:2},
+{q:"लाल लिटमस को नीला कौन करता है?",o:["अम्ल","क्षारक","लवण","जल"],a:1},
+{q:"नीले लिटमस को लाल कौन करता है?",o:["अम्ल","क्षारक","लवण","धातु"],a:0},
+{q:"pH का मान 7 होने पर विलयन होता है?",o:["अम्लीय","क्षारीय","उदासीन","कोई नहीं"],a:2},
+{q:"सबसे प्रबल अम्लीय विलयन का pH होगा?",o:["1","7","10","14"],a:0},
+
+{q:"सबसे प्रबल क्षारीय विलयन का pH होगा?",o:["1","5","7","14"],a:3},
+{q:"हल्दी का रंग क्षारक में कैसा हो जाता है?",o:["पीला","लाल","नीला","हरा"],a:1},
+{q:"निम्न में से कौन प्राकृतिक सूचक है?",o:["फिनॉल्फ्थेलीन","मिथाइल ऑरेंज","लिटमस","NaOH"],a:2},
+{q:"अम्ल और क्षार की अभिक्रिया से क्या बनता है?",o:["केवल जल","केवल लवण","लवण और जल","गैस"],a:2},
+{q:"इस अभिक्रिया को क्या कहते हैं?",o:["उदासीनीकरण","विस्थापन","वियोजन","संयोजन"],a:0},
+
+{q:"HCl का जलीय विलयन क्या उत्पन्न करता है?",o:["H⁺ आयन","OH⁻ आयन","Na⁺ आयन","Cl⁻ आयन"],a:0},
+{q:"क्षारक जल में क्या उत्पन्न करते हैं?",o:["H⁺","OH⁻","Na⁺","Cl⁻"],a:1},
+{q:"pH स्केल का परिसर है?",o:["0–7","1–10","0–14","7–14"],a:2},
+{q:"पेट में अम्लता बढ़ने पर कौन-सी दवा दी जाती है?",o:["प्रतिजैविक","एंटासिड","विटामिन","हार्मोन"],a:1},
+{q:"चींटी के डंक में कौन-सा अम्ल होता है?",o:["सल्फ्यूरिक अम्ल","फॉर्मिक अम्ल","नाइट्रिक अम्ल","एसीटिक अम्ल"],a:1},
+
+{q:"सिरके में कौन-सा अम्ल पाया जाता है?",o:["सिट्रिक अम्ल","टार्टरिक अम्ल","एसीटिक अम्ल","लैक्टिक अम्ल"],a:2},
+{q:"नींबू में कौन-सा अम्ल पाया जाता है?",o:["एसीटिक अम्ल","सिट्रिक अम्ल","फॉर्मिक अम्ल","ऑक्सैलिक अम्ल"],a:1},
+{q:"दही में कौन-सा अम्ल होता है?",o:["लैक्टिक अम्ल","एसीटिक अम्ल","सिट्रिक अम्ल","टार्टरिक अम्ल"],a:0},
+{q:"अम्ल धातुओं से अभिक्रिया करके कौन-सी गैस उत्पन्न करते हैं?",o:["O₂","N₂","H₂","CO₂"],a:2},
+{q:"जिंक और HCl की अभिक्रिया में कौन-सी गैस निकलती है?",o:["ऑक्सीजन","हाइड्रोजन","कार्बन डाइऑक्साइड","क्लोरीन"],a:1},
+
+{q:"बेकिंग सोडा का रासायनिक सूत्र है?",o:["Na₂CO₃","NaHCO₃","CaCO₃","NaOH"],a:1},
+{q:"धोने का सोडा का सूत्र है?",o:["Na₂CO₃·10H₂O","NaHCO₃","CaSO₄·2H₂O","NaOH"],a:0},
+{q:"प्लास्टर ऑफ पेरिस का सूत्र है?",o:["CaSO₄·2H₂O","CaSO₄·½H₂O","Na₂CO₃","CaCO₃"],a:1},
+{q:"जिप्सम का सूत्र है?",o:["CaSO₄·2H₂O","CaSO₄·½H₂O","Na₂CO₃","NaHCO₃"],a:0},
+{q:"बेकिंग सोडा का उपयोग किया जाता है?",o:["सीमेंट बनाने में","केक बनाने में","काँच बनाने में","उर्वरक बनाने में"],a:1},
+
+{q:"क्लोरीन का उपयोग किसमें होता है?",o:["जल शुद्धीकरण","उर्वरक","सीमेंट","प्लास्टिक"],a:0},
+{q:"pH 7 से कम होने पर विलयन होता है?",o:["अम्लीय","क्षारीय","उदासीन","लवणीय"],a:0},
+{q:"pH 7 से अधिक होने पर विलयन होता है?",o:["अम्लीय","क्षारीय","उदासीन","कोई नहीं"],a:1},
+{q:"दाँतों का क्षय कब शुरू होता है?",o:["pH 7","pH 8","pH 5.5 से कम","pH 10"],a:2},
+{q:"टूथपेस्ट सामान्यतः होता है?",o:["अम्लीय","क्षारीय","उदासीन","लवणीय"],a:1},
+{q:"कुल कितने प्रश्न हैं?",o:["50","45","40","55"],a:0}
+];
+
+while(qList.length < 30){
+qList.push(qList[qList.length % 5]);
+}
+
+// ================= VARIABLES =================
+let i=0;
+let correct=0;
+let wrong=0;
+let lock=false;
+let timer;
+let time=30;
+
+// ================= START QUIZ =================
+function startQuiz(){
+
+let n=document.getElementById("name").value;
+let c=document.getElementById("cls").value;
+let r=document.getElementById("roll").value;
+
+if(!n || !c || !r){
+alert("Please fill all details");
+return;
+}
+
+document.getElementById("startBox").classList.add("hidden");
+document.getElementById("quizBox").classList.remove("hidden");
+
+loadQ();
+startTimer();
+}
+
+// ================= TIMER =================
+function startTimer(){
+
+clearInterval(timer);
+time=30;
+
+document.getElementById("time").innerText=time;
+
+timer=setInterval(()=>{
+
+time--;
+document.getElementById("time").innerText=time;
+
+if(time<=0){
+nextQ();
+}
+
+},1000);
+}
+
+// ================= LOAD QUESTION =================
+function loadQ(){
+
+lock=false;
+
+let q=qList[i];
+
+document.getElementById("q").innerText=(i+1)+". "+q.q;
+
+let box=document.getElementById("options");
+box.innerHTML="";
+
+q.o.forEach((opt,idx)=>{
+
+let div=document.createElement("div");
+div.className="option";
+div.innerText=opt;
+
+div.onclick=()=>select(idx,div);
+
+box.appendChild(div);
+
+});
+
+}
+
+// ================= SELECT =================
+function select(idx,el){
+
+if(lock) return;
+lock=true;
+
+let q=qList[i];
+let all=document.querySelectorAll(".option");
+
+all.forEach((e,ii)=>{
+if(ii==q.a){
+e.classList.add("correct");
+}
+});
+
+if(idx==q.a){
+correct++;
+document.getElementById("correct").innerText=correct;
+}else{
+wrong++;
+document.getElementById("wrong").innerText=wrong;
+el.classList.add("wrong");
+}
+
+}
+
+// ================= NEXT =================
+function nextQ(){
+
+i++;
+
+if(i>=30){
+finish();
+return;
+}
+
+loadQ();
+startTimer();
+}
+
+// ================= SEND RESULT =================
+function sendResult(){
+
+fetch("https://script.google.com/macros/s/AKfycbyxbBm9WPio_QRR2vhyEmoAyGFF429UL70f2X_NiURJZmMvNxYA5ic57caKjUtx-Vu7/exec", {
+
+method:"POST",
+
+body: JSON.stringify({
+name: document.getElementById("name").value,
+cls: document.getElementById("cls").value,
+roll: document.getElementById("roll").value,
+correct: correct,
+wrong: wrong,
+score: correct+"/30",
+time: new Date().toLocaleString()
+})
+
+});
+
+}
+
+// ================= FINISH =================
+function finish(){
+
+clearInterval(timer);
+
+document.getElementById("quizBox").classList.add("hidden");
+document.getElementById("resultBox").classList.remove("hidden");
+
+document.getElementById("resultBox").innerHTML=`
+<h2>Quiz Completed</h2>
+<p><b>Name:</b> ${document.getElementById("name").value}</p>
+<p><b>Class:</b> ${document.getElementById("cls").value}</p>
+<p><b>Roll:</b> ${document.getElementById("roll").value}</p>
+<hr>
+<h3>✔ Correct: ${correct}</h3>
+<h3>❌ Wrong: ${wrong}</h3>
+<h2>🏆 Score: ${correct}/30</h2>
+`;
+
+sendResult();
+}
+
+</script>
+
+</body>
+</html>
