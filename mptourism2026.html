@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>पर्यटन क्विज़ में चोरहटा विद्यालय प्रथम | PM SHRI GHSS Chorahata</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Noto Sans Devanagari','Poppins',sans-serif;
+            background:
+                radial-gradient(circle at top left,#073b67 0%,transparent 35%),
+                radial-gradient(circle at bottom right,#075b45 0%,transparent 35%),
+                linear-gradient(135deg,#021526,#03346E,#0B6E4F);
+            color:white;
+            overflow-x:hidden;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header{
+            background:rgba(255,255,255,.08);
+            backdrop-filter:blur(15px);
+            -webkit-backdrop-filter:blur(15px);
+
+            padding:18px 20px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:18px;
+
+            border-bottom:1px solid rgba(255,255,255,.15);
+        }
+
+        header img{
+            width:78px;
+            height:78px;
+
+            object-fit:contain;
+
+            background:white;
+            border-radius:50%;
+            padding:5px;
+
+            box-shadow:0 5px 25px rgba(0,0,0,.3);
+        }
+
+        .school-name{
+            text-align:center;
+        }
+
+        .school-name h1{
+            font-size:24px;
+            font-weight:700;
+        }
+
+        .school-name p{
+            color:#FFD700;
+            margin-top:5px;
+            font-size:15px;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav{
+            background:#001F3F;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:30px;
+
+            padding:14px;
+
+            position:sticky;
+            top:0;
+            z-index:1000;
+
+            box-shadow:0 5px 20px rgba(0,0,0,.25);
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#FFD700;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero{
+            min-height:390px;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+
+            padding:60px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0,15,30,.75),
+                    rgba(0,20,35,.75)
+                ),
+                url("photos/tourism-quiz-2.jpg");
+
+            background-size:cover;
+            background-position:center;
+
+            border-bottom:1px solid rgba(255,255,255,.15);
+        }
+
+        .hero-content{
+            max-width:1000px;
+        }
+
+        .news-label{
+            display:inline-block;
+
+            background:#00C853;
+            color:white;
+
+            padding:8px 18px;
+
+            border-radius:50px;
+
+            font-weight:bold;
+
+            margin-bottom:20px;
+
+            box-shadow:0 5px 20px rgba(0,200,83,.3);
+        }
+
+        .hero h1{
+            font-size:42px;
+            line-height:1.35;
+
+            text-shadow:0 4px 15px rgba(0,0,0,.6);
+
+            margin-bottom:18px;
+        }
+
+        .hero p{
+            font-size:20px;
+            color:#FFD700;
+        }
+
+
+        /* ================= CONTAINER ================= */
+
+        .container{
+            width:100%;
+            max-width:1100px;
+
+            margin:auto;
+
+            padding:45px 18px;
+        }
+
+
+        /* ================= ARTICLE ================= */
+
+        .article{
+            background:rgba(255,255,255,.09);
+
+            backdrop-filter:blur(18px);
+            -webkit-backdrop-filter:blur(18px);
+
+            border:1px solid rgba(255,255,255,.15);
+
+            padding:40px;
+
+            border-radius:25px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.25);
+        }
+
+
+        .badge{
+            display:inline-block;
+
+            background:#00C853;
+
+            padding:8px 18px;
+
+            border-radius:50px;
+
+            font-weight:bold;
+
+            margin-bottom:10px;
+        }
+
+        .meta{
+            color:#FFD700;
+
+            font-size:16px;
+
+            margin:10px 0 30px;
+        }
+
+
+        /* ================= TEXT ================= */
+
+        .article p{
+            font-size:18px;
+
+            line-height:2;
+
+            margin-bottom:22px;
+
+            text-align:justify;
+        }
+
+        .article strong{
+            color:#FFD700;
+        }
+
+
+        /* ================= HEADINGS ================= */
+
+        .section-title{
+            font-size:28px;
+
+            color:#FFD700;
+
+            margin:40px 0 20px;
+
+            padding-bottom:10px;
+
+            border-bottom:2px solid rgba(255,215,0,.3);
+        }
+
+
+        /* ================= ACHIEVEMENT ================= */
+
+        .achievement-box{
+            display:flex;
+            align-items:center;
+
+            gap:25px;
+
+            margin:35px 0;
+
+            padding:25px;
+
+            border-radius:20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,200,83,.25),
+                    rgba(0,150,136,.15)
+                );
+
+            border:1px solid rgba(0,255,136,.4);
+
+            box-shadow:0 10px 30px rgba(0,0,0,.2);
+        }
+
+        .trophy{
+            font-size:65px;
+        }
+
+        .achievement-box h2{
+            color:#00ff88;
+
+            font-size:30px;
+
+            margin-bottom:10px;
+        }
+
+        .achievement-box p{
+            margin:0;
+        }
+
+
+        /* ================= RANKING ================= */
+
+        .ranking{
+            margin:35px 0;
+
+            padding:30px;
+
+            background:rgba(0,0,0,.2);
+
+            border-radius:22px;
+
+            border:1px solid rgba(255,255,255,.12);
+        }
+
+        .ranking h2{
+            color:#FFD700;
+
+            text-align:center;
+
+            margin-bottom:25px;
+        }
+
+        .rank{
+            display:flex;
+            align-items:center;
+
+            gap:20px;
+
+            padding:16px 18px;
+
+            margin:10px 0;
+
+            border-radius:14px;
+
+            background:rgba(255,255,255,.07);
+
+            border-left:4px solid #00C853;
+        }
+
+        .rank > span{
+            font-size:28px;
+
+            min-width:42px;
+        }
+
+        .rank strong{
+            color:#FFD700;
+
+            font-size:18px;
+        }
+
+        .rank p{
+            margin:3px 0;
+
+            font-size:16px;
+        }
+
+        .rank b{
+            color:#00ff88;
+        }
+
+        .rank.first{
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255,215,0,.18),
+                    rgba(255,255,255,.05)
+                );
+
+            border-left-color:#FFD700;
+        }
+
+
+        /* ================= QUOTE ================= */
+
+        .quote{
+            margin:35px 0;
+
+            padding:25px 30px;
+
+            background:rgba(255,255,255,.08);
+
+            border-left:5px solid #00ff88;
+
+            border-radius:12px;
+
+            position:relative;
+        }
+
+        .quote span{
+            position:absolute;
+
+            top:0;
+            left:15px;
+
+            font-size:60px;
+
+            color:#00ff88;
+
+            opacity:.4;
+        }
+
+        .quote p{
+            margin:0;
+
+            padding-left:25px;
+
+            font-size:20px;
+
+            color:#fff;
+        }
+
+
+        /* ================= PHOTO GALLERY ================= */
+
+        .photo-gallery{
+            display:grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap:25px;
+
+            margin-top:25px;
+        }
+
+        .photo-card{
+            background:rgba(255,255,255,.08);
+
+            padding:12px;
+
+            border-radius:18px;
+
+            overflow:hidden;
+
+            transition:.3s;
+
+            border:1px solid rgba(255,255,255,.12);
+        }
+
+        .photo-card:hover{
+            transform:translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.3);
+        }
+
+        .photo-card img{
+            width:100%;
+
+            height:330px;
+
+            object-fit:cover;
+
+            border-radius:12px;
+        }
+
+        .photo-card p{
+            text-align:center;
+
+            font-size:15px;
+
+            margin:12px 5px 5px;
+        }
+
+
+        /* ================= FINAL MESSAGE ================= */
+
+        .final-message{
+            margin-top:40px;
+
+            padding:30px;
+
+            text-align:center;
+
+            border-radius:20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,200,83,.18),
+                    rgba(3,52,110,.3)
+                );
+
+            border:1px solid rgba(0,255,136,.3);
+        }
+
+        .final-message h2{
+            color:#FFD700;
+
+            margin-bottom:15px;
+        }
+
+        .final-message p{
+            text-align:center;
+
+            margin:0;
+        }
+
+
+        /* ================= CREDIT ================= */
+
+        .credit{
+            text-align:center;
+
+            margin-top:45px;
+
+            padding-top:25px;
+
+            border-top:1px solid rgba(255,255,255,.2);
+
+            line-height:2;
+        }
+
+        .credit b{
+            color:#FFD700;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer{
+            margin-top:30px;
+
+            padding:30px 15px;
+
+            text-align:center;
+
+            background:#00152e;
+
+            border-top:1px solid rgba(255,255,255,.1);
+        }
+
+        footer h3{
+            color:#FFD700;
+
+            margin-bottom:8px;
+        }
+
+        footer p{
+            margin:5px;
+        }
+
+        .copyright{
+            margin-top:15px !important;
+
+            color:#aaa;
+
+            font-size:13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+
+                padding:15px 10px;
+            }
+
+            header img{
+                width:70px;
+                height:70px;
+            }
+
+            .school-name h1{
+                font-size:17px;
+                line-height:1.4;
+            }
+
+            .school-name p{
+                font-size:12px;
+            }
+
+
+            nav{
+                gap:15px;
+
+                padding:12px 5px;
+
+                overflow-x:auto;
+
+                justify-content:flex-start;
+            }
+
+            nav a{
+                white-space:nowrap;
+
+                font-size:14px;
+            }
+
+
+            .hero{
+                min-height:350px;
+
+                padding:45px 15px;
+            }
+
+            .hero h1{
+                font-size:27px;
+            }
+
+            .hero p{
+                font-size:16px;
+            }
+
+
+            .container{
+                padding:25px 10px;
+            }
+
+            .article{
+                padding:22px 16px;
+
+                border-radius:18px;
+            }
+
+
+            .article p{
+                font-size:16px;
+
+                line-height:1.9;
+
+                text-align:left;
+            }
+
+
+            .section-title{
+                font-size:22px;
+            }
+
+
+            .achievement-box{
+                flex-direction:column;
+
+                text-align:center;
+
+                padding:20px 15px;
+            }
+
+            .trophy{
+                font-size:50px;
+            }
+
+            .achievement-box h2{
+                font-size:24px;
+            }
+
+
+            .ranking{
+                padding:18px 12px;
+            }
+
+            .rank{
+                gap:10px;
+
+                padding:13px 10px;
+            }
+
+            .rank > span{
+                font-size:22px;
+
+                min-width:32px;
+            }
+
+            .rank p{
+                font-size:14px;
+
+                line-height:1.5;
+            }
+
+
+            .photo-gallery{
+                grid-template-columns:1fr;
+            }
+
+            .photo-card img{
+                height:auto;
+
+                max-height:none;
+            }
+
+
+            .quote p{
+                font-size:17px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <img src="logo.png" alt="PM SHRI GHSS Chorahata Logo">
+
+    <div class="school-name">
+
+        <h1>
+            PM SHRI GOVERNMENT HIGHER SECONDARY SCHOOL CHORAHATA
+        </h1>
+
+        <p>
+            पी एम श्री शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा,
+            जिला सतना (म.प्र.)
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="notice.html">Notice</a>
+
+    <a href="gallery.html">Gallery</a>
+
+    <a href="achivements.html">Achievements</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="news-label">
+            🏆 विद्यालय की शानदार उपलब्धि
+        </span>
+
+        <h1>
+            राज्य स्तरीय पर्यटन क्विज़ के लिए
+            चोरहटा विद्यालय ने पक्का किया स्थान
+        </h1>
+
+        <p>
+            जिला स्तरीय पर्यटन क्विज़ प्रतियोगिता में
+            PM SHRI शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा प्रथम
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ARTICLE ================= -->
+
+<main class="container">
+
+<article class="article">
+
+
+    <div class="badge">
+        📰 समाचार
+    </div>
+
+
+    <div class="meta">
+        📍 सतना, मध्यप्रदेश &nbsp; | &nbsp; 🏆 प्रथम स्थान
+    </div>
+
+
+    <p>
+        मध्यप्रदेश पर्यटन बोर्ड एवं स्कूल शिक्षा विभाग के संयुक्त
+        तत्वावधान में शुक्रवार को <strong>एकेएस यूनिवर्सिटी, सतना</strong>
+        में जिला स्तरीय पर्यटन क्विज़ प्रतियोगिता का आयोजन किया गया।
+        उत्साह और रोमांच से भरे इस आयोजन में PM SHRI शासकीय उच्चतर
+        माध्यमिक विद्यालय चोरहटा के विद्यार्थियों ने शानदार प्रदर्शन
+        करते हुए प्रतियोगिता में <strong>प्रथम स्थान</strong> प्राप्त किया।
+    </p>
+
+
+    <p>
+        प्रतियोगिता में जिले के विभिन्न विद्यालयों की कुल
+        <strong>168 टीमों</strong> ने पंजीयन कराया था, जिनमें से
+        <strong>116 टीमों</strong> ने प्रतियोगिता में भाग लिया।
+        प्रतियोगिता में पर्यटन, इतिहास, संस्कृति, स्थापत्य, वन्यजीव
+        और मध्यप्रदेश के विकास से संबंधित प्रश्न पूछे गए।
+    </p>
+
+
+    <!-- ACHIEVEMENT -->
+
+    <div class="achievement-box">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <div>
+
+            <h2>
+                चोरहटा विद्यालय प्रथम
+            </h2>
+
+            <p>
+                PM SHRI शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा की टीम ने
+                <strong>310 अंक</strong> प्राप्त कर प्रतियोगिता में
+                प्रथम स्थान हासिल किया।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">
+        प्रतियोगिता में शानदार प्रदर्शन
+    </h2>
+
+
+    <p>
+        प्रतियोगिता का शुभारंभ सुबह 10 बजे लिखित क्विज़ के साथ हुआ।
+        लिखित क्विज़ के बाद प्राप्त अंकों के आधार पर शीर्ष 6 टीमों ने
+        फाइनल राउंड में प्रवेश किया। इसके बाद मल्टीमीडिया आधारित
+        10 चरणों में आयोजित लाइव क्विज़ ने प्रतियोगिता को और भी
+        रोमांचक बना दिया।
+    </p>
+
+
+    <p>
+        अंतिम राउंड में भी चोरहटा विद्यालय की टीम ने शानदार प्रदर्शन
+        जारी रखा और <strong>310 अंक</strong> प्राप्त करते हुए प्रथम
+        स्थान पर कब्जा किया। विजय कॉन्वेंट विद्यालय, उतैली ने
+        <strong>300 अंक</strong> के साथ द्वितीय स्थान प्राप्त किया।
+    </p>
+
+
+    <!-- RANKING -->
+
+    <div class="ranking">
+
+        <h2>
+            🏆 प्रतियोगिता की अंतिम रैंकिंग
+        </h2>
+
+
+        <div class="rank first">
+
+            <span>🥇</span>
+
+            <div>
+
+                <strong>
+                    प्रथम स्थान
+                </strong>
+
+                <p>
+                    शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा
+                </p>
+
+                <b>
+                    310 अंक
+                </b>
+
+            </div>
+
+        </div>
+
+
+        <div class="rank">
+
+            <span>🥈</span>
+
+            <div>
+
+                <strong>
+                    द्वितीय स्थान
+                </strong>
+
+                <p>
+                    विजय कॉन्वेंट विद्यालय, उतैली
+                </p>
+
+                <b>
+                    300 अंक
+                </b>
+
+            </div>
+
+        </div>
+
+
+        <div class="rank">
+
+            <span>🥉</span>
+
+            <div>
+
+                <strong>
+                    तृतीय स्थान
+                </strong>
+
+                <p>
+                    शासकीय कन्या उच्चतर माध्यमिक विद्यालय उचेहरा
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="rank">
+
+            <span>4️⃣</span>
+
+            <div>
+
+                <strong>
+                    चतुर्थ स्थान
+                </strong>
+
+                <p>
+                    सेंट माइकल सीनियर सेकेंडरी स्कूल अमोदा
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="rank">
+
+            <span>5️⃣</span>
+
+            <div>
+
+                <strong>
+                    पंचम स्थान
+                </strong>
+
+                <p>
+                    शासकीय सांदीपनी उच्चतर माध्यमिक विद्यालय नागौद
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="rank">
+
+            <span>6️⃣</span>
+
+            <div>
+
+                <strong>
+                    छठा स्थान
+                </strong>
+
+                <p>
+                    शासकीय उच्चतर माध्यमिक विद्यालय अमरहा
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOPICS -->
+
+    <h2 class="section-title">
+        🌎 पर्यटन से जुड़े विभिन्न विषयों पर प्रश्न
+    </h2>
+
+
+    <p>
+        प्रतियोगिता में मध्यप्रदेश के पर्यटन स्थलों, ऐतिहासिक धरोहरों,
+        संस्कृति, स्थापत्य, वन्यजीव, प्राकृतिक संपदा तथा प्रदेश के
+        विकास से संबंधित प्रश्न पूछे गए। विद्यार्थियों ने अपनी
+        सामान्य ज्ञान एवं पर्यटन संबंधी जानकारी का उत्कृष्ट प्रदर्शन
+        किया।
+    </p>
+
+
+    <!-- QUOTE -->
+
+    <div class="quote">
+
+        <span>“</span>
+
+        <p>
+            चोरहटा विद्यालय की टीम ने शानदार प्रदर्शन करते हुए
+            विद्यालय एवं सतना जिले का नाम गौरवान्वित किया।
+        </p>
+
+    </div>
+
+
+    <!-- AWARD -->
+
+    <h2 class="section-title">
+        🎖️ विजेताओं का सम्मान
+    </h2>
+
+
+    <p>
+        प्रतियोगिता के समापन समारोह में विजेता टीम को मेडल, ट्रॉफी
+        एवं प्रशस्ति-पत्र प्रदान कर सम्मानित किया गया। इस उपलब्धि
+        के साथ चोरहटा विद्यालय की टीम ने राज्य स्तर पर सतना जिले
+        का प्रतिनिधित्व करने का गौरव प्राप्त किया।
+    </p>
+
+
+    <p>
+        कार्यक्रम में एकेएस यूनिवर्सिटी के कुलपति, जिला प्रशासन,
+        शिक्षा विभाग एवं पर्यटन से जुड़े अधिकारी, शिक्षक तथा
+        विद्यार्थी उपस्थित रहे।
+    </p>
+
+
+    <!-- PHOTOS -->
+
+    <h2 class="section-title">
+        📸 प्रतियोगिता की झलकियां
+    </h2>
+
+
+    <div class="photo-gallery">
+
+
+        <div class="photo-card">
+
+            <img
+                src="photos/tourism-quiz-1.jpg"
+                alt="पर्यटन क्विज़ प्रतियोगिता"
+            >
+
+            <p>
+                पर्यटन क्विज़ प्रतियोगिता में प्रतिभागी विद्यार्थी
+            </p>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="photos/tourism-quiz-2.jpg"
+                alt="चोरहटा विद्यालय पर्यटन क्विज़"
+            >
+
+            <p>
+                चोरहटा विद्यालय की विजेता टीम एवं प्रतियोगिता की झलक
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FINAL -->
+
+    <div class="final-message">
+
+        <h2>
+            🎉 विद्यालय के लिए गौरव का क्षण
+        </h2>
+
+        <p>
+            PM SHRI शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा की इस
+            उपलब्धि पर विद्यालय परिवार, शिक्षकगण एवं विद्यार्थियों
+            ने हर्ष व्यक्त किया और राज्य स्तरीय प्रतियोगिता के लिए
+            टीम को शुभकामनाएं दीं।
+        </p>
+
+    </div>
+
+
+    <!-- CREDIT -->
+
+    <div class="credit">
+
+        <b>
+            — विद्यालय संवाददाता —
+        </b>
+
+        <br>
+
+        PM SHRI शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा
+
+        <br>
+
+        जिला सतना, मध्यप्रदेश
+
+    </div>
+
+
+</article>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        PM SHRI Government Higher Secondary School Chorahata
+    </h3>
+
+    <p>
+        District Satna, Madhya Pradesh
+    </p>
+
+    <p class="copyright">
+        © 2026 PM SHRI GHSS Chorahata
+    </p>
+
+</footer>
+
+
+</body>
+</html>
