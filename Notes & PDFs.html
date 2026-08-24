@@ -122,55 +122,82 @@ h1{
 
 <script>
 const pdfs = [
-"10th Emplloyability Skills Notes 2021-22 - Copy.pdf",
-"10th IT PAPER 2023 - Copy - Copy (2).pdf",
-"10th Notes DDEO.pdf",
-"Adobe Scan Feb 12, 2026 - Copy - Copy (3).pdf",
-"Chapter 11,12 Class 10 - Copy (2).pdf",
-"Class 10 English Marking Scheme - Copy - Copy (3).pdf",
-"Class 10 Social Science Marking Schemes - Copy - Copy (3).pdf",
-"Complete_Sanskrit_1_liner (1) - Copy - Copy.pdf",
-"Complete_Social Science_10_liner.pdf",
-"Complete_Social Science_Formula.pdf",
-"English Grammar Do As Directed - Copy.pdf",
-"Keshav Sample Papers 2025, Social science.pdf",
-"Marking Scheme - Copy - Copy.pdf",
-"One liner Scince - Copy.pdf",
-"Parikshabodh Class 10th Objectives.pdf",
-"Probability Class 10th - Copy - Copy (2).pdf",
-"SANSKRIT answersheet - Copy - Copy (2).pdf",
-"SANSKRIT copy - Copy - Copy.pdf",
-"SOCIAL SCIENCE copy.pdf",
-"mp-board-class-10-english-102508-set-a-2025 - Copy (2).pdf",
-"mp-board-class-10-english-s-102-2022 - Copy - Copy (2).pdf",
-"mp-board-class-10-english-t-0652-set-a-2024 - Copy.pdf",
-"mp-board-class-10-half-yearly-english-1002-131125-2026 - Copy (2).pdf",
-"mp-board-class-10-half-yearly-sanskrit-1003-101125-2026 - Copy - Copy.pdf",
-"mp-board-class-10-half-yearly-social-science-1006-131125-2026.pdf",
-"mp-board-class-10-half-yearly-social-science-1056-111125-2026.pdf",
-"mp-board-class-10-hy-english-1003-171224-2025 (2) - Copy - Copy.pdf",
-"mp-board-class-10-hy-english-set-a-010424-2024 - Copy - Copy (2).pdf",
-"mp-board-class-10-hy-sanskrit-1005-301224-2025 - Copy - Copy (3).pdf",
-"mp-board-class-10-hy-social-science-1011-171224-2025.pdf",
-"mp-board-class-10-hy-social-science-set-a-010424-2024.pdf",
-"mp-board-class-10-it-ites-102518-set-c-2025 (2) - Copy - Copy.pdf",
-"mp-board-class-10-it-ites-j-515-set-b-2023 - Copy - Copy (3).pdf",
-"mp-board-class-10-it-ites-s-114-2022 - Copy - Copy (2).pdf",
-"mp-board-class-10-it-ites-t0666-set-a-2024.pdf",
-"mp-board-class-10-pb-english-180425-2025 - Copy.pdf",
-"mp-board-class-10-pb-hindi-180425-2025.pdf",
-"mp-board-class-10-pb-sanskrit-060423-2022 - Copy - Copy.pdf",
-"mp-board-class-10-qtr-sanskrit-1022-b-2023 - Copy (2).pdf",
-"mp-board-class-10-sanskrit-102512-set-a-2025 - Copy (2).pdf",
-"mp-board-class-10-sanskrit-j-503-set-a-2023 - Copy - Copy (3).pdf",
-"mp-board-class-10-sanskrit-s-103-2022 - Copy (2).pdf",
-"mp-board-class-10-sanskrit-t-0653-set-a-2024.pdf",
-"mp-board-class-10-social-science-102516-set-a-2025.pdf",
-"mp-board-class-10-social-science-j-511-set-a-2023.pdf",
-"mp-board-class-10-social-science-s-111-2022 - Copy (2) - Copy - Copy.pdf",
-"mp-board-class-10-social-science-t-0661-2024.pdf",
-"science - Copy - Copy (3).pdf",
-"stats - Copy - Copy (2).pdf"
+  {
+    file: "10th Emplloyability Skills Notes 2021-22 - Copy.pdf",
+    name: "Employability Skills Notes"
+  },
+  {
+    file: "10th IT PAPER 2023 - Copy - Copy (2).pdf",
+    name: "Class 10 IT Question Paper 2023"
+  },
+  {
+    file: "10th Notes DDEO.pdf",
+    name: "Class 10 Notes – DDEO"
+  },
+  {
+    file: "Chapter 11,12 Class 10 - Copy (2).pdf",
+    name: "Chapter 11 & 12 – Class 10"
+  },
+  {
+    file: "Class 10 English Marking Scheme - Copy - Copy (3).pdf",
+    name: "English Marking Scheme"
+  },
+  {
+    file: "Class 10 Social Science Marking Schemes - Copy - Copy (3).pdf",
+    name: "Social Science Marking Scheme"
+  },
+  {
+    file: "Complete_Sanskrit_1_liner (1) - Copy - Copy.pdf",
+    name: "Sanskrit Complete One-Liner"
+  },
+  {
+    file: "Complete_Social Science_10_liner.pdf",
+    name: "Social Science Complete One-Liner"
+  },
+  {
+    file: "Complete_Social Science_Formula.pdf",
+    name: "Social Science Important Formulas"
+  },
+  {
+    file: "English Grammar Do As Directed - Copy.pdf",
+    name: "English Grammar – Do As Directed"
+  },
+  {
+    file: "Keshav Sample Papers 2025, Social science.pdf",
+    name: "Social Science Sample Papers 2025"
+  },
+  {
+    file: "One liner Scince - Copy.pdf",
+    name: "Science One-Liner"
+  },
+  {
+    file: "Parikshabodh Class 10th Objectives.pdf",
+    name: "Parikshabodh – Class 10 Objectives"
+  },
+  {
+    file: "Probability Class 10th - Copy - Copy (2).pdf",
+    name: "Probability – Class 10"
+  },
+  {
+    file: "SANSKRIT answersheet - Copy - Copy (2).pdf",
+    name: "Sanskrit Answer Sheet"
+  },
+  {
+    file: "SANSKRIT copy - Copy - Copy.pdf",
+    name: "Sanskrit Practice Copy"
+  },
+  {
+    file: "SOCIAL SCIENCE copy.pdf",
+    name: "Social Science Study Material"
+  },
+  {
+    file: "science - Copy - Copy (3).pdf",
+    name: "Science Study Material"
+  },
+  {
+    file: "stats - Copy - Copy (2).pdf",
+    name: "Statistics – Class 10"
+  }
 ];
 
 const container = document.getElementById("pdfContainer");
@@ -180,10 +207,16 @@ pdfs.forEach(pdf => {
   card.className = "pdf-card";
 
   card.innerHTML = `
-    <h3>${pdf.replace(".pdf","")}</h3>
+    <h3>${pdf.name}</h3>
+
     <div class="buttons">
-      <a href="pdf/${pdf}" target="_blank">👁 View</a>
-      <a href="pdf/${pdf}" download>⬇ Download</a>
+      <a href="pdf/${encodeURIComponent(pdf.file)}" target="_blank">
+        👁 View
+      </a>
+
+      <a href="pdf/${encodeURIComponent(pdf.file)}" download>
+        ⬇ Download
+      </a>
     </div>
   `;
 
