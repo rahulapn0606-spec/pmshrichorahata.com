@@ -42,26 +42,52 @@ body{
     overflow-x:hidden;
 }
 
+.hero-slideshow{
+    width:100%;
+    height:65vh;
 
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    transition:opacity 1s ease-in-out;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1000px;
+    padding:35px 20px 60px;
+    background:white;
+}
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.hero-content h2{
+    font-size:25px;
+}
+
+.hero-content button{
+    margin-top:20px;
+}
 
 /* HERO SECTION */
 
 .hero{
     position:relative;
     width:100%;
-    height:100vh;
-    background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-transition:background-image 1s ease-in-out;
+    min-height:auto;
     background-size:cover;
     background-position:center;
-    colour:red;
-    justify-content:center;
-   align-items:flex-end;
-  padding-bottom:80px; 
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:0;
     text-align:center;
-    padding:20px;
 }
 
 .overlay{
@@ -74,12 +100,16 @@ transition:background-image 1s ease-in-out;
 .hero-content{
     position:relative;
     z-index:10;
-    color:white;
-    max-width:900px;
-    animation:fadeUp 1.5s ease;
-  margin-bottom:40px;
-}
+    color:#222;
+    width:100%;
+    max-width:1000px;
 
+    margin:0;
+    padding:40px 20px 60px;
+
+    background:white;
+    animation:fadeUp 1s ease;
+}
 .logo{
     width:120px;
     height:120px;
@@ -508,44 +538,62 @@ footer p{
 </header>
   <!-- HERO SECTION -->
 
-  <section class="hero" id="home">
+<section class="hero" id="home">
 
-    <div class="overlay"></div>
+    <!-- PHOTO SLIDESHOW -->
+    <div class="hero-slideshow"></div>
 
+    <!-- SCHOOL INFORMATION BELOW PHOTO -->
     <div class="hero-content">
 
-     <img
-  src="https://rahulapn0606-spec.github.io/pmshrichorahata.com/logo.png"
-  alt="PM SHRI Logo"
-  style="
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-  "
->
-      <div style=" background-color:rgba(255,0,0,0.35); padding:15px; text-align:center;">
-    
-    <h1 style="color:white; margin:0;">
-        PM SHRI GOVERNMENT HIGHER SECONDARY SCHOOL CHORAHATA
-    </h1>
+        <img
+            src="https://rahulapn0606-spec.github.io/pmshrichorahata.com/logo.png"
+            alt="PM SHRI Logo"
+            style="
+                width:80px;
+                height:80px;
+                object-fit:cover;
+                border-radius:50%;
+            "
+        >
 
-    <h2 style="color:white; margin-top:10px; margin-bottom:0;">
-        पी एम श्री शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा, जिला सतना (म.प्र.)
-    </h2>
+        <div style="
+            background-color:rgba(0,51,102,0.08);
+            padding:15px;
+            text-align:center;
+            margin-top:15px;
+        ">
 
+            <h1 style="color:#003366; margin:0;">
+                PM SHRI GOVERNMENT HIGHER SECONDARY SCHOOL CHORAHATA
+            </h1>
 
+            <h2 style="
+                color:#333;
+                margin-top:10px;
+                margin-bottom:0;
+            ">
+                पी एम श्री शासकीय उच्चतर माध्यमिक विद्यालय चोरहटा,
+                जिला सतना (म.प्र.)
+            </h2>
 
-     <p style="color:#003366; font-weight:bold;">
-    Quality Education • Digital Learning • Smart Future
-</p>
-</div>
-  <button onclick="document.querySelector('.online-content').scrollIntoView({behavior:'smooth'})">
-  WELCOME
-</button>
+            <p style="
+                color:#003366;
+                font-weight:bold;
+                margin-top:15px;
+            ">
+                Quality Education • Digital Learning • Smart Future
+            </p>
+
+        </div>
+
+        <button onclick="document.querySelector('.online-content').scrollIntoView({behavior:'smooth'})">
+            WELCOME
+        </button>
+
     </div>
 
-  </section>
+</section>
 
 
 
@@ -910,7 +958,7 @@ const images = [
   "photos/WhatsApp Image 2026-06-09 at 12.22.15 (1).jpeg"
 ];
 
-const hero = document.querySelector(".hero");
+const hero = document.querySelector(".hero-slideshow");
 
 let index = 0;
 
