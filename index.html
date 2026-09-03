@@ -50,7 +50,10 @@ body{
     position:relative;
     width:100%;
     height:100vh;
-    background:url('photos/home.jpg');
+    background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+transition:background-image 1s ease-in-out;
     background-size:cover;
     background-position:center;
     colour:red;
@@ -869,7 +872,54 @@ footer p{
 
   </div>
 
+<script>
+const images = [
+  "photos/home.jpg",
+  "photos/apni school photo.jpeg",
+  "photos/vmy.jpg",
 
+  "photos/1756205640829.jpg",
+  "photos/1756205640836.jpg",
+  "photos/1756205640844.jpg",
+  "photos/1756205640868.jpg",
+
+  "photos/6156969828410313317 (11).jpg",
+  "photos/6156969828410313319 (11).jpg",
+  "photos/6156969828410313320 (11).jpg",
+  "photos/6156969828410313320 (11) - Copy.jpg",
+  "photos/6156969828410313321 (11) - Copy.jpg",
+  "photos/6156969828410313323 (10) - Copy.jpg",
+  "photos/6156969828410313324 (11).jpg",
+  "photos/6156969828410313325 (11).jpg",
+
+  "photos/WhatsApp Image 2026-06-09 at 12.22.03.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.03 (2).jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.04 (1).jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.05.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.05 (1).jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.06.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.07.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.09.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.12.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.12 (1).jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.13.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.14.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.15.jpeg",
+  "photos/WhatsApp Image 2026-06-09 at 12.22.15 (1).jpeg"
+];
+
+const hero = document.querySelector(".hero");
+
+let index = 0;
+
+function changeImage(){
+    hero.style.backgroundImage = `url("${images[index]}")`;
+    index = (index + 1) % images.length;
+}
+
+changeImage();
+setInterval(changeImage, 3000);
+</script>
 
 </body>
 </html>
