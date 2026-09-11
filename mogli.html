@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>मोगली और जंगल की दुनिया | Mogli Bal Utsav 2026-27</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+    background:
+        radial-gradient(circle at top,#173f25 0,#07150d 45%,#020806 100%);
+    color:#f5f5f5;
+    line-height:1.75;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+        linear-gradient(45deg,#fff 25%,transparent 25%),
+        linear-gradient(-45deg,#fff 25%,transparent 25%);
+    background-size:60px 60px;
+    z-index:-1;
+}
+
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+}
+
+/* HEADER */
+.hero{
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:55px 15px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+        radial-gradient(circle at 50% 20%,#397b35,#0a2915 55%,#020806);
+    border-bottom:2px solid #e1b84b;
+}
+
+.hero:before,
+.hero:after{
+    position:absolute;
+    font-size:90px;
+    opacity:.13;
+}
+
+.hero:before{
+    content:"🌳";
+    left:2%;
+    bottom:0;
+}
+
+.hero:after{
+    content:"🐺";
+    right:3%;
+    bottom:10px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 17px;
+    border:1px solid #e4bd4e;
+    border-radius:30px;
+    color:#ffd75c;
+    background:rgba(0,0,0,.35);
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    font-size:clamp(32px,6vw,65px);
+    color:#ffd85b;
+    margin:18px 0 8px;
+    text-shadow:0 4px 15px #000;
+}
+
+.hero h2{
+    font-size:clamp(18px,3vw,28px);
+    color:#d9f4dc;
+}
+
+.hero p{
+    max-width:800px;
+    margin:20px auto 0;
+    color:#cbdccc;
+}
+
+/* NAV */
+.nav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(3,12,7,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #345b3e;
+}
+
+.nav .container{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding:9px 0;
+}
+
+.nav a{
+    white-space:nowrap;
+    color:#fff;
+    text-decoration:none;
+    background:#16341f;
+    padding:8px 13px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.nav a:hover{
+    background:#d4a93c;
+    color:#111;
+}
+
+/* GENERAL */
+section{
+    margin:32px 0;
+}
+
+.section-title{
+    color:#ffd45a;
+    font-size:29px;
+    margin-bottom:18px;
+    border-left:5px solid #d7ae3e;
+    padding-left:12px;
+}
+
+.card{
+    background:linear-gradient(145deg,rgba(22,54,32,.94),rgba(8,24,14,.96));
+    border:1px solid #315d3b;
+    border-radius:18px;
+    padding:22px;
+    margin:15px 0;
+    box-shadow:0 12px 35px rgba(0,0,0,.3);
+}
+
+.card h3{
+    color:#ffe17b;
+    margin-bottom:10px;
+}
+
+.highlight{
+    border-left:5px solid #e4bb45;
+    background:rgba(228,187,69,.09);
+    padding:16px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.warning{
+    border-left:5px solid #e06b5f;
+    background:rgba(180,50,40,.13);
+    padding:17px;
+    border-radius:10px;
+}
+
+.good{
+    border-left:5px solid #5bd47a;
+    background:rgba(60,180,90,.10);
+    padding:17px;
+    border-radius:10px;
+}
+
+strong{
+    color:#ffe083;
+}
+
+/* FACT GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.fact{
+    background:#0d2516;
+    border:1px solid #315b39;
+    border-radius:16px;
+    padding:20px;
+    text-align:center;
+    transition:.25s;
+}
+
+.fact:hover{
+    transform:translateY(-5px);
+    border-color:#e3ba45;
+}
+
+.fact .emoji{
+    font-size:42px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.fact h3{
+    color:#ffd45a;
+}
+
+/* TIMELINE */
+.timeline{
+    position:relative;
+    margin:20px 0;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:19px;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:#b98f2d;
+}
+
+.time-item{
+    position:relative;
+    padding:0 0 20px 55px;
+}
+
+.time-item:before{
+    content:"";
+    position:absolute;
+    left:9px;
+    top:7px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ffd45a;
+    border:4px solid #17351f;
+}
+
+.time-item h3{
+    color:#ffd45a;
+}
+
+/* CHARACTER CARDS */
+.character{
+    perspective:1000px;
+}
+
+.character-inner{
+    min-height:220px;
+    position:relative;
+    transition:transform .7s;
+    transform-style:preserve-3d;
+}
+
+.character:hover .character-inner{
+    transform:rotateY(180deg);
+}
+
+.character-front,
+.character-back{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:18px;
+    padding:22px;
+    border:1px solid #416a48;
+    background:linear-gradient(145deg,#173c23,#07150d);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.character-front .big{
+    font-size:52px;
+}
+
+.character-front h3{
+    color:#ffd85b;
+    font-size:22px;
+}
+
+.character-back{
+    transform:rotateY(180deg);
+    background:linear-gradient(145deg,#3b3218,#142718);
+}
+
+/* ACCORDION */
+details{
+    background:#0b2112;
+    border:1px solid #315b39;
+    border-radius:14px;
+    margin:12px 0;
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    padding:16px;
+    font-weight:bold;
+    color:#ffe17b;
+    background:#102b18;
+}
+
+details div{
+    padding:18px;
+}
+
+/* MEMORY */
+.memory{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.memory span{
+    padding:10px 13px;
+    border-radius:10px;
+    background:#173b22;
+    border:1px solid #4d704f;
+    color:#ffe27b;
+    font-weight:bold;
+}
+
+.arrow{
+    color:#d9ae3f;
+    font-size:22px;
+}
+
+/* QUIZ */
+.quiz-question{
+    background:#10291a;
+    border:1px solid #345f3e;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+}
+
+.option{
+    display:block;
+    padding:11px;
+    margin:7px 0;
+    background:#17351f;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#244c2c;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    color:#76e88d;
+    font-weight:bold;
+}
+
+.show{
+    display:block;
+}
+
+button{
+    border:0;
+    padding:11px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    background:#e1b643;
+    color:#101010;
+    font-weight:bold;
+}
+
+/* SOURCES */
+.source{
+    font-size:14px;
+    color:#b8cbb9;
+}
+
+/* FOOTER */
+footer{
+    margin-top:50px;
+    padding:30px 15px;
+    text-align:center;
+    border-top:1px solid #315b39;
+    background:#030b06;
+}
+
+.channel{
+    color:#ffd45a;
+    font-weight:bold;
+    font-size:21px;
+}
+
+@media(max-width:600px){
+    .hero{
+        min-height:390px;
+    }
+
+    .card{
+        padding:17px;
+    }
+
+    .section-title{
+        font-size:24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container">
+
+        <span class="badge">🐺 MOGLI BAL UTSAV 2026–27</span>
+
+        <h1>मोगली और जंगल की दुनिया</h1>
+
+        <h2>Topic 1 • Complete Theory</h2>
+
+        <p>
+            मोगली की कहानी, सियोनी क्षेत्र, Pench, The Jungle Book,
+            वास्तविक ऐतिहासिक प्रेरणा, जंगल के प्रमुख पात्र,
+            Jungle Law और Quiz के लिए महत्वपूर्ण तथ्य।
+        </p>
+
+    </div>
+</header>
+
+
+<!-- NAV -->
+<nav class="nav">
+<div class="container">
+    <a href="#intro">परिचय</a>
+    <a href="#history">इतिहास</a>
+    <a href="#pench">Pench</a>
+    <a href="#characters">पात्र</a>
+    <a href="#law">Jungle Law</a>
+    <a href="#learning">सीख</a>
+    <a href="#facts">Important Facts</a>
+    <a href="#quiz">Quiz</a>
+</div>
+</nav>
+
+
+<main class="container">
+
+<!-- INTRO -->
+<section id="intro">
+
+<h2 class="section-title">🐺 Topic 1 का परिचय</h2>
+
+<div class="card">
+
+<p>
+<strong>मोगली की कहानी</strong> का संबंध मध्य प्रदेश के
+<strong>सियोनी (Seoni)</strong> क्षेत्र और वर्तमान
+<strong>Pench National Park / Tiger Reserve</strong> के जंगलों से जोड़ा जाता है।
+</p>
+
+<p>
+Pench क्षेत्र सतपुड़ा पर्वत श्रेणी के दक्षिणी हिस्से में स्थित है
+और इसका नाम <strong>Pench नदी</strong> के नाम पर पड़ा है।
+यह क्षेत्र <strong>The Jungle Book</strong> की दुनिया से इतना जुड़ा हुआ है
+कि Pench को <strong>“Land of The Jungle Book”</strong> भी कहा जाता है।
+</p>
+
+<div class="highlight">
+🔥 <strong>Quiz Connection:</strong><br>
+Seoni + Pench + Jungle Book + Mowgli = Topic 1 की सबसे महत्वपूर्ण कड़ी
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HISTORICAL STORY -->
+<section id="history">
+
+<h2 class="section-title">📜 मोगली की ऐतिहासिक प्रेरणा</h2>
+
+<div class="card">
+
+<h3>1. क्या वास्तव में जंगल में एक बालक मिला था?</h3>
+
+<p>
+मध्य प्रदेश पर्यटन के अनुसार <strong>Sir William Henry Sleeman</strong>
+ने <strong>1831</strong> में एक ऐसे बच्चे के बारे में लिखा था
+जिसके बारे में माना गया कि वह भेड़ियों के साथ रहता था
+या भेड़ियों द्वारा पाला गया था।
+</p>
+
+<p>
+इस घटना का संबंध <strong>सियोनी क्षेत्र</strong> से बताया जाता है।
+Sleeman के विवरण के अनुसार उस बच्चे को
+<strong>Lieutenant John Moor</strong> ने पकड़ा था,
+जब वह सियोनी क्षेत्र में था।
+</p>
+
+<div class="highlight">
+<strong>याद रखने की ट्रिक:</strong><br><br>
+
+1831 → Seoni → Wolf Child → Sleeman → Mowgli की संभावित प्रेरणा
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>2. क्या यह बच्चा ही मोगली था?</h3>
+
+<div class="warning">
+
+<strong>⚠️ बहुत महत्वपूर्ण Quiz Point</strong>
+
+<p>
+यह नहीं कहना चाहिए कि
+<strong>“1831 में मिला बच्चा निश्चित रूप से Rudyard Kipling का Mowgli था।”</strong>
+</p>
+
+<p>
+सही बात यह है कि उस बच्चे की कहानी को
+<strong>मोगली की कथा की संभावित वास्तविक प्रेरणाओं में से एक</strong>
+माना जाता है।
+</p>
+
+</div>
+
+<p>
+भारत की Census publication में भी सियोनी जिले के
+<strong>Sant Baori गाँव</strong> से जुड़े एक बच्चे का उल्लेख मिलता है,
+जिसके बारे में माना जाता था कि उसे भेड़ियों ने पाला था।
+Sleeman का विवरण Kipling को प्रेरित कर सकता था।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>3. Rudyard Kipling और The Jungle Book</h3>
+
+<p>
+<strong>Rudyard Kipling</strong> ने जंगल और वन्यजीवन की पृष्ठभूमि पर
+<strong>The Jungle Book</strong> लिखी।
+</p>
+
+<div class="grid">
+
+<div class="fact">
+<span class="emoji">📖</span>
+<h3>1894</h3>
+<p>The Jungle Book पहली बार प्रकाशित हुई।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">👦</span>
+<h3>Mowgli</h3>
+<p>कहानी में मोगली नाम का बालक प्रमुख पात्र है।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🌳</span>
+<h3>Jungle</h3>
+<p>कहानी की दुनिया जंगल और वन्यजीवन से जुड़ी है।</p>
+</div>
+
+</div>
+
+<p style="margin-top:18px">
+मध्य प्रदेश पर्यटन के अनुसार Pench और Seoni क्षेत्र की प्रकृति तथा
+जंगलों ने <strong>The Jungle Book</strong> की दुनिया को प्रेरणा दी।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- TIMELINE -->
+<section>
+
+<h2 class="section-title">⏳ पूरी कहानी एक Timeline में</h2>
+
+<div class="card">
+
+<div class="timeline">
+
+<div class="time-item">
+<h3>1831</h3>
+<p>सियोनी क्षेत्र में भेड़ियों के साथ रहने वाले बच्चे का विवरण।</p>
+</div>
+
+<div class="time-item">
+<h3>Sir William Henry Sleeman</h3>
+<p>इस घटना का विवरण लिखने वाले महत्वपूर्ण नाम।</p>
+</div>
+
+<div class="time-item">
+<h3>Rudyard Kipling</h3>
+<p>जंगल और वन्यजीवन की पृष्ठभूमि पर The Jungle Book के लेखक।</p>
+</div>
+
+<div class="time-item">
+<h3>1894</h3>
+<p>The Jungle Book का पहला प्रकाशन।</p>
+</div>
+
+<div class="time-item">
+<h3>Mowgli</h3>
+<p>जंगल में पले मानव बालक की प्रसिद्ध साहित्यिक कथा।</p>
+</div>
+
+<div class="time-item">
+<h3>Pench–Seoni</h3>
+<p>मोगली और The Jungle Book की दुनिया से जुड़ा मध्य प्रदेश का क्षेत्र।</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MOWGLI -->
+<section>
+
+<h2 class="section-title">👦 मोगली का जंगल से संबंध</h2>
+
+<div class="card">
+
+<p>
+कहानी के अनुसार मोगली को <strong>भेड़ियों के झुंड</strong> ने अपनाया।
+इसी कारण उसे <strong>Wolf Child / Wolf Boy</strong> कहा जाता है।
+</p>
+
+<div class="grid">
+
+<div class="fact">
+<span class="emoji">📚</span>
+<h3>जंगल के नियम</h3>
+<p>मोगली जंगल के नियम सीखता है।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🐾</span>
+<h3>वन्यजीव</h3>
+<p>वह जानवरों के व्यवहार को समझता है।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🌲</span>
+<h3>जंगल</h3>
+<p>जंगल उसका घर और जीवन का वातावरण बन जाता है।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🤝</span>
+<h3>मित्रता</h3>
+<p>वह विभिन्न जानवरों से संबंध बनाता है।</p>
+</div>
+
+</div>
+
+<div class="highlight">
+👦 Human + 🐺 Wildlife + 🌳 Forest = <strong>MOWGLI</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PENCH -->
+<section id="pench">
+
+<h2 class="section-title">🌳 Pench और Mowgli Connection</h2>
+
+<div class="card">
+
+<h3>⭐ Pench को Mowgli से क्यों जोड़ा जाता है?</h3>
+
+<p>
+Pench और आसपास का Seoni क्षेत्र
+<strong>The Jungle Book</strong> की भौगोलिक और प्राकृतिक पृष्ठभूमि
+से जोड़ा जाता है।
+</p>
+
+<p>
+Madhya Pradesh Tourism के अनुसार The Jungle Book में वर्णित
+स्थानों का संबंध <strong>Alikatta village</strong> और
+<strong>Seeonee hills</strong> से जोड़ा जाता है।
+</p>
+
+<div class="good">
+इसी वजह से Pench Tiger Reserve को
+<strong>“Land of The Jungle Book”</strong> कहा जाता है।
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>🐅 Pench का वास्तविक महत्व</h3>
+
+<p>
+Pench केवल Mowgli से जुड़ी जगह नहीं है।
+यह एक महत्वपूर्ण <strong>Tiger Reserve और National Park</strong> है।
+</p>
+
+<h3 style="margin-top:20px">यहाँ पाए जाने वाले प्रमुख वन्यजीव</h3>
+
+<div class="grid">
+
+<div class="fact">🐅<h3>Bengal Tiger</h3></div>
+<div class="fact">🐆<h3>Leopard</h3></div>
+<div class="fact">🐻<h3>Sloth Bear</h3></div>
+<div class="fact">🦬<h3>Gaur</h3></div>
+<div class="fact">🦌<h3>Chital</h3></div>
+<div class="fact">🦌<h3>Sambar</h3></div>
+<div class="fact">🐕<h3>Wild Dog</h3></div>
+<div class="fact">🐗<h3>Wild Pig</h3></div>
+<div class="fact">🦌<h3>Chinkara</h3></div>
+<div class="fact">🐒<h3>विभिन्न बंदर</h3></div>
+<div class="fact">🦅<h3>अनेक पक्षी</h3></div>
+
+</div>
+
+<div class="highlight">
+🦅 <strong>280+ bird species</strong> का भी मध्य प्रदेश पर्यटन द्वारा उल्लेख किया जाता है।
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>🏞️ Mowgli Pench Sanctuary</h3>
+
+<p>
+Pench क्षेत्र में <strong>Mowgli Pench Sanctuary</strong> भी है।
+मध्य प्रदेश पर्यटन के अनुसार Pench क्षेत्र में:
+</p>
+
+<ul style="padding-left:25px">
+<li>Priyadarshini National Park</li>
+<li>Mowgli Pench Sanctuary</li>
+<li>Buffer Area</li>
+</ul>
+
+<p style="margin-top:15px">
+<strong>Mowgli Pench Sanctuary</strong> का क्षेत्रफल लगभग
+<strong>299 वर्ग किमी</strong> बताया गया है।
+</p>
+
+<div class="good">
+इससे पता चलता है कि मध्य प्रदेश में “Mowgli” नाम केवल कहानी तक सीमित नहीं है,
+बल्कि Pench क्षेत्र की पर्यटन और संरक्षण पहचान का भी हिस्सा है।
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CHARACTERS -->
+<section id="characters">
+
+<h2 class="section-title">🐾 The Jungle Book के प्रमुख पात्र</h2>
+
+<p style="margin-bottom:15px">
+💡 किसी कार्ड पर <strong>Mouse / Touch</strong> करने पर उसकी दूसरी side दिखाई देगी।
+</p>
+
+<div class="grid">
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🐻</div>
+<h3>Baloo</h3>
+<p>भालू</p>
+</div>
+<div class="character-back">
+<h3>BALOO → BEAR</h3>
+<p>मोगली का शिक्षक और मार्गदर्शक।</p>
+<p>वह जंगल के नियम और जंगल में रहने के तरीके समझाता है।</p>
+</div>
+</div>
+</div>
+
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🐆</div>
+<h3>Bagheera</h3>
+<p>Black Panther</p>
+</div>
+<div class="character-back">
+<h3>BAGHEERA → BLACK PANTHER</h3>
+<p>मोगली का मित्र और रक्षक।</p>
+<p>वह उसे जंगल के खतरों से सावधान करता है और मार्गदर्शन करता है।</p>
+</div>
+</div>
+</div>
+
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🐅</div>
+<h3>Shere Khan</h3>
+<p>Tiger</p>
+</div>
+<div class="character-back">
+<h3>SHERE KHAN → TIGER</h3>
+<p>मोगली का प्रमुख विरोधी।</p>
+<p>वह मोगली को जंगल के लिए खतरा मानता है।</p>
+</div>
+</div>
+</div>
+
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🐍</div>
+<h3>Kaa</h3>
+<p>Python</p>
+</div>
+<div class="character-back">
+<h3>KAA → PYTHON</h3>
+<p>एक विशाल अजगर और The Jungle Book का महत्वपूर्ण पात्र।</p>
+</div>
+</div>
+</div>
+
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🐺</div>
+<h3>Akela</h3>
+<p>Wolf Pack Leader</p>
+</div>
+<div class="character-back">
+<h3>AKELA → WOLF PACK LEADER</h3>
+<p>भेड़ियों के झुंड का नेता।</p>
+<p>मोगली के जंगल के जीवन में महत्वपूर्ण स्थान।</p>
+</div>
+</div>
+</div>
+
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🐺</div>
+<h3>Raksha</h3>
+<p>Mother Wolf</p>
+</div>
+<div class="character-back">
+<h3>RAKSHA → MOTHER WOLF</h3>
+<p>वह मोगली को अपने बच्चे की तरह स्वीकार करती है।</p>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK CHARACTER TABLE -->
+<section>
+
+<h2 class="section-title">🧠 Character Memory Table</h2>
+
+<div class="card">
+
+<div class="grid">
+
+<div class="fact">
+<h3>Mowgli</h3>
+<p>👦 Human Boy</p>
+</div>
+
+<div class="fact">
+<h3>Raksha</h3>
+<p>🐺 Mother Wolf</p>
+</div>
+
+<div class="fact">
+<h3>Akela</h3>
+<p>🐺 Wolf Pack Leader</p>
+</div>
+
+<div class="fact">
+<h3>Baloo</h3>
+<p>🐻 Bear • Teacher</p>
+</div>
+
+<div class="fact">
+<h3>Bagheera</h3>
+<p>🐆 Black Panther • Friend & Protector</p>
+</div>
+
+<div class="fact">
+<h3>Shere Khan</h3>
+<p>🐅 Tiger • Enemy</p>
+</div>
+
+<div class="fact">
+<h3>Kaa</h3>
+<p>🐍 Python</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- JUNGLE LAW -->
+<section id="law">
+
+<h2 class="section-title">🌳 Jungle Law क्या है?</h2>
+
+<div class="card">
+
+<p>
+<strong>The Jungle Book</strong> में Jungle Law बहुत महत्वपूर्ण है।
+जंगल में रहने वाले समूह के लिए नियम होते हैं।
+</p>
+
+<div class="grid">
+
+<div class="fact">⚖️<h3>अनुशासन</h3></div>
+<div class="fact">🛡️<h3>समूह की सुरक्षा</h3></div>
+<div class="fact">📋<h3>व्यवस्था</h3></div>
+<div class="fact">🤝<h3>सहयोग</h3></div>
+<div class="fact">🎯<h3>जिम्मेदारी</h3></div>
+
+</div>
+
+<p style="margin-top:20px">
+मोगली जंगल में रहते हुए इन नियमों को सीखता है।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- LESSON -->
+<section id="learning">
+
+<h2 class="section-title">💡 मोगली की कहानी से मिलने वाली सीख</h2>
+
+<div class="grid">
+
+<div class="fact">
+<span class="emoji">🦁</span>
+<h3>साहस</h3>
+<p>कठिन परिस्थितियों से डरकर पीछे न हटना।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🧠</span>
+<h3>बुद्धिमत्ता</h3>
+<p>समस्या को समझकर समाधान निकालना।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🤝</span>
+<h3>मित्रता</h3>
+<p>बालू और बघीरा जैसे मित्रों की सहायता और मार्गदर्शन।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">📜</span>
+<h3>अनुशासन</h3>
+<p>नियमों का पालन करना।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🌱</span>
+<h3>प्रकृति-प्रेम</h3>
+<p>जंगल और वन्यजीवों के महत्व को समझना।</p>
+</div>
+
+<div class="fact">
+<span class="emoji">🌍</span>
+<h3>सह-अस्तित्व</h3>
+<p>मनुष्य और वन्यजीव प्रकृति के संतुलन का हिस्सा हैं।</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IMPORTANT FACTS -->
+<section id="facts">
+
+<h2 class="section-title">🔥 Mogli Bal Utsav के लिए सबसे Important Facts</h2>
+
+<div class="card">
+
+<h3>इन्हें एक कहानी की तरह याद करो:</h3>
+
+<div class="memory">
+
+<span>1831</span>
+<div class="arrow">↓</div>
+
+<span>Seoni क्षेत्र</span>
+<div class="arrow">↓</div>
+
+<span>Wolf Child</span>
+<div class="arrow">↓</div>
+
+<span>Sleeman</span>
+<div class="arrow">↓</div>
+
+<span>Kipling</span>
+<div class="arrow">↓</div>
+
+<span>The Jungle Book</span>
+<div class="arrow">↓</div>
+
+<span>Mowgli</span>
+<div class="arrow">↓</div>
+
+<span>Pench–Seoni</span>
+<div class="arrow">↓</div>
+
+<span>Land of The Jungle Book</span>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>🐾 Character Chain</h3>
+
+<div class="memory">
+
+<span>👦 Mowgli → Human Boy</span>
+<span>🐺 Raksha → Mother Wolf</span>
+<span>🐺 Akela → Wolf Pack Leader</span>
+<span>🐻 Baloo → Bear</span>
+<span>🐆 Bagheera → Black Panther</span>
+<span>🐅 Shere Khan → Tiger</span>
+<span>🐍 Kaa → Python</span>
+
+</div>
+
+</div>
+
+
+<div class="warning">
+
+<h3>⚠️ सबसे महत्वपूर्ण सावधानी</h3>
+
+<p>
+<strong>
+Pench में मिले बच्चे और Kipling के Mowgli को 100% एक ही व्यक्ति मत लिखना।
+</strong>
+</p>
+
+<p>
+Quiz में यदि पूछा जाए:
+<strong>“Mowgli की वास्तविक प्रेरणा/कहानी किससे जुड़ी है?”</strong>
+तो उत्तर में <strong>1831 के Seoni क्षेत्र के wolf-child</strong>
+और <strong>Sir William Henry Sleeman के विवरण</strong> को याद रखना
+सबसे सुरक्षित और तथ्यात्मक है।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+<section>
+
+<h2 class="section-title">❓ Quiz में पूछे जा सकने वाले सवाल</h2>
+
+<details>
+<summary>मोगली की कहानी किस क्षेत्र से जुड़ी है?</summary>
+<div>
+सियोनी (Seoni) क्षेत्र और Pench के जंगलों से।
+</div>
+</details>
+
+<details>
+<summary>1831 में किस प्रकार के बच्चे का उल्लेख मिलता है?</summary>
+<div>
+ऐसे बच्चे का जिसके बारे में माना गया कि वह भेड़ियों के साथ रहता था या भेड़ियों द्वारा पाला गया था।
+</div>
+</details>
+
+<details>
+<summary>इस घटना का विवरण किसने लिखा?</summary>
+<div>
+Sir William Henry Sleeman.
+</div>
+</details>
+
+<details>
+<summary>उस बच्चे को किसने पकड़ा था?</summary>
+<div>
+Lieutenant John Moor.
+</div>
+</details>
+
+<details>
+<summary>The Jungle Book पहली बार कब प्रकाशित हुई?</summary>
+<div>
+1894.
+</div>
+</details>
+
+<details>
+<summary>The Jungle Book के लेखक कौन हैं?</summary>
+<div>
+Rudyard Kipling.
+</div>
+</details>
+
+<details>
+<summary>Pench को किस नाम से भी जाना जाता है?</summary>
+<div>
+“Land of The Jungle Book”.
+</div>
+</details>
+
+<details>
+<summary>Baloo कौन है?</summary>
+<div>
+Bear — मोगली का शिक्षक और मार्गदर्शक।
+</div>
+</details>
+
+<details>
+<summary>Bagheera कौन है?</summary>
+<div>
+Black Panther — मोगली का मित्र और रक्षक।
+</div>
+</details>
+
+<details>
+<summary>Shere Khan कौन है?</summary>
+<div>
+Tiger — मोगली का प्रमुख विरोधी।
+</div>
+</details>
+
+<details>
+<summary>Kaa कौन है?</summary>
+<div>
+Python — विशाल अजगर।
+</div>
+</details>
+
+<details>
+<summary>Akela कौन है?</summary>
+<div>
+Wolf Pack Leader — भेड़ियों के झुंड का नेता।
+</div>
+</details>
+
+<details>
+<summary>Raksha कौन है?</summary>
+<div>
+Mother Wolf — जिसने मोगली को अपने बच्चे की तरह स्वीकार किया।
+</div>
+</details>
+
+<details>
+<summary>Mowgli Pench Sanctuary का क्षेत्रफल कितना बताया गया है?</summary>
+<div>
+लगभग 299 वर्ग किमी।
+</div>
+</details>
+
+<details>
+<summary>Pench में कितनी पक्षी प्रजातियों का उल्लेख मिलता है?</summary>
+<div>
+280 से अधिक पक्षी प्रजातियाँ।
+</div>
+</details>
+
+</section>
+
+
+<!-- MINI QUIZ -->
+<section id="quiz">
+
+<h2 class="section-title">🎯 Quick Quiz Challenge</h2>
+
+<div class="card">
+
+<div class="quiz-question">
+<strong>Q1. 1831 का Seoni क्षेत्र किस घटना से जुड़ा है?</strong>
+
+<label class="option">
+<input type="radio" name="q1"> एक राजा के जन्म से
+</label>
+
+<label class="option">
+<input type="radio" name="q1"> भेड़ियों के साथ रहने वाले बच्चे के विवरण से
+</label>
+
+<label class="option">
+<input type="radio" name="q1"> किसी युद्ध से
+</label>
+
+<button onclick="showAnswer('a1')">उत्तर देखें</button>
+
+<div id="a1" class="answer">
+✅ सही उत्तर: भेड़ियों के साथ रहने वाले बच्चे के विवरण से।
+</div>
+</div>
+
+
+<div class="quiz-question">
+<strong>Q2. The Jungle Book के लेखक कौन हैं?</strong>
+
+<label class="option">
+<input type="radio" name="q2"> William Shakespeare
+</label>
+
+<label class="option">
+<input type="radio" name="q2"> Rudyard Kipling
+</label>
+
+<label class="option">
+<input type="radio" name="q2"> Sir William Sleeman
+</label>
+
+<button onclick="showAnswer('a2')">उत्तर देखें</button>
+
+<div id="a2" class="answer">
+✅ सही उत्तर: Rudyard Kipling.
+</div>
+</div>
+
+
+<div class="quiz-question">
+<strong>Q3. Baloo कौन है?</strong>
+
+<label class="option">
+<input type="radio" name="q3"> Tiger
+</label>
+
+<label class="option">
+<input type="radio" name="q3"> Bear
+</label>
+
+<label class="option">
+<input type="radio" name="q3"> Python
+</label>
+
+<button onclick="showAnswer('a3')">उत्तर देखें</button>
+
+<div id="a3" class="answer">
+✅ सही उत्तर: Bear.
+</div>
+</div>
+
+
+<div class="quiz-question">
+<strong>Q4. Pench को किस नाम से जाना जाता है?</strong>
+
+<label class="option">
+<input type="radio" name="q4"> Land of Rivers
+</label>
+
+<label class="option">
+<input type="radio" name="q4"> Land of The Jungle Book
+</label>
+
+<label class="option">
+<input type="radio" name="q4"> Tiger City
+</label>
+
+<button onclick="showAnswer('a4')">उत्तर देखें</button>
+
+<div id="a4" class="answer">
+✅ सही उत्तर: Land of The Jungle Book.
+</div>
+</div>
+
+
+<div class="quiz-question">
+<strong>Q5. Mowgli की संभावित ऐतिहासिक प्रेरणा किस घटना से जोड़ी जाती है?</strong>
+
+<label class="option">
+<input type="radio" name="q5"> 1831 के Seoni क्षेत्र के wolf-child के विवरण से
+</label>
+
+<label class="option">
+<input type="radio" name="q5"> 1894 में जन्मे किसी बच्चे से
+</label>
+
+<label class="option">
+<input type="radio" name="q5"> किसी काल्पनिक राजा से
+</label>
+
+<button onclick="showAnswer('a5')">उत्तर देखें</button>
+
+<div id="a5" class="answer">
+✅ सही उत्तर: 1831 के Seoni क्षेत्र के wolf-child के विवरण से।
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL REVISION -->
+<section>
+
+<h2 class="section-title">⚡ 30-Second Final Revision</h2>
+
+<div class="card">
+
+<p>
+🐺 <strong>Mowgli</strong> — Human Boy
+</p>
+
+<p>
+📍 <strong>Seoni</strong> — Mowgli/Jungle Book से जुड़ा क्षेत्र
+</p>
+
+<p>
+📜 <strong>1831</strong> — Wolf-child का ऐतिहासिक विवरण
+</p>
+
+<p>
+✍️ <strong>Sir William Henry Sleeman</strong> — विवरण
+</p>
+
+<p>
+👮 <strong>Lieutenant John Moor</strong> — बच्चे को पकड़ने का उल्लेख
+</p>
+
+<p>
+📖 <strong>Rudyard Kipling</strong> — The Jungle Book
+</p>
+
+<p>
+📅 <strong>1894</strong> — The Jungle Book का पहला प्रकाशन
+</p>
+
+<p>
+🌳 <strong>Pench</strong> — Land of The Jungle Book
+</p>
+
+<p>
+🐻 <strong>Baloo</strong> — Bear / Teacher
+</p>
+
+<p>
+🐆 <strong>Bagheera</strong> — Black Panther / Friend & Protector
+</p>
+
+<p>
+🐅 <strong>Shere Khan</strong> — Tiger / Enemy
+</p>
+
+<p>
+🐍 <strong>Kaa</strong> — Python
+</p>
+
+<p>
+🐺 <strong>Akela</strong> — Wolf Pack Leader
+</p>
+
+<p>
+🐺 <strong>Raksha</strong> — Mother Wolf
+</p>
+
+<p>
+🏞️ <strong>Mowgli Pench Sanctuary</strong> — लगभग 299 km²
+</p>
+
+<p>
+🦅 <strong>Bird Species</strong> — 280+ का उल्लेख
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SOURCES -->
+<section>
+
+<h2 class="section-title">📚 जानकारी का आधार</h2>
+
+<div class="card">
+
+<p class="source">
+इस Topic में ऐतिहासिक/पर्यटन संबंधी जानकारी को सावधानी से प्रस्तुत किया गया है।
+विशेष रूप से Seoni के 1831 के wolf-child विवरण और Pench–The Jungle Book संबंध
+को “संभावित प्रेरणा” के रूप में समझना चाहिए, न कि यह दावा करना चाहिए कि
+वह बच्चा निश्चित रूप से Kipling का Mowgli था।
+</p>
+
+<br>
+
+<p class="source">
+मुख्य संदर्भ: Madhya Pradesh Tourism तथा Census India में उपलब्ध विवरण।
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="channel">📚 BACKSHEETARS</div>
+
+<p>
+Mogli Bal Utsav 2026–27 • Topic 1
+</p>
+
+<p style="color:#849b88;margin-top:8px">
+मोगली और जंगल की दुनिया
+</p>
+
+</footer>
+
+
+<script>
+function showAnswer(id){
+    document.getElementById(id).classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
