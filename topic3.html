@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TOPIC 3 — MP के राष्ट्रीय उद्यान, अभयारण्य एवं जैवमंडल आरक्षित क्षेत्र</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+    background:
+        radial-gradient(circle at top,#173f25 0,#07150d 45%,#020806 100%);
+    color:#f5f5f5;
+    line-height:1.75;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+        linear-gradient(45deg,#fff 25%,transparent 25%),
+        linear-gradient(-45deg,#fff 25%,transparent 25%);
+    background-size:60px 60px;
+    z-index:-1;
+}
+
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+}
+
+/* HEADER */
+.hero{
+    min-height:400px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:55px 15px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+        radial-gradient(circle at 50% 20%,#397b35,#0a2915 55%,#020806);
+    border-bottom:2px solid #e1b84b;
+}
+
+.hero:before,
+.hero:after{
+    position:absolute;
+    font-size:90px;
+    opacity:.13;
+}
+
+.hero:before{
+    content:"🏞️";
+    left:2%;
+    bottom:0;
+}
+
+.hero:after{
+    content:"🐅";
+    right:3%;
+    bottom:10px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 17px;
+    border:1px solid #e4bd4e;
+    border-radius:30px;
+    color:#ffd75c;
+    background:rgba(0,0,0,.35);
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    font-size:clamp(28px,5vw,55px);
+    color:#ffd85b;
+    margin:18px 0 8px;
+    text-shadow:0 4px 15px #000;
+}
+
+.hero h2{
+    font-size:clamp(16px,2.5vw,24px);
+    color:#d9f4dc;
+}
+
+.hero p{
+    max-width:850px;
+    margin:20px auto 0;
+    color:#cbdccc;
+}
+
+/* NAV */
+.nav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(3,12,7,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #345b3e;
+}
+
+.nav .container{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding:9px 0;
+}
+
+.nav a{
+    white-space:nowrap;
+    color:#fff;
+    text-decoration:none;
+    background:#16341f;
+    padding:8px 13px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.nav a:hover{
+    background:#d4a93c;
+    color:#111;
+}
+
+/* GENERAL */
+section{
+    margin:32px 0;
+}
+
+.section-title{
+    color:#ffd45a;
+    font-size:29px;
+    margin-bottom:18px;
+    border-left:5px solid #d7ae3e;
+    padding-left:12px;
+}
+
+.card{
+    background:linear-gradient(145deg,rgba(22,54,32,.94),rgba(8,24,14,.96));
+    border:1px solid #315d3b;
+    border-radius:18px;
+    padding:22px;
+    margin:15px 0;
+    box-shadow:0 12px 35px rgba(0,0,0,.3);
+}
+
+.card h3{
+    color:#ffe17b;
+    margin-bottom:12px;
+    font-size:1.3rem;
+}
+
+.card h4{
+    color:#ffd85b;
+    margin:10px 0;
+    font-size:1.1rem;
+}
+
+.highlight{
+    border-left:5px solid #e4bb45;
+    background:rgba(228,187,69,.09);
+    padding:16px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.warning{
+    border-left:5px solid #e06b5f;
+    background:rgba(180,50,40,.13);
+    padding:17px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.good{
+    border-left:5px solid #5bd47a;
+    background:rgba(60,180,90,.10);
+    padding:17px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+strong{
+    color:#ffe083;
+}
+
+/* FACT GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.fact{
+    background:#0d2516;
+    border:1px solid #315b39;
+    border-radius:16px;
+    padding:20px;
+    transition:.25s;
+}
+
+.fact:hover{
+    transform:translateY(-3px);
+    border-color:#e3ba45;
+}
+
+.fact h3{
+    color:#ffd45a;
+    margin-bottom:8px;
+}
+
+/* TABLES */
+.table-container{
+    overflow-x:auto;
+    margin:20px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#0b2112;
+    border:1px solid #315b39;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+th, td{
+    padding:12px 15px;
+    text-align:left;
+    border-bottom:1px solid #23482d;
+    font-size:15px;
+}
+
+th{
+    background:#143820;
+    color:#ffd85b;
+    font-weight:bold;
+}
+
+tr:nth-child(even){
+    background:#08180d;
+}
+
+tr:hover{
+    background:#173d23;
+}
+
+/* ACCORDION */
+details{
+    background:#0b2112;
+    border:1px solid #315b39;
+    border-radius:14px;
+    margin:12px 0;
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    padding:16px;
+    font-weight:bold;
+    color:#ffe17b;
+    background:#102b18;
+}
+
+details div{
+    padding:18px;
+}
+
+/* MEMORY */
+.memory{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:flex-start;
+    gap:8px;
+}
+
+.memory span{
+    padding:8px 12px;
+    border-radius:8px;
+    background:#173b22;
+    border:1px solid #4d704f;
+    color:#ffe27b;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.arrow{
+    color:#d9ae3f;
+    font-size:18px;
+}
+
+/* QUIZ */
+.quiz-question{
+    background:#10291a;
+    border:1px solid #345f3e;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+}
+
+.option{
+    display:block;
+    padding:11px;
+    margin:7px 0;
+    background:#17351f;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#244c2c;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    color:#76e88d;
+    font-weight:bold;
+}
+
+.show{
+    display:block;
+}
+
+button{
+    border:0;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    background:#e1b643;
+    color:#101010;
+    font-weight:bold;
+}
+
+/* SOURCES */
+.source{
+    font-size:14px;
+    color:#b8cbb9;
+}
+
+/* FOOTER */
+footer{
+    margin-top:50px;
+    padding:30px 15px;
+    text-align:center;
+    border-top:1px solid #315b39;
+    background:#030b06;
+}
+
+.channel{
+    color:#ffd45a;
+    font-weight:bold;
+    font-size:21px;
+}
+
+@media(max-width:600px){
+    .hero{ min-height:360px; }
+    .card{ padding:16px; }
+    .section-title{ font-size:22px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container">
+        <span class="badge">🌿 EXAM ORIENTED STUDY MATERIAL</span>
+        <h1>TOPIC 3 — मध्य प्रदेश के राष्ट्रीय उद्यान, अभयारण्य एवं जैवमंडल आरक्षित क्षेत्र</h1>
+        <h2>विस्तृत अध्ययन • तथ्य, इतिहास, अभयारण्य, BRs एवं Full Memory Map</h2>
+        <p>
+            राष्ट्रीय उद्यान, वन्यजीव अभयारण्य, UNESCO Biosphere Reserves, Tiger Reintroduction, Project Cheetah, और परीक्षा उपयोगी 100% विस्तृत डेटा।
+        </p>
+    </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="container">
+    <a href="#np">1. National Parks</a>
+    <a href="#np-table">NP One-Liner</a>
+    <a href="#sanctuaries">2. 25 Sanctuaries</a>
+    <a href="#biosphere">3. Biosphere Reserves</a>
+    <a href="#diff">4. NP vs Sanctuary</a>
+    <a href="#india-np">5. India NPs</a>
+    <a href="#memory-map">Final Memory Map</a>
+    <a href="#faq">FAQ</a>
+    <a href="#quiz">Quiz Challenge</a>
+</div>
+</nav>
+
+<main class="container">
+
+<!-- SECTION 1: NATIONAL PARKS -->
+<section id="np">
+
+<h2 class="section-title">1. मध्य प्रदेश के National Parks — विस्तृत अध्ययन</h2>
+
+<div class="warning">
+    <h3>⚠️ सबसे पहले एक जरूरी बात (Data Clarification)</h3>
+    <p>
+        तुम्हारे syllabus/GK material में MP के <strong>12 National Parks</strong> पूछा जा सकता है, लेकिन वर्तमान MP Forest Department की वेबसाइट पर <strong>10 National Parks</strong> की visitor list दिखाई देती है और MP Wildlife Action Plan में Omkareshwar को <strong>“proposed National Park”</strong> कहा गया है। इसलिए पुराने प्रतियोगी/GK sources में मिलने वाली संख्या और वर्तमान notified status को अलग-अलग समझना जरूरी है।
+    </p>
+    <p style="margin-top:10px;">
+        तुम्हारी तैयारी के लिए नीचे 12 वाला exam-oriented framework दिया जा रहा है।
+    </p>
+</div>
+
+<!-- 1. KANHA -->
+<div class="card">
+    <h3>1️⃣ कान्हा राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> मंडला और बालाघाट</p>
+    <p><strong>क्षेत्र:</strong> सतपुड़ा के मैकाल पर्वतीय क्षेत्र में</p>
+    
+    <h4>मुख्य विशेषताएँ:</h4>
+    <p>कान्हा मध्य प्रदेश के सबसे महत्वपूर्ण वन्यजीव क्षेत्रों में से एक है। यह विशेष रूप से: बाघ, हार्ड-ग्राउंड बारहसिंगा, चीतल, सांभर, गौर, जंगली कुत्ता आदि के लिए प्रसिद्ध है।</p>
+    
+    <h4>सबसे महत्वपूर्ण पहचान:</h4>
+    <p><strong>कान्हा = हार्ड-ग्राउंड बारहसिंगा + बाघ</strong></p>
+    <p>कान्हा का बारहसिंगा संरक्षण कार्यक्रम विशेष रूप से महत्वपूर्ण है। मध्य प्रदेश का राज्य पशु बारहसिंगा (Hard-ground Barasingha) इसी क्षेत्र से विशेष रूप से जुड़ा हुआ है।</p>
+    
+    <h4>इतिहास:</h4>
+    <p>कान्हा क्षेत्र को राष्ट्रीय उद्यान के रूप में <strong>1955</strong> में अधिसूचित किया गया था। बाद में यह Project Tiger के अंतर्गत Tiger Reserve भी बना (Kanha Tiger Reserve → Project Tiger के शुरुआती Tiger Reserves में से एक)।</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में याद रखें:</strong> कान्हा → मंडला + बालाघाट → बारहसिंगा → बाघ
+    </div>
+</div>
+
+<!-- 2. BANDHAVGARH -->
+<div class="card">
+    <h3>2️⃣ बांधवगढ़ राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> उमरिया तथा कुछ क्षेत्र कटनी</p>
+    <p><strong>मुख्य पहचान:</strong> बाघ (बांधवगढ़ मध्य प्रदेश के सबसे प्रसिद्ध Tiger habitats में से है)</p>
+    
+    <h4>मुख्य वन्यजीव:</h4>
+    <p>बाघ, तेंदुआ, चीतल, सांभर, नीलगाय, जंगली सूअर, गौर आदि।</p>
+    
+    <h4>बांधवगढ़ किला:</h4>
+    <p>इस क्षेत्र की एक बहुत महत्वपूर्ण ऐतिहासिक पहचान है: <strong>बांधवगढ़ किला</strong>। इसी कारण National Park की सामान्य पहचान में Tiger + Fort दोनों याद रखना चाहिए।</p>
+    
+    <h4>इतिहास:</h4>
+    <p>बांधवगढ़ को राष्ट्रीय उद्यान के रूप में <strong>1968</strong> में अधिसूचित किया गया था। बाद में इसका Tiger Reserve के रूप में भी विकास हुआ।</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में:</strong> बांधवगढ़ → उमरिया → बाघ → बांधवगढ़ किला
+    </div>
+</div>
+
+<!-- 3. PENCH -->
+<div class="card">
+    <h3>3️⃣ पेंच राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> सिवनी और छिंदवाड़ा</p>
+    <p><strong>मुख्य नदी:</strong> पेंच नदी</p>
+    <p>यह Topic 3 में सबसे महत्वपूर्ण parks में से एक है क्योंकि इसका संबंध मोगली से जोड़ा जाता है।</p>
+    
+    <h4>मोगली से संबंध:</h4>
+    <p>पेंच का जंगल <em>The Jungle Book</em> और मोगली की साहित्यिक दुनिया से संबंधित क्षेत्र के रूप में प्रसिद्ध है।</p>
+    <p><strong>ध्यान रखना:</strong> मोगली एक साहित्यिक पात्र है। पेंच को मोगली के जंगल से जोड़कर पढ़ाया जाता है, लेकिन इसे यह तथ्य नहीं मानना चाहिए कि Rudyard Kipling का वास्तविक मोगली इसी जंगल में रहता था।</p>
+    
+    <h4>मुख्य वन्यजीव:</h4>
+    <p>बाघ, तेंदुआ, जंगली कुत्ता, चीतल, सांभर, गौर, नीलगाय आदि।</p>
+    
+    <h4>इतिहास में सावधानी:</h4>
+    <p>पेंच के National Park notification year के संबंध में अलग-अलग सरकारी/पुराने स्रोतों में <strong>1975</strong> और <strong>1983</strong> दोनों मिलते हैं, क्योंकि अलग-अलग stages/notifications को आधार बनाया गया है।</p>
+    <p>इसलिए केवल एक वर्ष को बिना संदर्भ के अंतिम सत्य की तरह याद करने के बजाय: <strong>पेंच → सिवनी-छिंदवाड़ा → पेंच नदी → मोगली → Tiger Reserve</strong> याद रखना अधिक महत्वपूर्ण है।</p>
+    
+    <p><strong>Tiger Reserve:</strong> Pench Tiger Reserve → 1992–93</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में सबसे जरूरी:</strong> पेंच = मोगली
+    </div>
+</div>
+
+<!-- 4. SATPURA -->
+<div class="card">
+    <h3>4️⃣ सतपुड़ा राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> नर्मदापुरम (पुराना नाम: होशंगाबाद)</p>
+    <p>यह सतपुड़ा पर्वत क्षेत्र का महत्वपूर्ण संरक्षित क्षेत्र है।</p>
+    
+    <h4>मुख्य विशेषताएँ:</h4>
+    <p>पहाड़ी भू-भाग, घने वन, जैवविविधता, बाघ, तेंदुआ, गौर, भालू, हिरण आदि।</p>
+    
+    <h4>इतिहास:</h4>
+    <p>National Park के रूप में इसकी प्रारंभिक अधिसूचना <strong>1981</strong> से संबंधित है।</p>
+    
+    <h4>विशेष पहचान:</h4>
+    <p>सतपुड़ा क्षेत्र में: Satpura National Park, Bori Wildlife Sanctuary, Pachmarhi Wildlife Sanctuary जैसे महत्वपूर्ण संरक्षित क्षेत्र हैं। इसी व्यापक landscape का संबंध Pachmarhi Biosphere Reserve से भी है।</p>
+    
+    <p><strong>Tiger Reserve:</strong> Satpura Tiger Reserve → 1999–2000</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में:</strong> सतपुड़ा → नर्मदापुरम → पहाड़ी वन → जैवविविधता
+    </div>
+</div>
+
+<!-- 5. MADHAV -->
+<div class="card">
+    <h3>5️⃣ माधव राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> शिवपुरी</p>
+    <p>यह मध्य प्रदेश के उत्तर-पश्चिमी भाग का महत्वपूर्ण National Park है।</p>
+    
+    <h4>मुख्य विशेषताएँ & साख्य सागर:</h4>
+    <p>चितल, सांभर, नीलगाय, चिंकारा, तेंदुआ व अन्य वन्यजीव। माधव National Park की महत्वपूर्ण पहचान: <strong>साख्य सागर झील</strong>। यह क्षेत्र वन्यजीवों और पक्षियों के लिए भी महत्वपूर्ण habitat प्रदान करता है।</p>
+    
+    <h4>इतिहास:</h4>
+    <p>माधव National Park की प्रारंभिक अधिसूचना <strong>1956</strong> से जुड़ी है। पुराने कुछ स्रोतों में <strong>1959</strong> भी मिलता है, इसलिए notification stages के कारण year-confusion हो सकता है।</p>
+    
+    <p><strong>महत्वपूर्ण वर्तमान तथ्य:</strong> माधव क्षेत्र को Tiger Reserve के रूप में भी विकसित किया गया है।</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में:</strong> माधव → शिवपुरी → साख्य सागर
+    </div>
+</div>
+
+<!-- 6. PANNA -->
+<div class="card">
+    <h3>6️⃣ पन्ना राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> पन्ना और छतरपुर | <strong>मुख्य नदी:</strong> केन</p>
+    <p>पन्ना National Park का सबसे महत्वपूर्ण विषय है: <strong>Tiger Conservation और Tiger Reintroduction</strong>।</p>
+    
+    <h4>मुख्य वन्यजीव:</h4>
+    <p>बाघ, तेंदुआ, चीतल, सांभर, नीलगाय, मगरमच्छ आदि। केन नदी → पन्ना क्षेत्र की महत्वपूर्ण नदी (आसपास Ken-Gharial तथा अन्य wildlife conservation areas भी हैं)।</p>
+    
+    <h4>बाघ पुनर्स्थापन (Tiger Reintroduction):</h4>
+    <p>पन्ना में बाघों की संख्या में भारी गिरावट के बाद Tiger Reintroduction Programme चलाया गया। 2009 में अन्य MP Tiger Reserves से बाघिनों को पन्ना में स्थानांतरित किया गया। यह भारत में सफल wildlife restoration के महत्वपूर्ण उदाहरणों में गिना जाता है।</p>
+    
+    <h4>Biosphere Reserve भी:</h4>
+    <p>पन्ना सिर्फ National Park/Tiger Reserve के कारण ही महत्वपूर्ण नहीं है। Panna National Park + Panna Tiger Reserve + Panna Biosphere Reserve तीनों को अलग-अलग concepts के रूप में समझना चाहिए।</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में:</strong> पन्ना → केन नदी → बाघ पुनर्स्थापन → Biosphere Reserve
+    </div>
+</div>
+
+<!-- 7. KUNO -->
+<div class="card">
+    <h3>7️⃣ कूनो राष्ट्रीय उद्यान</h3>
+    <p><strong>स्थान:</strong> श्योपुर</p>
+    <p>आज के पर्यावरण एवं वन्यजीव GK में कूनो बहुत महत्वपूर्ण है।</p>
+    
+    <h4>सबसे महत्वपूर्ण पहचान:</h4>
+    <p><strong>कूनो → चीता</strong> (भारत में चीता पुनर्स्थापन कार्यक्रम के कारण कूनो National Park राष्ट्रीय स्तर पर चर्चा में आया)।</p>
+    
+    <h4>मुख्य बातें:</h4>
+    <p>श्योपुर जिले में, वन्यजीव habitat (चितल, सांभर, नीलगाय, तेंदुआ आदि), Project Cheetah का प्रमुख स्थल।</p>
+    <p>National Park के रूप में <strong>2018</strong> में अधिसूचित किया गया।</p>
+    
+    <div class="highlight">
+        🔥 <strong>परीक्षा में:</strong> कूनो → श्योपुर → चीता → Project Cheetah
+    </div>
+</div>
+
+<!-- 8 to 12 GRID -->
+<div class="grid">
+    <div class="card">
+        <h3>8️⃣ संजय राष्ट्रीय उद्यान</h3>
+        <p><strong>स्थान:</strong> सीधी क्षेत्र</p>
+        <p>संजय National Park मध्य प्रदेश के पूर्वी हिस्से का महत्वपूर्ण वन क्षेत्र है। इसका संबंध Sanjay-Dubri landscape/Tiger Reserve से है।</p>
+        <p><strong>मुख्य वन्यजीव:</strong> बाघ, तेंदुआ, चीतल, सांभर, नीलगाय, जंगली सूअर आदि।</p>
+        <p><strong>इतिहास:</strong> इसकी प्रारंभिक National Park notification <strong>1980</strong> से संबंधित है।</p>
+        <div class="highlight">संजय → सीधी → Sanjay-Dubri → Tiger</div>
+    </div>
+
+    <div class="card">
+        <h3>9️⃣ वन विहार राष्ट्रीय उद्यान</h3>
+        <p><strong>स्थान:</strong> भोपाल</p>
+        <p>यह सामान्य जंगल वाले National Parks से थोड़ा अलग है क्योंकि यह भोपाल शहर के अंदर/निकट स्थित urban wildlife area है।</p>
+        <p><strong>विशेषता:</strong> यहाँ वन्यजीव संरक्षण, rescue और captive/semi-captive management से संबंधित गतिविधियाँ महत्वपूर्ण हैं।</p>
+        <div class="highlight">वन विहार → भोपाल</div>
+    </div>
+
+    <div class="card">
+        <h3>🔟 घुघवा Fossil National Park</h3>
+        <p><strong>स्थान:</strong> डिंडोरी</p>
+        <p><strong>सबसे महत्वपूर्ण पहचान:</strong> Fossils / जीवाश्म</p>
+        <p>यह क्षेत्र प्राचीन वनस्पतियों और जीवाश्मों के अध्ययन के लिए महत्वपूर्ण है।</p>
+        <div class="highlight">घुघवा → डिंडोरी → Fossils</div>
+    </div>
+
+    <div class="card">
+        <h3>1️⃣1️⃣ Dinosaur Fossil National Park</h3>
+        <p><strong>स्थान:</strong> धार</p>
+        <p><strong>सबसे महत्वपूर्ण पहचान:</strong> Dinosaur Fossils</p>
+        <p>धार क्षेत्र में मिले डायनासोर से संबंधित जीवाश्मों के कारण यह स्थान महत्वपूर्ण है।</p>
+        <div class="highlight">Dinosaur Fossil NP → धार → Dinosaur fossils</div>
+    </div>
+
+    <div class="card">
+        <h3>1️⃣2️⃣ ओंकारेश्वर — विशेष सावधानी</h3>
+        <p><strong>स्थान:</strong> खंडवा क्षेत्र</p>
+        <p>इसे कई पुराने/प्रतियोगी GK sources में MP के National Parks की संख्या में शामिल किया जाता है। लेकिन वर्तमान MP Forest Wildlife Action Plan में: <strong>Proposed Omkareshwar National Park</strong> के रूप में इसका उल्लेख है।</p>
+        <div class="highlight">Omkareshwar = Proposed National Park</div>
+    </div>
+</div>
+
+<div class="good" style="margin-top:20px;">
+    <strong>MP Forest Department Current Listing Note:</strong><br>
+    MP Forest Department की वर्तमान National Park listing में Kanha, Bandhavgarh, Panna, Pench, Satpura, Sanjay-Dubri, Madhav, Van Vihar, Fossil और Dinosaur Fossil National Parks शामिल हैं।
+</div>
+
+</section>
+
+<!-- NP ONE LINER REVISION TABLE -->
+<section id="np-table">
+<h2 class="section-title">⭐ MP National Parks — One-Line Revision</h2>
+
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>National Park</th>
+            <th>सबसे जरूरी पहचान</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>कान्हा</td><td>बारहसिंगा + बाघ</td></tr>
+        <tr><td>बांधवगढ़</td><td>बाघ + किला</td></tr>
+        <tr><td>पेंच</td><td>मोगली</td></tr>
+        <tr><td>सतपुड़ा</td><td>पर्वतीय जैवविविधता</td></tr>
+        <tr><td>पन्ना</td><td>केन + Tiger Reintroduction</td></tr>
+        <tr><td>माधव</td><td>शिवपुरी + साख्य सागर</td></tr>
+        <tr><td>कूनो</td><td>चीता</td></tr>
+        <tr><td>संजय</td><td>Sanjay-Dubri</td></tr>
+        <tr><td>वन विहार</td><td>भोपाल</td></tr>
+        <tr><td>घुघवा</td><td>जीवाश्म</td></tr>
+        <tr><td>Dinosaur Fossil</td><td>डायनासोर जीवाश्म</td></tr>
+        <tr><td>ओंकारेश्वर</td><td>Proposed NP</td></tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<!-- SECTION 2: 25 SANCTUARIES -->
+<section id="sanctuaries">
+<h2 class="section-title">2. मध्य प्रदेश के 25 Wildlife Sanctuaries</h2>
+
+<p style="margin-bottom:15px;">2025 में डॉ. भीमराव अंबेडकर अभयारण्य की अधिसूचना के साथ MP में 25 Wildlife Sanctuaries होने की जानकारी प्रकाशित हुई थी। नीचे पूरी सूची दी गई है:</p>
+
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>क्र.</th>
+            <th>अभयारण्य</th>
+            <th>कहाँ</th>
+            <th>खासियत</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>बगदरा</td><td>सिंगरौली</td><td>वन्यजीव, तेंदुआ, चीतल आदि</td></tr>
+        <tr><td>2</td><td>रतापानी</td><td>रायसेन/सीहोर क्षेत्र</td><td>वन्यजीव व बाघ आवास; बाद में Tiger Reserve बना</td></tr>
+        <tr><td>3</td><td>पचमढ़ी</td><td>नर्मदापुरम</td><td>सतपुड़ा क्षेत्र, जैवविविधता</td></tr>
+        <tr><td>4</td><td>केन घड़ियाल</td><td>पन्ना/छतरपुर क्षेत्र</td><td>घड़ियाल संरक्षण</td></tr>
+        <tr><td>5</td><td>बोरी</td><td>नर्मदापुरम</td><td>ऐतिहासिक वन क्षेत्र; सतपुड़ा क्षेत्र</td></tr>
+        <tr><td>6</td><td>सैलाना</td><td>रतलाम</td><td>खरमोर (Lesser Florican) संरक्षण</td></tr>
+        <tr><td>7</td><td>पानपथा</td><td>उमरिया</td><td>बांधवगढ़ क्षेत्र से जुड़ा वन्यजीव आवास</td></tr>
+        <tr><td>8</td><td>खेओनी</td><td>देवास/सीहोर</td><td>वन्यजीव एवं वन क्षेत्र</td></tr>
+        <tr><td>9</td><td>गांधी सागर</td><td>मंदसौर</td><td>गांधी सागर क्षेत्र; विविध वन्यजीव</td></tr>
+        <tr><td>10</td><td>सरदारपुर</td><td>धार</td><td>खरमोर संरक्षण</td></tr>
+        <tr><td>11</td><td>पेंच (मोगली)</td><td>सिवनी</td><td>पेंच क्षेत्र, बाघ व वन्यजीव</td></tr>
+        <tr><td>12</td><td>नरसिंहगढ़</td><td>राजगढ़</td><td>वन्यजीव व पक्षी</td></tr>
+        <tr><td>13</td><td>गंगऊ</td><td>पन्ना</td><td>वन्यजीव/जल क्षेत्र</td></tr>
+        <tr><td>14</td><td>संजय (डुबरी)</td><td>सीधी</td><td>बाघ व वन्यजीव आवास</td></tr>
+        <tr><td>15</td><td>फेन</td><td>मंडला</td><td>वन्यजीव, कान्हा क्षेत्र से संबंध</td></tr>
+        <tr><td>16</td><td>चंबल</td><td>मुरैना/अंतरराज्यीय क्षेत्र</td><td>घड़ियाल, मगर, गंगा डॉल्फिन</td></tr>
+        <tr><td>17</td><td>घाटीगांव</td><td>ग्वालियर</td><td>सोनचिरैया/Great Indian Bustard संरक्षण</td></tr>
+        <tr><td>18</td><td>सिंघोरी</td><td>रायसेन</td><td>वन्यजीव व जैवविविधता</td></tr>
+        <tr><td>19</td><td>रालामंडल</td><td>इंदौर</td><td>इंदौर के पास; तेंदुआ आदि</td></tr>
+        <tr><td>20</td><td>नौरादेही</td><td>सागर, दमोह, नरसिंहपुर</td><td>बहुत बड़ा वन्यजीव क्षेत्र</td></tr>
+        <tr><td>21</td><td>करमाझिरी</td><td>सिवनी</td><td>वन्यजीव संरक्षण</td></tr>
+        <tr><td>22</td><td>सोन घड़ियाल</td><td>सीधी क्षेत्र</td><td>घड़ियाल संरक्षण</td></tr>
+        <tr><td>23</td><td>वीरांगना दुर्गावती</td><td>दमोह क्षेत्र</td><td>वन्यजीव कॉरिडोर/बाघ क्षेत्र</td></tr>
+        <tr><td>24</td><td>ओरछा</td><td>टीकमगढ़/निवाड़ी</td><td>वन्यजीव व ऐतिहासिक क्षेत्र</td></tr>
+        <tr><td>25</td><td>डॉ. भीमराव अंबेडकर अभयारण्य</td><td>सागर</td><td>2025 में जोड़ा गया; लगभग 258.64 km², तेंदुआ, सियार, चीतल, नीलगाय आदि</td></tr>
+    </tbody>
+</table>
+</div>
+
+<div class="card">
+    <h3>⭐ अभयारण्यों की सबसे जरूरी पहचान (Quick Exam Keys)</h3>
+    <div class="memory">
+        <span>सैलाना + सरदारपुर → खरमोर</span>
+        <span>घाटीगांव → सोनचिरैया</span>
+        <span>केन घड़ियाल + सोन घड़ियाल + चंबल → घड़ियाल</span>
+        <span>पेंच → मोगली</span>
+        <span>नौरादेही → बड़ा वन्यजीव क्षेत्र</span>
+        <span>डॉ. भीमराव अंबेडकर → 2025 का नया/25वाँ अभयारण्य</span>
+    </div>
+</div>
+</section>
+
+<!-- SECTION 3: BIOSPHERE RESERVES -->
+<section id="biosphere">
+<h2 class="section-title">3. मध्य प्रदेश के 3 Biosphere Reserves — विस्तृत अध्ययन</h2>
+
+<div class="card">
+    <h3>Biosphere Reserve क्या होता है?</h3>
+    <p>
+        जैवमंडल आरक्षित क्षेत्र (Biosphere Reserve) ऐसा बड़ा क्षेत्र है जहाँ: <strong>जैवविविधता का संरक्षण</strong>, <strong>प्राकृतिक संसाधनों का sustainable use</strong>, <strong>स्थानीय समुदायों की भागीदारी</strong>, <strong>research, education, conservation</strong> को साथ लेकर काम किया जाता है।
+    </p>
+    <p>Biosphere Reserve बनने से जमीन का ownership अपने-आप नहीं बदलता और इसके designation से land/forest की legal status अपने-आप समाप्त नहीं होती।</p>
+    
+    <h4 style="margin-top:15px;">इसके सामान्य तीन भाग समझो:</h4>
+    <p><strong>Core Zone:</strong> सबसे अधिक संरक्षण</p>
+    <p><strong>Buffer Zone:</strong> संरक्षण + research/education जैसी नियंत्रित गतिविधियाँ</p>
+    <p><strong>Transition Zone:</strong> मानव बस्तियाँ और sustainable development</p>
+</div>
+
+<!-- 1. PACHMARHI -->
+<div class="card">
+    <h3>① पचमढ़ी Biosphere Reserve</h3>
+    <p><strong>स्थापना:</strong> 1999 (यह मध्य प्रदेश का पहला Biosphere Reserve है)</p>
+    <p><strong>UNESCO:</strong> 2009 में UNESCO World Network of Biosphere Reserves में शामिल हुआ।</p>
+    <p><strong>क्षेत्र:</strong> यह मुख्यतः नर्मदापुरम, छिंदवाड़ा, बैतूल क्षेत्रों से संबंधित है। इसका कुल क्षेत्रफल लगभग <strong>4,981.72 km²</strong> है।</p>
+    
+    <h4>इसके Core में महत्वपूर्ण protected areas:</h4>
+    <p>Satpura National Park, Bori Wildlife Sanctuary, Pachmarhi Wildlife Sanctuary शामिल हैं।</p>
+    
+    <h4>भौगोलिक विशेषता:</h4>
+    <p>यह Satpura Hills से जुड़ा हुआ है। पचमढ़ी पठार इस क्षेत्र का महत्वपूर्ण भाग है।</p>
+    <p><strong>धूपगढ़:</strong> मध्य प्रदेश का सबसे ऊँचा बिंदु (ऊँचाई लगभग 1,352 m बताई गई है)।</p>
+    
+    <h4>जैवविविधता & विशेष पहचान:</h4>
+    <p>यहाँ साल, सागौन, विभिन्न औषधीय पौधे, अनेक वनस्पतियाँ व वन्यजीव मिलते हैं।</p>
+    <div class="good">
+        <strong>बहुत महत्वपूर्ण विशेष पहचान:</strong> पचमढ़ी Biosphere Reserve को पूर्वी हिमालय और पश्चिमी घाट की जैविक विविधता के बीच species diversity के महत्वपूर्ण क्षेत्र के रूप में वर्णित किया जाता है।
+    </div>
+    
+    <div class="highlight">
+        याद करो: पचमढ़ी → 1999 → Satpura → Bori → Pachmarhi → UNESCO 2009
+    </div>
+</div>
+
+<!-- 2. ACHANAKMAR-AMARKANTAK -->
+<div class="card">
+    <h3>② अचानकमार–अमरकंटक Biosphere Reserve</h3>
+    <p><strong>पूरा नाम:</strong> Achanakmar–Amarkantak Biosphere Reserve</p>
+    <p><strong>स्थापना:</strong> 2005 (यह मध्य प्रदेश का दूसरा Biosphere Reserve है)</p>
+    
+    <h4>सबसे महत्वपूर्ण विशेषता:</h4>
+    <p>यह <strong>Interstate Biosphere Reserve</strong> है। अर्थात यह दो राज्यों में फैला है: <strong>मध्य प्रदेश + छत्तीसगढ़</strong></p>
+    
+    <h4>क्षेत्र & राज्यवार हिस्सा:</h4>
+    <p>MP में इसके प्रमुख हिस्से: अनूपपुर, डिंडोरी। और बड़ा हिस्सा छत्तीसगढ़ में है। कुल क्षेत्र लगभग 3,835.51 km² है।</p>
+    <p>लगभग: <strong>68.1% → छत्तीसगढ़</strong> | <strong>31.9% → मध्य प्रदेश</strong></p>
+    
+    <p><strong>UNESCO:</strong> 2012 में UNESCO World Network of Biosphere Reserves में शामिल हुआ।</p>
+    
+    <h4>महत्वपूर्ण पर्वत व नदियाँ:</h4>
+    <p>यह क्षेत्र <strong>Maikal Range</strong> से जुड़ा है। यह क्षेत्र तीन महत्वपूर्ण नदी प्रणालियों से संबंधित है: <strong>नर्मदा, जोहिला, सोन</strong>।</p>
+    <p>विशेष भौगोलिक महत्व: यह क्षेत्र ऐसी जगह है जहाँ अलग-अलग दिशाओं में बहने वाली नदी प्रणालियों का विभाजन देखने को मिलता है।</p>
+    
+    <div class="highlight">
+        याद करो: Achanakmar-Amarkantak → 2005 → MP + Chhattisgarh → Maikal → Narmada/Johila/Son → UNESCO 2012
+    </div>
+</div>
+
+<!-- 3. PANNA -->
+<div class="card">
+    <h3>③ पन्ना Biosphere Reserve</h3>
+    <p><strong>स्थापना:</strong> 2011 (यह मध्य प्रदेश का तीसरा Biosphere Reserve है)</p>
+    <p><strong>क्षेत्र:</strong> मुख्य रूप से पन्ना, छतरपुर जिलों में।</p>
+    <p><strong>UNESCO:</strong> 2020 में UNESCO World Network of Biosphere Reserves में शामिल हुआ।</p>
+    
+    <h4>भौगोलिक विशेषता & वनस्पति:</h4>
+    <p>यह क्षेत्र Vindhyan Hill Ranges, Bundelkhand, Central Highlands से संबंधित है। यहाँ सागौन, सालई, करधई, बाँस, मिश्रित शुष्क पर्णपाती वन पाए जाते हैं।</p>
+    
+    <h4>वन्यजीव:</h4>
+    <p>पन्ना Biosphere Reserve का सबसे महत्वपूर्ण हिस्सा है: Panna National Park / Panna Tiger Reserve. इसके अलावा Gangau Sanctuary के कुछ हिस्से भी Biosphere Reserve में आते हैं (Panna NP + Gangau Sanctuary + North Panna Forest Division)।</p>
+    
+    <div class="highlight">
+        याद करो: Panna → 2011 → Panna/Chhatarpur → Vindhya/Bundelkhand → UNESCO 2020
+    </div>
+</div>
+
+<!-- ALL 3 BRs TABLE -->
+<h3>⭐ तीनों Biosphere Reserves एक साथ</h3>
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>Biosphere Reserve</th>
+            <th>वर्ष</th>
+            <th>मुख्य क्षेत्र</th>
+            <th>UNESCO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Pachmarhi</td><td>1999</td><td>Narmadapuram–Chhindwara–Betul</td><td>2009</td></tr>
+        <tr><td>Achanakmar-Amarkantak</td><td>2005</td><td>MP + Chhattisgarh</td><td>2012</td></tr>
+        <tr><td>Panna</td><td>2011</td><td>Panna–Chhatarpur</td><td>2020</td></tr>
+    </tbody>
+</table>
+</div>
+
+<div class="good">
+    <strong>सबसे आसान ट्रिक:</strong><br>
+    स्थापना वर्ष: 1999 → 2005 → 2011 (पचमढ़ी → अचानकमार-अमरकंटक → पन्ना)<br>
+    UNESCO वर्ष: 2009 → 2012 → 2020<br>
+    <em>MP सरकार की EPCO जानकारी के अनुसार मध्य प्रदेश में यही तीन notified Biosphere Reserves हैं और तीनों UNESCO World Network में शामिल हैं।</em>
+</div>
+</section>
+
+<!-- SECTION 4: NP VS SANCTUARY -->
+<section id="diff">
+<h2 class="section-title">4. National Park और Wildlife Sanctuary में अंतर</h2>
+
+<div class="table-container">
+<table>
+    <thead>
+        <tr>
+            <th>National Park</th>
+            <th>Wildlife Sanctuary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>संरक्षण अधिक कठोर</td>
+            <td>संरक्षण की तीव्रता तुलनात्मक रूप से सामान्य</td>
+        </tr>
+        <tr>
+            <td>वन्यजीव + habitat का समग्र संरक्षण</td>
+            <td>वन्यजीव और विशिष्ट habitat संरक्षण पर ध्यान</td>
+        </tr>
+        <tr>
+            <td>मानवीय गतिविधियों (चराई, निवास आदि) पर अत्यधिक कठोर नियंत्रण/निषेध</td>
+            <td>कुछ परिस्थितियों में नियंत्रित मानवीय गतिविधियाँ संभव</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<!-- SECTION 5: INDIA NP -->
+<section id="india-np">
+<h2 class="section-title">5. भारत के Important National Parks</h2>
+
+<div class="grid">
+    <div class="fact">
+        <h3>Jim Corbett</h3>
+        <p>उत्तराखंड • भारत का पहला National Park</p>
+    </div>
+    <div class="fact">
+        <h3>Kaziranga</h3>
+        <p>असम • एक सींग वाला गैंडा</p>
+    </div>
+    <div class="fact">
+        <h3>Gir</h3>
+        <p>गुजरात • एशियाई सिंह (Asiatic Lion)</p>
+    </div>
+    <div class="fact">
+        <h3>Ranthambore</h3>
+        <p>राजस्थान • बाघ (Tiger)</p>
+    </div>
+    <div class="fact">
+        <h3>Keoladeo</h3>
+        <p>राजस्थान • पक्षी (Bird Sanctuary)</p>
+    </div>
+    <div class="fact">
+        <h3>Sundarbans</h3>
+        <p>पश्चिम बंगाल • मैंग्रोव + Royal Bengal Tiger</p>
+    </div>
+    <div class="fact">
+        <h3>Manas</h3>
+        <p>असम • बाघ/गैंडा</p>
+    </div>
+    <div class="fact">
+        <h3>Dudhwa</h3>
+        <p>उत्तर प्रदेश • बाघ/बारहसिंगा</p>
+    </div>
+    <div class="fact">
+        <h3>Periyar</h3>
+        <p>केरल • हाथी (Elephant)</p>
+    </div>
+    <div class="fact">
+        <h3>Bandipur</h3>
+        <p>कर्नाटक • बाघ/हाथी</p>
+    </div>
+    <div class="fact">
+        <h3>Nagarhole</h3>
+        <p>कर्नाटक • बाघ/हाथी</p>
+    </div>
+    <div class="fact">
+        <h3>Silent Valley</h3>
+        <p>केरल • सदाबहार वन (Evergreen Forest)</p>
+    </div>
+    <div class="fact">
+        <h3>Great Himalayan</h3>
+        <p>हिमाचल प्रदेश • हिमालयी जैवविविधता</p>
+    </div>
+    <div class="fact">
+        <h3>Nanda Devi</h3>
+        <p>उत्तराखंड • हिमालयी पारिस्थितिकी</p>
+    </div>
+    <div class="fact">
+        <h3>Valley of Flowers</h3>
+        <p>उत्तराखंड • हिमालयी पुष्प विविधता</p>
+    </div>
+</div>
+</section>
+
+<!-- FINAL MEMORY MAP -->
+<section id="memory-map">
+<h2 class="section-title">🔥 इस पूरे Topic की Final Memory Map</h2>
+
+<div class="card">
+    <h3>MP National Parks Quick Recall</h3>
+    <div class="memory">
+        <span>कान्हा → बारहसिंगा</span>
+        <span>बांधवगढ़ → बाघ</span>
+        <span>पेंच → मोगली</span>
+        <span>सतपुड़ा → पहाड़ी जैवविविधता</span>
+        <span>पन्ना → Tiger Reintroduction</span>
+        <span>माधव → साख्य सागर</span>
+        <span>कूनो → चीता</span>
+        <span>संजय → Sanjay-Dubri</span>
+        <span>वन विहार → भोपाल</span>
+        <span>घुघवा → Fossil</span>
+        <span>Dinosaur Fossil → Dinosaur Fossil</span>
+        <span>ओंकारेश्वर → Proposed NP</span>
+    </div>
+</div>
+
+<div class="card">
+    <h3>3 Biosphere Reserves Quick Recall</h3>
+    <div class="memory">
+        <span>पचमढ़ी → 1999 → UNESCO 2009</span>
+        <span>अचानकमार-अमरकंटक → 2005 → UNESCO 2012</span>
+        <span>पन्ना → 2011 → UNESCO 2020</span>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Special Wildlife Quick Recall</h3>
+    <div class="memory">
+        <span>खरमोर → सैलाना/सरदारपुर</span>
+        <span>सोनचिरैया → घाटीगांव</span>
+        <span>घड़ियाल → चंबल/केन/सोन</span>
+        <span>चीता → कूनो</span>
+        <span>बारहसिंगा → कान्हा</span>
+        <span>मोगली → पेंच</span>
+    </div>
+</div>
+</section>
+
+<!-- FAQ / ACCORDION -->
+<section id="faq">
+<h2 class="section-title">❓ परीक्षा उपयोगी बार-बार पूछे जाने वाले प्रश्न (FAQ)</h2>
+
+<details>
+<summary>1. मध्य प्रदेश का पहला राष्ट्रीय उद्यान कौन सा है?</summary>
+<div>
+कान्हा राष्ट्रीय उद्यान (अधिसूचित वर्ष: 1955)।
+</div>
+</details>
+
+<details>
+<summary>2. मध्य प्रदेश का पहला Biosphere Reserve कौन सा है और यह UNESCO में कब शामिल हुआ?</summary>
+<div>
+पचमढ़ी Biosphere Reserve (1999 में स्थापित, 2009 में UNESCO World Network में शामिल)।
+</div>
+</details>
+
+<details>
+<summary>3. भारत में Project Cheetah का प्रमुख स्थल कौन सा National Park है?</summary>
+<div>
+कूनो राष्ट्रीय उद्यान (श्योपुर जिला)।
+</div>
+</details>
+
+<details>
+<summary>4. किस National Park में सफल Tiger Reintroduction Programme (2009) चलाया गया?</summary>
+<div>
+पन्ना राष्ट्रीय उद्यान।
+</div>
+</details>
+
+<details>
+<summary>5. खरमोर पक्षी के संरक्षण के लिए कौन से अभयारण्य प्रसिद्ध हैं?</summary>
+<div>
+सैलाना (रतलाम) और सरदारपुर (धार)।
+</div>
+</details>
+
+<details>
+<summary>6. MP का 25वाँ अभयारण्य कौन सा घोषित हुआ है?</summary>
+<div>
+डॉ. भीमराव अंबेडकर अभयारण्य (सागर जिला, 2025 में अधिसूचित)।
+</div>
+</details>
+
+<details>
+<summary>7. मध्य प्रदेश का कौन सा Biosphere Reserve दो राज्यों में फैला है?</summary>
+<div>
+अचानकमार-अमरकंटक Biosphere Reserve (मध्य प्रदेश + छत्तीसगढ़)।
+</div>
+</details>
+</section>
+
+<!-- MINI QUIZ -->
+<section id="quiz">
+<h2 class="section-title">🎯 Quick Quiz Challenge</h2>
+
+<div class="card">
+    <div class="quiz-question">
+        <strong>Q1. कान्हा राष्ट्रीय उद्यान मुख्य रूप से किस राज्य पशु के संरक्षण के लिए प्रसिद्ध है?</strong>
+        <label class="option"><input type="radio" name="q1"> चिंकारा</label>
+        <label class="option"><input type="radio" name="q1"> हार्ड-ग्राउंड बारहसिंगा</label>
+        <label class="option"><input type="radio" name="q1"> जंगली भैंसा</label>
+        <button onclick="showAnswer('a1')">उत्तर देखें</button>
+        <div id="a1" class="answer">✅ सही उत्तर: हार्ड-ग्राउंड बारहसिंगा।</div>
+    </div>
+
+    <div class="quiz-question">
+        <strong>Q2. साख्य सागर झील किस राष्ट्रीय उद्यान की महत्वपूर्ण पहचान है?</strong>
+        <label class="option"><input type="radio" name="q2"> पेंच</label>
+        <label class="option"><input type="radio" name="q2"> माधव राष्ट्रीय उद्यान</label>
+        <label class="option"><input type="radio" name="q2"> सतपुड़ा</label>
+        <button onclick="showAnswer('a2')">उत्तर देखें</button>
+        <div id="a2" class="answer">✅ सही उत्तर: माधव राष्ट्रीय उद्यान (शिवपुरी)।</div>
+    </div>
+
+    <div class="quiz-question">
+        <strong>Q3. अचानकमार-अमरकंटक Biosphere Reserve UNESCO में किस वर्ष शामिल किया गया?</strong>
+        <label class="option"><input type="radio" name="q3"> 2009</label>
+        <label class="option"><input type="radio" name="q3"> 2012</label>
+        <label class="option"><input type="radio" name="q3"> 2020</label>
+        <button onclick="showAnswer('a3')">उत्तर देखें</button>
+        <div id="a3" class="answer">✅ सही उत्तर: 2012 (स्थापना: 2005)।</div>
+    </div>
+
+    <div class="quiz-question">
+        <strong>Q4. जीवाश्म (Fossils) के अध्ययन के लिए कौन सा National Park डिंडोरी जिले में स्थित है?</strong>
+        <label class="option"><input type="radio" name="q4"> घुघवा Fossil National Park</label>
+        <label class="option"><input type="radio" name="q4"> Dinosaur Fossil NP</label>
+        <label class="option"><input type="radio" name="q4"> वन विहार</label>
+        <button onclick="showAnswer('a4')">उत्तर देखें</button>
+        <div id="a4" class="answer">✅ सही उत्तर: घुघवा Fossil National Park।</div>
+    </div>
+</div>
+</section>
+
+<!-- SOURCES -->
+<section>
+<h2 class="section-title">📚 जानकारी का आधार</h2>
+<div class="card">
+    <p class="source">
+        इस Topic में तथ्य एवं आँकड़े मध्य प्रदेश वन विभाग (MP Forest Department), EPCO (Environmental Planning & Coordination Organisation), UNESCO World Heritage Centre/Biosphere Network, MP Wildlife Action Plan तथा Drishti IAS/Mogli Bal Utsav Guide 2026 से संकलित किए गए हैं।
+    </p>
+</div>
+</section>
+
+</main>
+
+<footer>
+    <div class="channel">📚 BACKSHEETARS</div>
+    <p>Mogli Bal Utsav 2026–27 • Topic 3 Complete Study File</p>
+    <p style="color:#849b88;margin-top:8px">मध्य प्रदेश के राष्ट्रीय उद्यान, अभयारण्य एवं जैवमंडल आरक्षित क्षेत्र</p>
+</footer>
+
+<script>
+function showAnswer(id){
+    document.getElementById(id).classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
