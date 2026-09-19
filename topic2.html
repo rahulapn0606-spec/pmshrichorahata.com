@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>मध्य प्रदेश के वन | Mogli Bal Utsav 2026-27 (Complete Master Theory)</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+    background:
+        radial-gradient(circle at top,#173f25 0,#07150d 45%,#020806 100%);
+    color:#f5f5f5;
+    line-height:1.75;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+        linear-gradient(45deg,#fff 25%,transparent 25%),
+        linear-gradient(-45deg,#fff 25%,transparent 25%);
+    background-size:60px 60px;
+    z-index:-1;
+}
+
+.container{
+    width:min(1150px,94%);
+    margin:auto;
+}
+
+/* HEADER */
+.hero{
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:55px 15px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+        radial-gradient(circle at 50% 20%,#397b35,#0a2915 55%,#020806);
+    border-bottom:2px solid #e1b84b;
+}
+
+.hero:before,
+.hero:after{
+    position:absolute;
+    font-size:90px;
+    opacity:.13;
+}
+
+.hero:before{
+    content:"🌳";
+    left:2%;
+    bottom:0;
+}
+
+.hero:after{
+    content:"🐅";
+    right:3%;
+    bottom:10px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 17px;
+    border:1px solid #e4bd4e;
+    border-radius:30px;
+    color:#ffd75c;
+    background:rgba(0,0,0,.35);
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    font-size:clamp(32px,6vw,62px);
+    color:#ffd85b;
+    margin:18px 0 8px;
+    text-shadow:0 4px 15px #000;
+}
+
+.hero h2{
+    font-size:clamp(18px,3vw,26px);
+    color:#d9f4dc;
+}
+
+.hero p{
+    max-width:850px;
+    margin:20px auto 0;
+    color:#cbdccc;
+}
+
+/* NAV */
+.nav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(3,12,7,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #345b3e;
+}
+
+.nav .container{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding:10px 0;
+}
+
+.nav a{
+    white-space:nowrap;
+    color:#fff;
+    text-decoration:none;
+    background:#16341f;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13.5px;
+    transition:.2s;
+}
+
+.nav a:hover{
+    background:#d4a93c;
+    color:#111;
+}
+
+/* GENERAL */
+section{
+    margin:38px 0;
+}
+
+.section-title{
+    color:#ffd45a;
+    font-size:28px;
+    margin-bottom:18px;
+    border-left:5px solid #d7ae3e;
+    padding-left:12px;
+}
+
+.card{
+    background:linear-gradient(145deg,rgba(22,54,32,.94),rgba(8,24,14,.96));
+    border:1px solid #315d3b;
+    border-radius:18px;
+    padding:24px;
+    margin:16px 0;
+    box-shadow:0 12px 35px rgba(0,0,0,.3);
+}
+
+.card h3{
+    color:#ffe17b;
+    margin-bottom:12px;
+    font-size:20px;
+}
+
+.highlight{
+    border-left:5px solid #e4bb45;
+    background:rgba(228,187,69,.09);
+    padding:16px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.warning{
+    border-left:5px solid #e06b5f;
+    background:rgba(180,50,40,.13);
+    padding:17px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.good{
+    border-left:5px solid #5bd47a;
+    background:rgba(60,180,90,.10);
+    padding:17px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+strong{
+    color:#ffe083;
+}
+
+/* FACT GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:16px;
+}
+
+.fact{
+    background:#0d2516;
+    border:1px solid #315b39;
+    border-radius:16px;
+    padding:20px;
+    text-align:center;
+    transition:.25s;
+}
+
+.fact:hover{
+    transform:translateY(-5px);
+    border-color:#e3ba45;
+}
+
+.fact .emoji{
+    font-size:40px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.fact h3{
+    color:#ffd45a;
+    font-size:18px;
+}
+
+/* TABLES */
+.custom-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
+    font-size:15px;
+}
+
+.custom-table th, .custom-table td{
+    border:1px solid #315d3b;
+    padding:12px 15px;
+    text-align:left;
+}
+
+.custom-table th{
+    background:#102e1a;
+    color:#ffd85b;
+}
+
+.custom-table tr:nth-child(even){
+    background:rgba(255,255,255,.02);
+}
+
+/* TIMELINE */
+.timeline{
+    position:relative;
+    margin:20px 0;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:19px;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:#b98f2d;
+}
+
+.time-item{
+    position:relative;
+    padding:0 0 25px 55px;
+}
+
+.time-item:before{
+    content:"";
+    position:absolute;
+    left:9px;
+    top:7px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ffd45a;
+    border:4px solid #17351f;
+}
+
+.time-item h3{
+    color:#ffd45a;
+}
+
+/* FLIP CARDS */
+.character{
+    perspective:1000px;
+}
+
+.character-inner{
+    min-height:240px;
+    position:relative;
+    transition:transform .7s;
+    transform-style:preserve-3d;
+}
+
+.character:hover .character-inner{
+    transform:rotateY(180deg);
+}
+
+.character-front,
+.character-back{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:18px;
+    padding:20px;
+    border:1px solid #416a48;
+    background:linear-gradient(145deg,#173c23,#07150d);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.character-front .big{
+    font-size:48px;
+}
+
+.character-front h3{
+    color:#ffd85b;
+    font-size:20px;
+}
+
+.character-back{
+    transform:rotateY(180deg);
+    background:linear-gradient(145deg,#3b3218,#142718);
+    overflow-y:auto;
+}
+
+/* ACCORDION */
+details{
+    background:#0b2112;
+    border:1px solid #315b39;
+    border-radius:14px;
+    margin:12px 0;
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    padding:16px;
+    font-weight:bold;
+    color:#ffe17b;
+    background:#102b18;
+}
+
+details div{
+    padding:18px;
+}
+
+/* MEMORY CHAIN */
+.memory{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.memory span{
+    padding:10px 14px;
+    border-radius:10px;
+    background:#173b22;
+    border:1px solid #4d704f;
+    color:#ffe27b;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.arrow{
+    color:#d9ae3f;
+    font-size:22px;
+}
+
+/* QUIZ */
+.quiz-question{
+    background:#10291a;
+    border:1px solid #345f3e;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+}
+
+.option{
+    display:block;
+    padding:11px;
+    margin:7px 0;
+    background:#17351f;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#244c2c;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    color:#76e88d;
+    font-weight:bold;
+}
+
+.show{
+    display:block;
+}
+
+button{
+    border:0;
+    padding:11px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    background:#e1b643;
+    color:#101010;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* SOURCES */
+.source{
+    font-size:14px;
+    color:#b8cbb9;
+}
+
+/* FOOTER */
+footer{
+    margin-top:50px;
+    padding:30px 15px;
+    text-align:center;
+    border-top:1px solid #315b39;
+    background:#030b06;
+}
+
+.channel{
+    color:#ffd45a;
+    font-weight:bold;
+    font-size:22px;
+}
+
+@media(max-width:600px){
+    .hero{ min-height:390px; }
+    .card{ padding:17px; }
+    .section-title{ font-size:23px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container">
+        <span class="badge">🌳 MOGLI BAL UTSAV 2026–27</span>
+        <h1>मध्य प्रदेश के वन (Complete Master Edition)</h1>
+        <h2>Topic 2 • 100% Comprehensive Theory & Facts</h2>
+        <p>
+            भौगोलिक विस्तार, जलवायु वर्गीकरण, कानूनी वर्गीकरण, जिलेवार आँकड़े, प्रमुख वृक्ष, लघु वनोपज, अनुसंधान संस्थान, वन मण्डल, नीतियाँ, JFM, राष्ट्रीय उद्यान व अभयारण्य का अवलोकन एवं सम्पूर्ण क्विज़।
+        </p>
+    </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="container">
+    <a href="#intro">परिचय</a>
+    <a href="#stats">क्षेत्र व विस्तार</a>
+    <a href="#districts">जिलेवार आँकड़े</a>
+    <a href="#climate-types">जलवायु वर्गीकरण</a>
+    <a href="#law">कानूनी वर्गीकरण</a>
+    <a href="#circles">वन वृत्त व प्रशासन</a>
+    <a href="#trees">प्रमुख वृक्ष</a>
+    <a href="#mfp">लघु वनोपज</a>
+    <a href="#institutes">अनुसंधान संस्थान</a>
+    <a href="#policies">नीतियाँ व कानून</a>
+    <a href="#jfm">JFM व वानिकी</a>
+    <a href="#parks">राष्ट्रीय उद्यान/अभयारण्य</a>
+    <a href="#quiz">Master Quiz</a>
+</div>
+</nav>
+
+<main class="container">
+
+<!-- INTRO -->
+<section id="intro">
+<h2 class="section-title">🌲 Topic 2 का परिचय एवं पृष्ठभूमि</h2>
+<div class="card">
+<p>
+<strong>मध्य प्रदेश</strong> देश में सर्वाधिक वनाच्छादित राज्य है। भारत के कुल वन क्षेत्र में सर्वाधिक योगदान मध्य प्रदेश का ही है। यहाँ की जलवायु, भू-आकृतिक विविधता (सतपुड़ा, विंध्याचल पर्वतमाला तथा नर्मदा-ताप्ती-चंबल की घाटियाँ) एवं वर्षा का असमान वितरण यहाँ विभिन्न प्रकार के वनों के विकास का आधार है।
+</p>
+<p>
+वनों का राष्ट्रीयकरण करने वाला मध्य प्रदेश भारत का **प्रथम राज्य** है (1970 में तेंदूपत्ता राष्ट्रीयकरण के साथ शुरुआत)। राज्य में वन न केवल आर्थिक स्रोत हैं, बल्कि जनजातीय संस्कृति, पारिस्थितिक संतुलन एवं जैव-विविधता की रीढ़ हैं।
+</p>
+
+<div class="highlight">
+🔥 <strong>Master Fact:</strong><br>
+1970 में MP ने वनों का 100% राष्ट्रीयकरण (Nationalization) किया था। सबसे पहले <strong>तेंदूपत्ता</strong> का राष्ट्रीयकरण किया गया था।
+</div>
+</div>
+</section>
+
+<!-- STATS & DISTRIBUTION -->
+<section id="stats">
+<h2 class="section-title">📊 वन क्षेत्र एवं प्रमुख सांख्यिकी (ISFR Data)</h2>
+
+<div class="grid">
+    <div class="fact">
+        <span class="emoji">🗺️</span>
+        <h3>3,08,252 km²</h3>
+        <p>MP का कुल भौगोलिक क्षेत्रफल</p>
+    </div>
+    <div class="fact">
+        <span class="emoji">🌲</span>
+        <h3>94,689 km²</h3>
+        <p>Recorded Forest Area (RFA)</p>
+    </div>
+    <div class="fact">
+        <span class="emoji">📈</span>
+        <h3>30.72%</h3>
+        <p>भौगोलिक क्षेत्रफल में वनों का %</p>
+    </div>
+    <div class="fact">
+        <span class="emoji">🇮🇳</span>
+        <h3>~12.4%</h3>
+        <p>भारत के कुल वन क्षेत्र में MP का हिस्सा</p>
+    </div>
+</div>
+
+<div class="card">
+<h3>वन घनत्व का वर्गीकरण (Density Breakdown)</h3>
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>वन का प्रकार</th>
+            <th>कैनोपी घनत्व (Canopy Density)</th>
+            <th>विशेष विवरण</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>अत्यंत सघन वन (Very Dense Forest)</strong></td>
+            <td>70% या अधिक</td>
+            <td>बालाघाट, सीधी, छिंदवाड़ा के पर्वतीय ढलानों में।</td>
+        </tr>
+        <tr>
+            <td><strong>सामान्य सघन वन (Moderately Dense)</strong></td>
+            <td>40% से 70%</td>
+            <td>राज्य में सबसे विस्तृत क्षेत्र में फैले हुए।</td>
+        </tr>
+        <tr>
+            <td><strong>खुले वन (Open Forest)</strong></td>
+            <td>10% से 40%</td>
+            <td>पश्चिमी व उत्तरी मैदानी/झाड़ीदार क्षेत्र।</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<!-- DISTRICTS DATA -->
+<section id="districts">
+<h2 class="section-title">🗺️ जिलेवार वन विस्तार (सर्वाधिक व न्यूनतम)</h2>
+
+<div class="grid">
+<div class="card">
+    <h3 style="color:#5bd47a;">🏆 सर्वाधिक वन क्षेत्र वाले जिले (क्षेत्रफल अनुसार)</h3>
+    <ol style="padding-left:20px;">
+        <li><strong>बालाघाट (Balaghat):</strong> सर्वाधिक वन क्षेत्रफल (~4,923 sq km)</li>
+        <li><strong>छिंदवाड़ा (Chhindwara):</strong> दूसरा बड़ा वन क्षेत्र</li>
+        <li><strong>बैतूल (Betul):</strong> तीसरा बड़ा वन क्षेत्र</li>
+        <li><strong>शेओपुर (Sheopur) / डिंडोरी (Dindori)</strong></li>
+    </ol>
+</div>
+
+<div class="card">
+    <h3 style="color:#e06b5f;">⚠️ न्यूनतम वन क्षेत्र वाले जिले (क्षेत्रफल अनुसार)</h3>
+    <ol style="padding-left:20px;">
+        <li><strong>उज्जैन (Ujjain):</strong> सबसे कम वन क्षेत्र (~37 sq km)</li>
+        <li><strong>शाजापुर (Shajapur):</strong> दूसरा सबसे कम</li>
+        <li><strong>रतलाम (Ratlam)</strong></li>
+        <li><strong>भिंड (Bhind) / आगर मालवा</strong></li>
+    </ol>
+</div>
+</div>
+
+<div class="card">
+<h3>PERCENTAGE (%) के आधार पर शीर्ष जिले:</h3>
+<p><strong>सर्वाधिक प्रतिशत वन:</strong> बालाघाट (~53.4%) ➔ शेओपुर ➔ उमरिया।</p>
+<p><strong>न्यूनतम प्रतिशत वन:</strong> उज्जैन (~0.60%) ➔ शाजापुर ➔ रतलाम।</p>
+</div>
+</section>
+
+<!-- CLIMATE BASED TYPES -->
+<section id="climate-types">
+<h2 class="section-title">🌤️ भौगोलिक / जलवायु आधारित वनों का वर्गीकरण</h2>
+
+<div class="grid">
+
+<div class="fact" style="text-align:left;">
+    <h3>1. उष्णकटिबंधीय पर्णपाती वन (Tropical Deciduous Forests)</h3>
+    <p><strong>वर्षा:</strong> 50 - 100 सेमी</p>
+    <p><strong>क्षेत्र:</strong> सागर, दमोह, छतरपुर, पन्ना, ग्वालियर, शिवपुरी।</p>
+    <p><strong>मुख्य वृक्ष:</strong> सागौन, नीम, पीपल, शीशम, धावड़ा।</p>
+    <p><strong>विशेषता:</strong> गर्मी की शुरुआत में पत्तियाँ गिरा देते हैं। यह MP का सबसे बड़ा वन प्रकार है।</p>
+</div>
+
+<div class="fact" style="text-align:left;">
+    <h3>2. उष्णकटिबंधीय अर्ध-पर्णपाती वन (Tropical Semi-Deciduous)</h3>
+    <p><strong>वर्षा:</strong> 100 - 150 सेमी</p>
+    <p><strong>क्षेत्र:</strong> बालाघाट, मंडला, डिंडोरी, सीधी, शहडोल, सियोनी।</p>
+    <p><strong>मुख्य वृक्ष:</strong> साल, बांस, महुआ, हर्रा, साजा, बीजा।</p>
+    <p><strong>विशेषता:</strong> यहाँ सघनता और इमारती लकड़ी (साल) की प्रचुरता अधिक होती है।</p>
+</div>
+
+<div class="fact" style="text-align:left;">
+    <h3>3. उष्णकटिबंधीय शुष्क कांटेदार वन (Tropical Dry Thorny)</h3>
+    <p><strong>वर्षा:</strong> 50 सेमी से कम</p>
+    <p><strong>क्षेत्र:</strong> भिंड, मुरैना, ग्वालियर, श्योपुर, रतलाम, मंदसौर।</p>
+    <p><strong>मुख्य वृक्ष:</strong> बबूल, खैर, नागफनी, रींझ, बेर।</p>
+    <p><strong>विशेषता:</strong> पत्तियाँ छोटी व काँटेदार, वाष्पोत्सर्जन को रोकने के लिए अनुकूलित।</p>
+</div>
+
+</div>
+</section>
+
+<!-- LEGAL CLASSIFICATION -->
+<section id="law">
+<h2 class="section-title">⚖️ कानूनी / प्रशासनिक वर्गीकरण</h2>
+
+<div class="card">
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>श्रेणी (Category)</th>
+            <th>प्रतिशत (%)</th>
+            <th>नियंत्रण व नियम</th>
+            <th>मुख्य विशेषताएं</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>आरक्षित वन (Reserved Forest)</strong></td>
+            <td><strong>65.36%</strong></td>
+            <td>पूर्ण सरकारी नियंत्रण (कठोर)</td>
+            <td>बिना अनुमति कटाई, चराई और प्रवेश सख्त वर्जित। सर्वाधिक क्षेत्र उज्जैन मंडल में नहीं, बल्कि छिंदवाड़ा/खंडवा क्षेत्र में।</td>
+        </tr>
+        <tr>
+            <td><strong>संरक्षित वन (Protected Forest)</strong></td>
+            <td><strong>32.84%</strong></td>
+            <td>सीमित प्रशासनिक नियंत्रण</td>
+            <td>स्थानीय निवासियों को पशु चराई एवं सूखी लकड़ी एकत्र करने की सीमित छूट। छतरपुर मंडल में सर्वाधिक।</td>
+        </tr>
+        <tr>
+            <td><strong>अवर्गीकृत वन (Unclassed Forest)</strong></td>
+            <td><strong>1.80%</strong></td>
+            <td>न्यूनतम प्रतिबंध</td>
+            <td>जो उपरोक्त दो श्रेणियों में शामिल नहीं हैं। चराई व कटाई पर विशेष रोक नहीं।</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<!-- CIRCLES & ADMINISTRATION -->
+<section id="circles">
+<h2 class="section-title">🏛️ वन प्रशासनिक व्यवस्था एवं वन वृत्त (Forest Circles)</h2>
+
+<div class="card">
+<p>मध्य प्रदेश में वनों के कुशल प्रबंधन हेतु त्रिस्तरीय प्रशासनिक ढाँचा है:</p>
+<div class="memory" style="margin:15px 0;">
+<span>16 वन वृत्त (Forest Circles)</span>
+<div class="arrow">➔</div>
+<span>63 वन मण्डल (Forest Divisions)</span>
+<div class="arrow">➔</div>
+<span>135 उप-वन मण्डल (Sub-Divisions)</span>
+</div>
+
+<div class="grid" style="margin-top:20px;">
+    <div class="fact">
+        <h3>सबसे बड़ा वन वृत्त</h3>
+        <p style="color:#ffd85b; font-size:22px; font-weight:bold;">खंडवा (Khandwa)</p>
+    </div>
+    <div class="fact">
+        <h3>सबसे छोटा वन वृत्त</h3>
+        <p style="color:#ffd85b; font-size:22px; font-weight:bold;">होशंगाबाद / उज्जैन</p>
+    </div>
+    <div class="fact">
+        <h3>सर्वाधिक आरक्षित वन वृत्त</h3>
+        <p style="color:#ffd85b; font-size:22px; font-weight:bold;">खंडवा (Khandwa)</p>
+    </div>
+    <div class="fact">
+        <h3>सर्वाधिक संरक्षित वन वृत्त</h3>
+        <p style="color:#ffd85b; font-size:22px; font-weight:bold;">छतरपुर (Chhatarpur)</p>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- TREES (FLIP CARDS) -->
+<section id="trees">
+<h2 class="section-title">🌳 प्रमुख वृक्ष प्रजातियाँ (Key Tree Species)</h2>
+<p style="margin-bottom:15px">💡 कार्ड पर <strong>Hover / Tap</strong> करें विस्तृत विवरण हेतु:</p>
+
+<div class="grid">
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🪵</div>
+<h3>सागौन (Teak)</h3>
+<p>Tectona grandis</p>
+</div>
+<div class="character-back">
+<h3>TEAK</h3>
+<p><strong>कुल वन का:</strong> ~19.36%</p>
+<p><strong>क्षेत्र:</strong> होशंगाबाद (बोरी घाटी - सर्वश्रेष्ठ सागौन), जबलपुर, बैतूल, छिंदवाड़ा।</p>
+<p><strong>उपयोग:</strong> उच्च गुणवत्ता वाला इमारती फर्नीचर।</p>
+</div>
+</div>
+</div>
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🌲</div>
+<h3>साल (Sal)</h3>
+<p>Shorea robusta</p>
+</div>
+<div class="character-back">
+<h3>SAL</h3>
+<p><strong>कुल वन का:</strong> ~4.15%</p>
+<p><strong>क्षेत्र:</strong> पूर्वी MP (मंडला, डिंडोरी, बालाघाट, उमरिया, सीधी)।</p>
+<p><strong>उपयोग:</strong> रेलवे स्लीपर, बीम व खंभे। (कीट: 'साल बोरर' इसका मुख्य शत्रु है)।</p>
+</div>
+</div>
+</div>
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🎍</div>
+<h3>बाँस (Bamboo)</h3>
+<p>Dendrocalamus strictus</p>
+</div>
+<div class="character-back">
+<h3>BAMBOO</h3>
+<p><strong>मुख्य प्रजाति:</strong> नर बाँस (Dendrocalamus strictus)।</p>
+<p><strong>क्षेत्र:</strong> बालाघाट, सियोनी, अनूपपुर।</p>
+<p><strong>उपयोग:</strong> पेपर मिल (नेपानगर, अमलाई), टोकरी व हस्तशिल्प।</p>
+</div>
+</div>
+</div>
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🪵</div>
+<h3>खैर (Khair)</h3>
+<p>Acacia catechu</p>
+</div>
+<div class="character-back">
+<h3>KHAIR</h3>
+<p><strong>क्षेत्र:</strong> शिवपुरी, गुना, मुरैना, उमरिया।</p>
+<p><strong>उपयोग:</strong> छाल व लकड़ी से <strong>कत्था (Cutch/Catechu)</strong> बनाया जाता है।</p>
+<p><strong>कारखाने:</strong> शिवपुरी एवं बाणभोर (मुरैना)।</p>
+</div>
+</div>
+</div>
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🍃</div>
+<h3>तेंदू (Tendu Leaf)</h3>
+<p>Diospyros melanoxylon</p>
+</div>
+<div class="character-back">
+<h3>TENDU LEAF</h3>
+<p><strong>उत्पादन:</strong> भारत के कुल तेंदूपत्ता का ~60% MP में।</p>
+<p><strong>क्षेत्र:</strong> सागर, जबलपुर, रीवा, शहडोल।</p>
+<p><strong>उपयोग:</strong> बीड़ी उद्योग। राष्ट्रीयकरण: 1970।</p>
+</div>
+</div>
+</div>
+
+<div class="character">
+<div class="character-inner">
+<div class="character-front">
+<div class="big">🌸</div>
+<h3>महुआ व पलाश</h3>
+<p>बहुपयोगी वृक्ष</p>
+</div>
+<div class="character-back">
+<h3>MAHUA & PALASH</h3>
+<p><strong>महुआ (Madhuca longifolia):</strong> तेल, औषधीय उपयोग व देशी पेय।</p>
+<p><strong>पलाश (Butea monosperma):</strong> इसे <strong>'जंगल की ज्वाला' (Flame of the Forest)</strong> कहा जाता है। लाख कीट पालन में उपयोगी।</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- MINOR FOREST PRODUCE (MFP) -->
+<section id="mfp">
+<h2 class="section-title">🍯 लघु वनोपज (Minor Forest Produce - MFP)</h2>
+
+<div class="card">
+<p>लघु वनोपज मध्य प्रदेश के वनों में रहने वाले जनजातीय समुदायों की आजीविका का मुख्य आधार है।</p>
+
+<div class="grid" style="margin-top:15px;">
+    <div class="fact">
+        <h3>तेंदूपत्ता (Tendu Leaves)</h3>
+        <p>1970 में राज्य द्वारा पूर्ण नियंत्रण। संग्रहकर्ताओं के लिए चरणपादुका योजना संचालित।</p>
+    </div>
+    <div class="fact">
+        <h3>हर्रा व बहेरा (Harra & Bahera)</h3>
+        <p>चर्म शोधन (Tanning) तथा त्रिफला औषधि निर्माण में प्रयुक्त।</p>
+    </div>
+    <div class="fact">
+        <h3>गोंद (Gum)</h3>
+        <p>कुल्लू गोंद, धावड़ा गोंद एवं बबूल गोंद। (कुल्लू गोंद का उपयोग पेस्ट्री/बेकरी में)।</p>
+    </div>
+    <div class="fact">
+        <h3>भिलावा (Bhilawa)</h3>
+        <p>स्याही एवं पेंट उद्योग तथा औषधियों में प्रयुक्त। कारखाना: छिंदवाड़ा।</p>
+    </div>
+</div>
+
+<div class="highlight" style="margin-top:20px;">
+🏛️ <strong>M.P. State Minor Forest Produce Federation:</strong><br>
+<strong>स्थापना:</strong> 1984 (भोपाल)। यह लघु वनोपज के संग्रहण, प्रसंस्करण एवं विपणन (Vindhya Herbals ब्रांड) का कार्य करता है।
+</div>
+</div>
+</section>
+
+<!-- RESEARCH INSTITUTES -->
+<section id="institutes">
+<h2 class="section-title">🏛️ वन अनुसंधान, संस्थान एवं प्रशिक्षण केंद्र</h2>
+
+<div class="card">
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>संस्थान / केंद्र (Institute)</th>
+            <th>स्थान (Location)</th>
+            <th>मुख्य बिंदु / विवरण</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>राज्य वन अनुसंधान संस्थान (SFRI)</strong></td>
+            <td>जबलपुर</td>
+            <td>स्थापना: 1963। वन अनुसंधान का राज्यस्तरीय शीर्ष केंद्र।</td>
+        </tr>
+        <tr>
+            <td><strong>उष्णकटिबंधीय वन अनुसंधान संस्थान (TFRI)</strong></td>
+            <td>जबलपुर</td>
+            <td>केंद्र सरकार (ICFRE) के अधीन राष्ट्रीय स्तर का संस्थान।</td>
+        </tr>
+        <tr>
+            <td><strong>भारतीय वन प्रबंधन संस्थान (IIFM)</strong></td>
+            <td>भोपाल</td>
+            <td>स्थापना: 1982। एशिया का एकमात्र वन प्रबंधन संस्थान।</td>
+        </tr>
+        <tr>
+            <td><strong>पहला वन राजकीय विद्यालय (Forest School)</strong></td>
+            <td>शिवपुरी</td>
+            <td>1948 में स्थापित। (रेंजर व वनरक्षकों का प्रशिक्षण)।</td>
+        </tr>
+        <tr>
+            <td><strong>अन्य वन अनुसंधान/प्रशिक्षण केंद्र</strong></td>
+            <td>बैतूल, अमरकंटक, लखनादौन (सियोनी), गोविंदगढ़ (रीवा)</td>
+            <td>वनपाल एवं वनरक्षक प्रशिक्षण संस्थान।</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<!-- POLICIES & LAWS -->
+<section id="policies">
+<h2 class="section-title">📜 वन नीतियाँ, कानून एवं उत्सव</h2>
+
+<div class="card">
+<div class="timeline">
+
+<div class="time-item">
+<h3>Indian Forest Act, 1927</h3>
+<p>भारत में वनों के वर्गीकरण एवं वन अपराधों की रोकथाम का मूल आधार।</p>
+</div>
+
+<div class="time-item">
+<h3>प्रथम राज्य वन नीति (1952)</h3>
+<p>स्वतंत्र भारत की पहली वन नीति, जिसके तहत कुल क्षेत्रफल के 33% भाग पर वन रखने का लक्ष्य तय किया गया।</p>
+</div>
+
+<div class="time-item">
+<h3>Van Mahotsav (वन महोत्सव) - 1950 से प्रारंभ</h3>
+<p>कन्हैयालाल माणिकलाल मुंशी (K.M. Munshi) द्वारा शुरू। प्रतिवर्ष <strong>1 से 7 जुलाई</strong> तक आयोजित।</p>
+</div>
+
+<div class="time-item">
+<h3>राष्ट्रीय वन नीति (National Forest Policy - 1988)</h3>
+<p>मुख्य उद्देश्य: पर्यावरण स्थिरता, पारिस्थितिक संतुलन और स्थानीय समुदायों की आवश्यकताओं की पूर्ति।</p>
+</div>
+
+<div class="time-item">
+<h3>नवीन मध्य प्रदेश वन नीति (2005)</h3>
+<p>4 अप्रैल 2005 को लागू। वनों की सुरक्षा, eco-tourism और JFM को और अधिक सशक्त बनाने पर बल।</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- JFM & FORESTRY -->
+<section id="jfm">
+<h2 class="section-title">🤝 संयुक्त वन प्रबंधन (JFM) एवं सामाजिक वानिकी</h2>
+
+<div class="card">
+<h3>1. Joint Forest Management (JFM)</h3>
+<p>
+वनों के संरक्षण, संवर्धन और अवैध कटाई रोकने के लिए वन विभाग एवं स्थानीय ग्रामीणों की संयुक्त समिति।
+</p>
+<ul style="padding-left:25px; margin-top:10px;">
+    <li><strong>वन सुरक्षा समितियाँ (Forest Protection Committees):</strong> सघन वनों की सुरक्षा हेतु।</li>
+    <li><strong>ग्राम वन समितियाँ (Village Forest Committees):</strong> बिगड़े हुए वनों के सुधार हेतु।</li>
+    <li><strong>इको-विकास समितियाँ (Eco-Development Committees):</strong> राष्ट्रीय उद्यानों/अभयारण्यों के आसपास।</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>2. सामाजिक वानिकी (Social Forestry) — 1976</h3>
+<p>
+कृषक भूमि, सड़कों, नहरों, एवं रेलवे लाइनों के किनारे खाली पड़ी भूमि पर वृक्षारोपण करना ताकि ईंधन, चारे व लकड़ी की ग्रामीण मांग पूरी हो सके और प्राकृतिक वनों पर दबाव कम हो।
+</p>
+<div class="grid" style="margin-top:15px;">
+    <div class="fact">
+        <h3>कृषि वानिकी (Agroforestry)</h3>
+        <p>खेतों की मेड़ों व फसलों के साथ पेड़ लगाना।</p>
+    </div>
+    <div class="fact">
+        <h3>फार्म वानिकी (Farm Forestry)</h3>
+        <p>किसानों द्वारा स्वयं की भूमि पर व्यावसायिक वृक्ष उगाना।</p>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- PARKS & SANCTUARIES OVERVIEW -->
+<section id="parks">
+<h2 class="section-title">🐅 राष्ट्रीय उद्यान एवं अभयारण्य (Topic 2 Linkage)</h2>
+
+<div class="card">
+<p>वनों में जैव-विविधता एवं वन्यजीवों के संरक्षण हेतु MP में विस्तृत नेटवर्क स्थापित है:</p>
+
+<div class="grid" style="margin-top:15px;">
+    <div class="fact">
+        <h3>12</h3>
+        <p>राष्ट्रीय उद्यान (National Parks)</p>
+    </div>
+    <div class="fact">
+        <h3>24+</h3>
+        <p>वन्यजीव अभयारण्य (Sanctuaries)</p>
+    </div>
+    <div class="fact">
+        <h3>7</h3>
+        <p>टाइगर रिजर्व (Tiger Reserves)</p>
+    </div>
+    <div class="fact">
+        <h3>3</h3>
+        <p>बायोस्फीयर रिजर्व (Pachmarhi, Achanakmar, Panna)</p>
+    </div>
+</div>
+
+<div class="good" style="margin-top:20px;">
+🌟 <strong>Key Highlights:</strong><br>
+• <strong>कान्हा किसली (Kanha Kisli):</strong> MP का पहला और सबसे बड़ा राष्ट्रीय उद्यान (1955)। पहला टाइगर रिजर्व (1974)।<br>
+• <strong>कुनो राष्ट्रीय उद्यान (Kuno NP):</strong> श्योपुर में स्थित, नामीबिया व दक्षिण अफ्रीका से लाए गए 'चीतों' (Cheetahs) का नया आवास।<br>
+• <strong>रालामंडल (Ralamandal):</strong> इंदौर में स्थित, MP का सबसे छोटा अभयारण्य।<br>
+• <strong>नौरादेही (Nauradehi):</strong> सागर में स्थित, MP का सबसे बड़ा अभयारण्य।
+</div>
+</div>
+</section>
+
+<!-- MASTER FACTS & STATE SYMBOLS -->
+<section>
+<h2 class="section-title">👑 राज्य के प्रतीक एवं वनों से जुड़े Master Facts</h2>
+
+<div class="grid">
+    <div class="fact">
+        <span class="emoji">🌳</span>
+        <h3>राजकीय वृक्ष</h3>
+        <p><strong>बरगद (Banyan)</strong><br><i>Ficus benghalensis</i></p>
+    </div>
+    <div class="fact">
+        <span class="emoji">🦜</span>
+        <h3>राजकीय पक्षी</h3>
+        <p><strong>दूधराज / शाह बुलबुल</strong><br><i>Terpsiphone paradisi</i></p>
+    </div>
+    <div class="fact">
+        <span class="emoji">🦌</span>
+        <h3>राजकीय पशु</h3>
+        <p><strong>बारहसिंगा (ब्रेडरी प्रजाति)</strong><br><i>Rucervus duvaucelii</i></p>
+    </div>
+    <div class="fact">
+        <span class="emoji">🌺</span>
+        <h3>राजकीय पुष्प</h3>
+        <p><strong>सफेद लिली (White Lily)</strong><br><i>Lilium candidum</i></p>
+    </div>
+</div>
+
+<div class="warning" style="margin-top:20px;">
+⚡ <strong>Quick Memory Chain for MP Forest Ranks:</strong><br>
+• सर्वाधिक वन क्षेत्रफल वाला जिला ➔ <strong>बालाघाट</strong><br>
+• सबसे कम वन क्षेत्रफल वाला जिला ➔ <strong>उज्जैन</strong><br>
+• सबसे बड़ा वन वृत्त ➔ <strong>खंडवा</strong><br>
+• भारत में वनों का पहला पूर्ण राष्ट्रीयकरण करने वाला राज्य ➔ <strong>मध्य प्रदेश (1970)</strong><br>
+• सर्वश्रेष्ठ सागौन लकड़ी कहाँ पाई जाती है? ➔ <strong>बोरी घाटी (होशंगाबाद/नर्मदापुरम)</strong>
+</div>
+</section>
+
+<!-- FAQ / ACCORDION -->
+<section>
+<h2 class="section-title">❓ Master Quiz Questions & Explanations</h2>
+
+<details>
+<summary>1. मध्य प्रदेश में कुल कितने वन वृत्त (Forest Circles) और वन मण्डल हैं?</summary>
+<div>मध्य प्रदेश में कुल <strong>16 वन वृत्त</strong> तथा <strong>63 वन मण्डल</strong> हैं।</div>
+</details>
+
+<details>
+<summary>2. MP के किस जिले में वन क्षेत्र का प्रतिशत सबसे अधिक है?</summary>
+<div>बालाघाट जिले में (लगभग 53.4% भाग पर वन हैं)।</div>
+</details>
+
+<details>
+<summary>3. मध्य प्रदेश में कत्था बनाने का कारखाना कहाँ-कहाँ स्थित है?</summary>
+<div>शिवपुरी तथा बाणभोर (मुरैना) में। यह खैर की लकड़ी (Acacia catechu) से बनाया जाता है।</div>
+</details>
+
+<details>
+<summary>4. भारतीय वन प्रबंधन संस्थान (IIFM) कहाँ स्थित है?</summary>
+<div>भोपाल में स्थित है। इसकी स्थापना 1982 में हुई थी।</div>
+</details>
+
+<details>
+<summary>5. राज्य वन अनुसंधान संस्थान (SFRI) कहाँ स्थित है?</summary>
+<div>जबलपुर में (स्थापना 1963)। जबकि TFRI भी जबलपुर में ही स्थित है।</div>
+</details>
+
+<details>
+<summary>6. MP की नवीनतम वन नीति किस वर्ष लागू की गई थी?</summary>
+<div>4 अप्रैल 2005 को।</div>
+</details>
+
+<details>
+<summary>7. 'बोरी अभयारण्य / बोरी घाटी' किस वृक्ष की उच्च गुणवत्ता के लिए प्रसिद्ध है?</summary>
+<div>सागौन (Teak) वृक्षों के लिए (नर्मदापुरम/होशंगाबाद जिला)।</div>
+</details>
+
+<details>
+<summary>8. म.प्र. राज्य लघु वनोपज व्यापार एवं विकास सहकारी संघ का मुख्यालय कहाँ है?</summary>
+<div>भोपाल में (स्थापना 1984)। यह 'विंध्य हर्बल्स' (Vindhya Herbals) नाम से उत्पाद बेचता है।</div>
+</details>
+</section>
+
+<!-- MASTER QUIZ -->
+<section id="quiz">
+<h2 class="section-title">🎯 Topic 2 Comprehensive Master Quiz</h2>
+
+<div class="card">
+
+<div class="quiz-question">
+<strong>Q1. मध्य प्रदेश का सबसे बड़ा वन वृत्त (Forest Circle) कौन सा है?</strong>
+<label class="option"><input type="radio" name="mq1"> उज्जैन</label>
+<label class="option"><input type="radio" name="mq1"> खंडवा</label>
+<label class="option"><input type="radio" name="mq1"> रीवा</label>
+<button onclick="showAnswer('ma1')">उत्तर देखें</button>
+<div id="ma1" class="answer">✅ सही उत्तर: खंडवा (Khandwa)</div>
+</div>
+
+<div class="quiz-question">
+<strong>Q2. 'कत्था' (Cutch) का निर्माण किस वृक्ष की लकड़ी से किया जाता है?</strong>
+<label class="option"><input type="radio" name="mq2"> साल (Sal)</label>
+<label class="option"><input type="radio" name="mq2"> खैर (Khair)</label>
+<label class="option"><input type="radio" name="mq2"> सागौन (Teak)</label>
+<button onclick="showAnswer('ma2')">उत्तर देखें</button>
+<div id="ma2" class="answer">✅ सही उत्तर: खैर (Acacia catechu)</div>
+</div>
+
+<div class="quiz-question">
+<strong>Q3. एशिया का एकमात्र भारतीय वन प्रबंधन संस्थान (IIFM) MP के किस शहर में है?</strong>
+<label class="option"><input type="radio" name="mq3"> जबलपुर</label>
+<label class="option"><input type="radio" name="mq3"> भोपाल</label>
+<label class="option"><input type="radio" name="mq3"> इंदौर</label>
+<button onclick="showAnswer('ma3')">उत्तर देखें</button>
+<div id="ma3" class="answer">✅ सही उत्तर: भोपाल (1982 में स्थापित)</div>
+</div>
+
+<div class="quiz-question">
+<strong>Q4. MP में वनों का 100% राष्ट्रीयकरण किस वर्ष में किया गया था?</strong>
+<label class="option"><input type="radio" name="mq4"> 1956</label>
+<label class="option"><input type="radio" name="mq4"> 1970</label>
+<label class="option"><input type="radio" name="mq4"> 1988</label>
+<button onclick="showAnswer('ma4')">उत्तर देखें</button>
+<div id="ma4" class="answer">✅ सही उत्तर: 1970 (तेंदूपत्ता राष्ट्रीयकरण से शुरुआत)</div>
+</div>
+
+<div class="quiz-question">
+<strong>Q5. मध्य प्रदेश के कुल वन क्षेत्र में 'संरक्षित वन' (Protected Forests) का हिस्सा कितना है?</strong>
+<label class="option"><input type="radio" name="mq5"> 65.36%</label>
+<label class="option"><input type="radio" name="mq5"> 32.84%</label>
+<label class="option"><input type="radio" name="mq5"> 1.80%</label>
+<button onclick="showAnswer('ma5')">उत्तर देखें</button>
+<div id="ma5" class="answer">✅ सही उत्तर: 32.84% (जबकि आरक्षित वन 65.36% हैं)</div>
+</div>
+
+</div>
+</section>
+
+<!-- FINAL SUMMARY -->
+<section>
+<h2 class="section-title">⚡ 1-Minute Master Summary</h2>
+<div class="card">
+<p>🌲 <strong>कुल वन क्षेत्र:</strong> 94,689 km² (30.72%)</p>
+<p>🏆 <strong>सर्वाधिक वन वाला जिला:</strong> बालाघाट | <strong>न्यूनतम:</strong> उज्जैन</p>
+<p>⚖️ <strong>कानूनी स्थिति:</strong> आरक्षित 65.36%, संरक्षित 32.84%, अवर्गीकृत 1.80%</p>
+<p>🌳 <strong>मुख्य वृक्ष:</strong> सागौन (19.36% - Tectona grandis), साल (4.15% - Shorea robusta)</p>
+<p>🏛️ <strong>IIFM:</strong> भोपाल | <strong>SFRI & TFRI:</strong> जबलपुर</p>
+<p>📜 <strong>नीतियाँ:</strong> 1952, 1988, MP Policy 2005</p>
+<p>🤝 <strong>JFM:</strong> 1990 से जनभागीदारी</p>
+</div>
+</section>
+
+<!-- SOURCES -->
+<section>
+<h2 class="section-title">📚 प्रमाणिक स्रोत (Authentic Sources)</h2>
+<div class="card">
+<p class="source">
+संदर्भ: Madhya Pradesh Forest Department Annual Administrative Report, India State of Forest Report (ISFR), MP State Minor Forest Produce Federation, तथा MP Eco Tourism Development Board.
+</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="channel">📚 BACKSHEETARS</div>
+<p>Mogli Bal Utsav 2026–27 • Topic 2 Complete Edition</p>
+<p style="color:#849b88;margin-top:8px">मध्य प्रदेश के वन — Master Theory, Data & Interactive Quiz</p>
+</footer>
+
+<script>
+function showAnswer(id){
+    document.getElementById(id).classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
