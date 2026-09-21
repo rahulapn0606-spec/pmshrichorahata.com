@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOPIC 4 — MP की नदियाँ, पर्वत, मिट्टी, फसलें एवं कृषि क्षेत्र</title>
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+body{
+font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+background:
+radial-gradient(circle at top,#173f25 0,#07150d 45%,#020806 100%);
+color:#f5f5f5;
+line-height:1.75;
+}
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.08;
+background-image:
+linear-gradient(45deg,#fff 25%,transparent 25%),
+linear-gradient(-45deg,#fff 25%,transparent 25%);
+background-size:60px 60px;
+z-index:-1;
+}
+.container{
+width:min(1100px,94%);
+margin:auto;
+}
+/* HEADER */
+.hero{
+min-height:400px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:55px 15px;
+position:relative;
+overflow:hidden;
+background:
+linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+radial-gradient(circle at 50% 20%,#397b35,#0a2915 55%,#020806);
+border-bottom:2px solid #e1b84b;
+}
+.hero:before,
+.hero:after{
+position:absolute;
+font-size:90px;
+opacity:.13;
+}
+.hero:before{
+content:"🌊";
+left:2%;
+bottom:0;
+}
+.hero:after{
+content:"🌾";
+right:3%;
+bottom:10px;
+}
+.badge{
+display:inline-block;
+padding:7px 17px;
+border:1px solid #e4bd4e;
+border-radius:30px;
+color:#ffd75c;
+background:rgba(0,0,0,.35);
+font-weight:bold;
+letter-spacing:1px;
+}
+.hero h1{
+font-size:clamp(28px,5vw,55px);
+color:#ffd85b;
+margin:18px 0 8px;
+text-shadow:0 4px 15px #000;
+}
+.hero h2{
+font-size:clamp(16px,2.5vw,24px);
+color:#d9f4dc;
+}
+.hero p{
+max-width:850px;
+margin:20px auto 0;
+color:#cbdccc;
+}
+/* NAV */
+.nav{
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(3,12,7,.94);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #345b3e;
+}
+.nav .container{
+display:flex;
+gap:7px;
+overflow-x:auto;
+padding:9px 0;
+}
+.nav a{
+white-space:nowrap;
+color:#fff;
+text-decoration:none;
+background:#16341f;
+padding:8px 13px;
+border-radius:20px;
+font-size:14px;
+}
+.nav a:hover{
+background:#d4a93c;
+color:#111;
+}
+/* GENERAL */
+section{
+margin:32px 0;
+}
+.section-title{
+color:#ffd45a;
+font-size:29px;
+margin-bottom:18px;
+border-left:5px solid #d7ae3e;
+padding-left:12px;
+}
+.card{
+background:linear-gradient(145deg,rgba(22,54,32,.94),rgba(8,24,14,.96));
+border:1px solid #315d3b;
+border-radius:18px;
+padding:22px;
+margin:15px 0;
+box-shadow:0 12px 35px rgba(0,0,0,.3);
+}
+.card h3{
+color:#ffe17b;
+margin-bottom:12px;
+font-size:1.3rem;
+}
+.card h4{
+color:#ffd85b;
+margin:10px 0;
+font-size:1.1rem;
+}
+.highlight{
+border-left:5px solid #e4bb45;
+background:rgba(228,187,69,.09);
+padding:16px;
+border-radius:10px;
+margin:15px 0;
+}
+.warning{
+border-left:5px solid #e06b5f;
+background:rgba(180,50,40,.13);
+padding:17px;
+border-radius:10px;
+margin:15px 0;
+}
+.good{
+border-left:5px solid #5bd47a;
+background:rgba(60,180,90,.10);
+padding:17px;
+border-radius:10px;
+margin:15px 0;
+}
+strong{
+color:#ffe083;
+}
+/* FACT GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+.fact{
+background:#0d2516;
+border:1px solid #315b39;
+border-radius:16px;
+padding:20px;
+transition:.25s;
+}
+.fact:hover{
+transform:translateY(-3px);
+border-color:#e3ba45;
+}
+.fact h3{
+color:#ffd45a;
+margin-bottom:8px;
+}
+/* TABLES */
+.table-container{
+overflow-x:auto;
+margin:20px 0;
+}
+table{
+width:100%;
+border-collapse:collapse;
+background:#0b2112;
+border:1px solid #315b39;
+border-radius:12px;
+overflow:hidden;
+}
+th, td{
+padding:12px 15px;
+text-align:left;
+border-bottom:1px solid #23482d;
+font-size:15px;
+}
+th{
+background:#143820;
+color:#ffd85b;
+font-weight:bold;
+}
+tr:nth-child(even){
+background:#08180d;
+}
+tr:hover{
+background:#173d23;
+}
+/* ACCORDION */
+details{
+background:#0b2112;
+border:1px solid #315b39;
+border-radius:14px;
+margin:12px 0;
+overflow:hidden;
+}
+summary{
+cursor:pointer;
+padding:16px;
+font-weight:bold;
+color:#ffe17b;
+background:#102b18;
+}
+details div{
+padding:18px;
+}
+/* MEMORY */
+.memory{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:flex-start;
+gap:8px;
+}
+.memory span{
+padding:8px 12px;
+border-radius:8px;
+background:#173b22;
+border:1px solid #4d704f;
+color:#ffe27b;
+font-size:14px;
+font-weight:bold;
+}
+.arrow{
+color:#d9ae3f;
+font-size:18px;
+}
+/* QUIZ */
+.quiz-question{
+background:#10291a;
+border:1px solid #345f3e;
+padding:20px;
+border-radius:15px;
+margin:15px 0;
+}
+.option{
+display:block;
+padding:11px;
+margin:7px 0;
+background:#17351f;
+border-radius:9px;
+cursor:pointer;
+}
+.option:hover{
+background:#244c2c;
+}
+.answer{
+display:none;
+margin-top:12px;
+color:#76e88d;
+font-weight:bold;
+}
+.show{
+display:block;
+}
+button{
+border:0;
+padding:10px 18px;
+border-radius:25px;
+cursor:pointer;
+background:#e1b643;
+color:#101010;
+font-weight:bold;
+}
+/* SOURCES */
+.source{
+font-size:14px;
+color:#b8cbb9;
+}
+/* FOOTER */
+footer{
+margin-top:50px;
+padding:30px 15px;
+text-align:center;
+border-top:1px solid #315b39;
+background:#030b06;
+}
+.channel{
+color:#ffd45a;
+font-weight:bold;
+font-size:21px;
+}
+@media(max-width:600px){
+.hero{ min-height:360px; }
+.card{ padding:16px; }
+.section-title{ font-size:22px; }
+}
+</style>
+</head>
+<body>
+<!-- HERO -->
+<header class="hero">
+<div class="container">
+<span class="badge">🌿 EXAM ORIENTED STUDY MATERIAL</span>
+<h1>TOPIC 4 — मध्य प्रदेश की नदियाँ, पर्वत, मिट्टी, फसलें एवं कृषि क्षेत्र</h1>
+<h2>विस्तृत अध्ययन • नदियाँ, जलप्रपात, पर्वत शृंखलाएँ, मृदा प्रकार, फसलें एवं फुल मेमोरी मैप</h2>
+<p>
+'नदियों का मायका', विंध्याचल व सतपुड़ा पर्वत श्रेणी, 5 प्रकार की मिट्टियाँ, सोयाबीन राज्य, सिंचाई परियोजनाएँ और 100% सटीक परीक्षा उपयोगी डेटा।
+</p>
+</div>
+</header>
+<!-- NAV -->
+<nav class="nav">
+<div class="container">
+<a href="#rivers">1. MP की नदियाँ</a>
+<a href="#waterfalls">2. जलप्रपात व बाँध</a>
+<a href="#mountains">3. पर्वत शृंखलाएँ</a>
+<a href="#soils">4. MP की मिट्टियाँ</a>
+<a href="#agriculture">5. फसलें एवं कृषि</a>
+<a href="#rivers-table">River One-Liner</a>
+<a href="#memory-map">Final Memory Map</a>
+<a href="#faq">FAQ</a>
+<a href="#quiz">Quiz Challenge</a>
+</div>
+</nav>
+<main class="container">
+<!-- SECTION 1: RIVERS -->
+<section id="rivers">
+<h2 class="section-title">1. मध्य प्रदेश की प्रमुख नदियाँ — विस्तृत अध्ययन</h2>
+<div class="good">
+<h3>💧 नदियों का मायका (Cradle of Rivers)</h3>
+<p>
+मध्य प्रदेश को सर्वाधिक नदियों के उद्गम के कारण <strong>"नदियों का मायका"</strong> कहा जाता है। यहाँ से प्रायद्वीपीय भारत की कई प्रमुख नदियाँ निकलती हैं और चारों दिशाओं में प्रवाहित होती हैं।
+</p>
+</div>
+<!-- 1. NARMADA -->
+<div class="card">
+<h3>1️⃣ नर्मदा नदी (Narmada River)</h3>
+<p><strong>उद्गम:</strong> अमरकंटक (अनूपपुर जिला) — मैकाल पर्वत श्रेणी</p>
+<p><strong>समापन/विसर्जन:</strong> खंभात की खाड़ी (अरब सागर), गुजरात</p>
+<p><strong>कुल लंबाई:</strong> 1,312 किमी (MP में लंबाई: <strong>1,077 किमी</strong>)</p>
+<p><strong>उपनाम:</strong> रेवा, मेकलसुता, सोमोदेवी, MP की जीवन रेखा (Lifeline of MP)</p>
+<h4>मुख्य विशेषताएँ:</h4>
+<p>यह भारत की 5वीं सबसे बड़ी और MP की सबसे बड़ी नदी है। यह पूर्व से पश्चिम दिशा में भ्रंश घाटी (Rift Valley) से होकर बहती है तथा एस्टुअरी (Estuary/ज्वारनदमुख) का निर्माण करती है (डेल्टा नहीं बनाती)।</p>
+<h4>सहायक नदियाँ (41 सहायक नदियाँ):</h4>
+<p><strong>बाएँ तट से:</strong> तवा, शेर, शक्कर, दूधी, गंजार, बंजर।</p>
+<p><strong>दाएँ तट से:</strong> मान, हथनी, हिरन, ओरसंग।</p>
+<div class="highlight">
+🔥 <strong>परीक्षा में याद रखें:</strong> नर्मदा → अमरकंटक → 1077 किमी (MP) → भ्रंश घाटी → एस्टुअरी
+</div>
+</div>
+<!-- 2. CHAMBAL -->
+<div class="card">
+<h3>2️⃣ चंबल नदी (Chambal River)</h3>
+<p><strong>उद्गम:</strong> जानापाव पहाड़ी, महू (इंदौर)</p>
+<p><strong>समापन:</strong> यमुना नदी (इटावा, उत्तर प्रदेश के पास)</p>
+<p><strong>कुल लंबाई:</strong> लगभग 965 किमी</p>
+<p><strong>पुराना नाम:</strong> चर्मावती, धर्मावती</p>
+<h4>मुख्य विशेषताएँ:</h4>
+<p>यह MP की दूसरी सबसे बड़ी नदी है। यह मध्य प्रदेश और राजस्थान के बीच प्राकृतिक सीमा बनाती है। यह नदी भारी मृदा अपरदन (Soil Erosion) के कारण अवनालिका अपरदन (Gully Erosion) और 'बीहड़' (Ravines) के निर्माण के लिए जानी जाती है (विशेषकर भिंड-मुरैना क्षेत्र में)।</p>
+<h4>सहायक नदियाँ:</h4>
+<p>शिप्रा, कालीसिंध, पार्वती, बनास, कूनो।</p>
+<div class="highlight">
+🔥 <strong>परीक्षा में:</strong> चंबल → जानापाव (महू) → यमुना में विलय → बीहड़/अवनालिका अपरदन
+</div>
+</div>
+<!-- 3. SON -->
+<div class="card">
+<h3>3️⃣ सोन नदी (Son River)</h3>
+<p><strong>उद्गम:</strong> अमरकंटक (अनूपपुर जिला)</p>
+<p><strong>समापन:</strong> गंगा नदी (पटना, बिहार के पास)</p>
+<p><strong>कुल लंबाई:</strong> लगभग 784 किमी</p>
+<p><strong>अन्य नाम:</strong> स्वर्ण नदी, हिरण्यवाह</p>
+<h4>मुख्य विशेषताएँ:</h4>
+<p>यह उत्तर की ओर बहने वाली प्रमुख नदी है जो सीधे गंगा में जाकर मिलती है। इसके रेत में सोने के कण पाए जाने के कारण इसे 'स्वर्ण नदी' कहा जाता है। बाणसागर परियोजना इसी नदी पर (शहडोल जिले में) स्थित है।</p>
+<div class="highlight">
+🔥 <strong>परीक्षा में:</strong> सोन → अमरकंटक → गंगा में विलय → बाणसागर परियोजना
+</div>
+</div>
+<!-- 4. TAPI -->
+<div class="card">
+<h3>4️⃣ ताप्ती नदी (Tapi / Tapti River)</h3>
+<p><strong>उद्गम:</strong> मुल्ताई (बैतूल जिला)</p>
+<p><strong>समापन:</strong> खंभात की खाड़ी (अरब सागर)</p>
+<p><strong>कुल लंबाई:</strong> लगभग 724 किमी</p>
+<p><strong>अन्य नाम:</strong> सूर्यपुत्री, पयोष्णी</p>
+<h4>मुख्य विशेषताएँ:</h4>
+<p>नर्मदा की तरह ताप्ती भी पूर्व से पश्चिम दिशा में भ्रंश घाटी में बहती है और एस्टुअरी बनाती है। यह मध्य प्रदेश और महाराष्ट्र के बीच सीमा का निर्धारण करती है। इसके तट पर सूरत शहर बसा है।</p>
+<div class="highlight">
+🔥 <strong>परीक्षा में:</strong> ताप्ती → मुल्ताई (बैतूल) → पूर्व से पश्चिम प्रवाह → सूर्यपुत्री
+</div>
+</div>
+<!-- 5. BETWA -->
+<div class="card">
+<h3>5️⃣ बेतवा नदी (Betwa River)</h3>
+<p><strong>उद्गम:</strong> कुमरागाँव (रायसेन जिला)</p>
+<p><strong>समापन:</strong> यमुना नदी (हमीरपुर, उत्तर प्रदेश के पास)</p>
+<p><strong>कुल लंबाई:</strong> लगभग 590 किमी</p>
+<p><strong>पौराणिक नाम:</strong> वेत्रवती | <strong>उपनाम:</strong> बुंदेलखंड की जीवन रेखा, MP की गंगा (प्रदूषण के समान स्तर के आधार पर)</p>
+<h4>मुख्य विशेषताएँ:</h4>
+<p>सांची, ओरछा, और भोजपुर जैसे प्रसिद्ध ऐतिहासिक व सांस्कृतिक नगर बेतवा के तट पर बसे हैं। माताटीला और राजघाट बाँध इसी नदी पर निर्मित हैं।</p>
+<div class="highlight">
+🔥 <strong>परीक्षा में:</strong> बेतवा → रायसेन → वेत्रवती → ओरछा/सांची तट → बुंदेलखंड की जीवन रेखा
+</div>
+</div>
+<!-- OTHER RIVERS GRID -->
+<div class="grid">
+<div class="card">
+<h3>6️⃣ शिप्रा नदी (Shipra)</h3>
+<p><strong>उद्गम:</strong> काकरी बरडी पहाड़ी (इंदौर)</p>
+<p><strong>समापन:</strong> चंबल नदी</p>
+<p><strong>विशेषता:</strong> 'मालवा की गंगा'। इसके तट पर उज्जैन स्थित है जहाँ प्रत्येक 12 वर्ष में सिंहस्थ महाकुंभ मेला लगता है।</p>
+<div class="highlight">शिप्रा → मालवा की गंगा → उज्जैन (कुंभ)</div>
+</div>
+<div class="card">
+<h3>7️⃣ केन नदी (Ken)</h3>
+<p><strong>उद्गम:</strong> अहरगाँव, कटनी (कैमूर पहाड़ी)</p>
+<p><strong>समापन:</strong> यमुना नदी (बाँदा, UP)</p>
+<p><strong>विशेषता:</strong> पन्ना राष्ट्रीय उद्यान के बीच से गुजरती है। शजर पत्थर के लिए प्रसिद्ध। देश की पहली नदी जोड़ो परियोजना (Ken-Betwa Link) से संबंधित।</p>
+<div class="highlight">केन → कटनी → पन्ना NP → केन-बेतवा लिंक</div>
+</div>
+<div class="card">
+<h3>8️⃣ वैनगंगा नदी (Wainganga)</h3>
+<p><strong>उद्गम:</strong> पारसवाड़ा पठार (सिवनी)</p>
+<p><strong>समापन:</strong> वर्धा नदी में मिलकर 'प्रणहिता' बनाती है (गोदावरी बेसिन)</p>
+<p><strong>विशेषता:</strong> दक्षिण की ओर बहने वाली MP की प्रमुख नदी। एशिया का सबसे बड़ा मिट्टी का बाँध (संजय सरोवर/भीमगढ़) इसी पर है।</p>
+<div class="highlight">वैनगंगा → सिवनी → दक्षिण की ओर प्रवाह → भीमगढ़ बाँध</div>
+</div>
+<div class="card">
+<h3>9️⃣ तवा नदी (Tawa)</h3>
+<p><strong>उद्गम:</strong> कालीभीत पहाड़ियाँ, पचमढ़ी (नर्मदापुरम)</p>
+<p><strong>समापन:</strong> नर्मदा नदी (बांद्राभान में)</p>
+<p><strong>विशेषता:</strong> नर्मदा की सबसे बड़ी सहायक नदी। तवा बाँध MP के सबसे लंबे बाँधों में से एक है।</p>
+<div class="highlight">तवा → पचमढ़ी → नर्मदा की सबसे बड़ी सहायक</div>
+</div>
+<div class="card">
+<h3>🔟 माही नदी (Mahi)</h3>
+<p><strong>उद्गम:</strong> मिंडा गाँव, सरदारपुर (धार)</p>
+<p><strong>समापन:</strong> खंभात की खाड़ी</p>
+<p><strong>विशेषता:</strong> भारत की एकमात्र नदी जो <strong>कर्क रेखा (Tropic of Cancer) को दो बार काटती है</strong>।</p>
+<div class="highlight">माही → धार → कर्क रेखा को 2 बार काटती है</div>
+</div>
+<div class="card">
+<h3>1️⃣1️⃣ सिंध नदी (Sindh)</h3>
+<p><strong>उद्गम:</strong> सिरोंज (विदिशा)</p>
+<p><strong>समापन:</strong> यमुना नदी (जालौन, UP)</p>
+<p><strong>विशेषता:</strong> गुना, शिवपुरी, दतिया और भिंड जिलों से बहती है। मड़ीखेड़ा (अटल सागर) बाँध इसी पर है।</p>
+<div class="highlight">सिंध → विदिशा → मड़ीखेड़ा बाँध</div>
+</div>
+<div class="card">
+<h3>1️⃣2️⃣ तमसा/टोंस नदी (Tons)</h3>
+<p><strong>उद्गम:</strong> तमसा कुण्ड, मैहर (सतना)</p>
+<p><strong>समापन:</strong> गंगा नदी (सिरसा, इलाहाबाद के पास)</p>
+<p><strong>विशेषता:</strong> पूर्वा और चचाई जलप्रपात के निकट जल प्रवाह तंत्र बनाती है।</p>
+<div class="highlight">टोंस → सतना → गंगा की सहायक</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: WATERFALLS & DAMS -->
+<section id="waterfalls">
+<h2 class="section-title">2. मध्य प्रदेश के प्रमुख जलप्रपात एवं नदी घाटी परियोजनाएँ</h2>
+<div class="card">
+<h3>🌊 प्रमुख जलप्रपात (Waterfalls)</h3>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>जलप्रपात</th>
+<th>नदी</th>
+<th>स्थान / जिला</th>
+<th>विशेषता</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>कपिलधारा & दुग्धधारा</td><td>नर्मदा</td><td>अमरकंटक (अनूपपुर)</td><td>नर्मदा के प्रथम जलप्रपात</td></tr>
+<tr><td>धुआँधार</td><td>नर्मदा</td><td>भेड़ाघाट (जबलपुर)</td><td>संगमर्मर की चट्टानों के बीच</td></tr>
+<tr><td>सहस्रधारा</td><td>नर्मदा</td><td>महेश्वर (खरगोन)</td><td>ऐतिहासिक व धार्मिक स्थल</td></tr>
+<tr><td>दर्दी & मंधार</td><td>नर्मदा</td><td>हंडिया/बड़वाह (खंडवा)</td><td>नर्मदा प्रवाह में स्थित</td></tr>
+<tr><td>चचाई</td><td>बीहड़</td><td>रीवा</td><td>MP का प्रसिद्ध उच्च जलप्रपात (130m)</td></tr>
+<tr><td>केवटी</td><td>महाना</td><td>रीवा</td><td>सुंदर प्राकृतिक जलप्रपात</td></tr>
+<tr><td>बहुती</td><td>सेलार / ओड्डा</td><td>मऊगंज/रीवा</td><td>MP का सबसे ऊँचा जलप्रपात (~198m)</td></tr>
+<tr><td>पातालपानी</td><td>चोरल</td><td>महू (इंदौर)</td><td>पर्यटन स्थल व ट्रैकिंग</td></tr>
+<tr><td>झाड़ीदाहा</td><td>चंबल</td><td>इंदौर</td><td>चंबल घाटी जलप्रपात</td></tr>
+<tr><td>भालकुंड (राहतगढ़)</td><td>बीना</td><td>सागर</td><td>पर्यटन केंद्र</td></tr>
+<tr><td>डचेस फॉल & बी फॉल</td><td>छोटी नदियाँ/झरने</td><td>पचमढ़ी (नर्मदापुरम)</td><td>हिल स्टेशन पचमढ़ी के झरने</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="card">
+<h3>🏗️ प्रमुख नदी घाटी परियोजनाएँ व बाँध (Dams & Projects)</h3>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>परियोजना / बाँध</th>
+<th>नदी</th>
+<th>स्थान</th>
+<th>विशेष तथ्य</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>इंदिरा सागर परियोजना</td><td>नर्मदा</td><td>पुनासा (खंडवा)</td><td>भारत में सबसे बड़ा जल भण्डारण (Reservoir)</td></tr>
+<tr><td>सरदार सरोवर परियोजना</td><td>नर्मदा</td><td>केवड़िया (गुजरात)</td><td>MP, गुजरात, महाराष्ट्र, राजस्थान की संयुक्त</td></tr>
+<tr><td>गांधी सागर बाँध</td><td>चंबल</td><td>भानपुरा (मंदसौर)</td><td>चंबल पर बना पहला बाँध (1960)</td></tr>
+<tr><td>राणा प्रताप सागर</td><td>चंबल</td><td>चित्तौड़गढ़ (राजस्थान)</td><td>MP व राजस्थान की संयुक्त परियोजना</td></tr>
+<tr><td>जवाहर सागर</td><td>चंबल</td><td>कोटा (राजस्थान)</td><td>जलविद्युत उत्पादन केंद्र</td></tr>
+<tr><td>बाणसागर परियोजना</td><td>सोन</td><td>देवलोंद (शहडोल)</td><td>MP, UP और बिहार की संयुक्त परियोजना (2:1:1)</td></tr>
+<tr><td>माताटीला (रानी लक्ष्मीबाई)</td><td>बेतवा</td><td>ललितपुर (UP सीमा)</td><td>MP और UP की संयुक्त सिंचाई परियोजना</td></tr>
+<tr><td>सम्राट अशोक (हलाली)</td><td>हलाली/बेतवा</td><td>विदिशा/रायसेन</td><td>सिंचाई परियोजना</td></tr>
+<tr><td>पेच/माचागोरा बाँध</td><td>पेंच</td><td>छिंदवाड़ा</td><td>छिंदवाड़ा एवं सिवनी हेतु सिंचाई</td></tr>
+<tr><td>बरगी बाँध (अवंतीबाई)</td><td>नर्मदा</td><td>बिजोरा (जबलपुर)</td><td>नर्मदा की पहली बड़ी परियोजना</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SECTION 3: MOUNTAINS -->
+<section id="mountains">
+<h2 class="section-title">3. मध्य प्रदेश की पर्वत शृंखलाएँ एवं पहाड़ियाँ</h2>
+<p style="margin-bottom:15px;">मध्य प्रदेश मुख्य रूप से दो प्रमुख पर्वत प्रणालियों में विभाजित है: <strong>विंध्याचल पर्वत श्रेणी</strong> और <strong>सतपुड़ा पर्वत श्रेणी</strong>।</p>
+<!-- VINDHYACHAL -->
+<div class="card">
+<h3>1️⃣ विंध्याचल पर्वत श्रेणी (Vindhyachal Range)</h3>
+<p>यह नर्मदा नदी के उत्तर में स्थित विश्व की प्राचीनतम अवशिष्ट पर्वत शृंखलाओं में से एक है। यह उत्तर भारत और दक्षिण भारत के बीच जल-विभाजक का कार्य करती है।</p>
+<h4>मुख्य तीन उप-भाग:</h4>
+<p><strong>1. विंध्याचल श्रेणी (पश्चिमी भाग):</strong> धार, झाबुआ, इंदौर, रतलामी क्षेत्र। मांडू पहाड़ियाँ, काकरी बरडी, जानापाव इसी का हिस्सा हैं।</p>
+<p><strong>2. भांडेर श्रेणी (मध्य भाग):</strong> छतरपुर, दमोह, पन्ना क्षेत्र। <strong>सद्भावना शिखर (Goodwill Peak / कलुमार चोटी - 752m)</strong> दमोह में स्थित इस श्रेणी की सबसे ऊँची चोटी है।</p>
+<p><strong>3. कैमूर श्रेणी (पूर्वी भाग):</strong> सतना, रीवा, सीधी क्षेत्र। केन और टोंस नदियों का उद्गम यहीं से होता है।</p>
+</div>
+<!-- SATPURA -->
+<div class="card">
+<h3>2️⃣ सतपुड़ा-मैकाल पर्वत श्रेणी (Satpura-Maikal Range)</h3>
+<p>यह नर्मदा नदी के दक्षिण में पश्चिम से पूर्व की ओर फैली ब्लॉक पर्वत (Block Mountain) शृंखला है।</p>
+<h4>मुख्य तीन उप-भाग:</h4>
+<p><strong>1. राजपीपला श्रेणी (पश्चिमी भाग):</strong> गुजरात सीमा से बुरहानपुर दर्रे तक। बड़वानी पहाड़ियाँ, असीरगढ़ पहाड़ी यहाँ स्थित हैं।</p>
+<p><strong>2. मध्य सतपुड़ा / महादेव श्रेणी (मध्य भाग):</strong> बैतूल, छिंदवाड़ा, नर्मदापुरम। प्रसिद्ध <strong>धूपगढ़ चोटी (1,352 मीटर)</strong> महादेव श्रेणी में पचमढ़ी में स्थित है, जो पूरे MP की सबसे ऊँची चोटी है।</p>
+<p><strong>3. मैकाल श्रेणी (पूर्वी भाग):</strong> अनूपपुर, डिंडोरी, मंडला क्षेत्र। अर्धचंद्राकार आकृति में फैली है। अमरकंटक पठार इसी का हिस्सा है जहाँ से नर्मदा, सोन और जोहिला नदियाँ निकलती हैं।</p>
+</div>
+<div class="grid">
+<div class="fact">
+<h3>धूपगढ़ चोटी (1,352 m)</h3>
+<p>स्थान: पचमढ़ी (महादेव श्रेणी)
+<strong>पूरे मध्य प्रदेश का उच्चतम बिंदु।</strong></p>
+</div>
+<div class="fact">
+<h3>सद्भावना शिखर (752 m)</h3>
+<p>स्थान: सिग्रामपुर, दमोह (भांडेर श्रेणी)
+<strong>विंध्याचल श्रेणी का सर्वोच्च बिंदु।</strong></p>
+</div>
+<div class="fact">
+<h3>सिद्धबाबा चोटी (1,172 m)</h3>
+<p>स्थान: बुंदेलखंड पठार (दतिया/निवाड़ी)
+<strong>बुंदेलखंड क्षेत्र की सबसे ऊँची चोटी।</strong></p>
+</div>
+<div class="fact">
+<h3>सिगार चोटी (881 m)</h3>
+<p>स्थान: मालवा का पठार (इंदौर)
+<strong>मालवा पठार की सबसे ऊँची चोटी।</strong></p>
+</div>
+</div>
+</section>
+<!-- SECTION 4: SOILS -->
+<section id="soils">
+<h2 class="section-title">4. मध्य प्रदेश की मिट्टियाँ (Soils of MP)</h2>
+<p style="margin-bottom:15px;">भारतीय कृषि अनुसंधान परिषद (ICAR) एवं भूगोलवेत्ताओं के अनुसार मध्य प्रदेश में मुख्यतः <strong>5 प्रकार की मिट्टियाँ</strong> पाई जाती हैं:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>मृदा का प्रकार</th>
+<th>क्षेत्र / प्रतिशत</th>
+<th>मुख्य जिले</th>
+<th>उपयुक्त फसलें</th>
+<th>मुख्य विशेषताएँ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. काली मिट्टी (Black Soil)</strong></td>
+<td>सर्वाधिक क्षेत्र (लगभग 47%)</td>
+<td>मालवा पठार, निमाड़, नर्मदा घाटी (इंदौर, उज्जैन, धार, खरगोन)</td>
+<td>सोयाबीन, कपास, गेहूं, मूंगफली</td>
+<td>बेसाल्ट चट्टानों के क्षरण से निर्मित; आयरन व चूना प्रचुर; इसे 'रेगुर' या 'कपासी मृदा' कहते हैं। जल धारण क्षमता सर्वाधिक।</td>
+</tr>
+<tr>
+<td><strong>2. लाल-पीली मिट्टी (Red-Yellow Soil)</strong></td>
+<td>दूसरा बड़ा क्षेत्र (लगभग 37%)</td>
+<td>बघेलखंड (रीवा, सतना, सीधी, शहडोल, बालाघाट)</td>
+<td>धान (चावल), मोटे अनाज</td>
+<td>फेरिक ऑक्साइड के कारण लाल और जल-योजन (Hydration) से पीली दिखती है। अम्लीय से क्षारीय प्रकृति।</td>
+</tr>
+<tr>
+<td><strong>3. जलोढ़ मिट्टी (Alluvial Soil)</strong></td>
+<td>लगभग 3% (उत्तर MP)</td>
+<td>चंबल उप-आद्र प्रदेश (भिंड, मुरैना, ग्वालियर, श्योपुर)</td>
+<td>सरसों, गेहूं, गन्ना</td>
+<td>नदियों द्वारा बहाकर लाई गई मृदा; अत्यधिक उपजाऊ; पोटाश प्रचुर; उदासीन pH मान। अवनालिका अपरदन से प्रभावित।</td>
+</tr>
+<tr>
+<td><strong>4. मिश्रित मिट्टी (Mixed Soil)</strong></td>
+<td>लगभग 10%</td>
+<td>बुंदेलखंड क्षेत्र (टीकमगढ़, छतरपुर, पन्ना, दतिया)</td>
+<td>ज्वार, बाजरा, दालें (मोटे अनाज)</td>
+<td>लाल, पीली और काली मिट्टी का सम्मिश्रण; नाइट्रोजन और फास्फोरस की कमी।</td>
+</tr>
+<tr>
+<td><strong>5. लैटेराइट मिट्टी (Laterite Soil)</strong></td>
+<td>लगभग 3%</td>
+<td>छिंदवाड़ा, सिवनी, मंदसौर, नीमच के कुछ हिस्से</td>
+<td>चाय, कॉफी, मक्का, मोटे अनाज</td>
+<td>ईंट जैसी सख्त मृदा; निक्षालन (Leaching) प्रक्रिया से निर्मित; अम्लीय प्रकृति; भवन निर्माण ईंटों हेतु उपयोगी।</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="card">
+<h3>🌱 काली मिट्टी के 3 उप-प्रकार:</h3>
+<p><strong>1. साधारण गहरी काली:</strong> मालवा पठार क्षेत्र में (सर्वाधिक भाग)।</p>
+<p><strong>2. गहरी काली:</strong> नर्मदा-सोन घाटी तथा होशंगाबाद/हरदा क्षेत्र में।</p>
+<p><strong>3. छिछली काली:</strong> सतपुड़ा श्रेणी तथा छिंदवाड़ा, बैतूल, सिवनी क्षेत्र में।</p>
+</div>
+</section>
+<!-- SECTION 5: AGRICULTURE -->
+<section id="agriculture">
+<h2 class="section-title">5. फसलें, कृषि क्षेत्र एवं प्रमुख कृषि तथ्य</h2>
+<div class="good">
+<h3>🏆 सोया प्रदेश एवं कृषि कर्मण पुरस्कार</h3>
+<p>
+मध्य प्रदेश भारत का <strong>सबसे बड़ा सोयाबीन उत्पादक राज्य</strong> है, इसलिए इसे <strong>"सोया प्रदेश" (Soybean State)</strong> कहा जाता है। MP को लगातार कई बार खाद्यान्न उत्पादन में उत्कृष्ट प्रदर्शन के लिए राष्ट्रीय <strong>"कृषि कर्मण पुरस्कार" (Krishi Karman Award)</strong> से सम्मानित किया जा चुका है।
+</p>
+</div>
+<div class="card">
+<h3>🌾 रबी, खरीफ और जायद फसलें</h3>
+<p><strong>1. खरीफ फसलें (मानसून फसलें - जून/जुलाई में बुआई, सितंबर/अक्टूबर में कटाई):</strong> सोयाबीन, धान (चावल), मक्का, तुअर (अरहर), कपास, मूंगफली, तिल।</p>
+<p><strong>2. रबी फसलें (शीतकालीन फसलें - अक्टूबर/नवंबर में बुआई, मार्च/अप्रैल में कटाई):</strong> गेहूं, चना, सरसों, अलसी, मटर, जौ।</p>
+<p><strong>3. जायद फसलें (ग्रीष्मकालीन फसलें - मार्च से जून):</strong> तरबूज, खरबूजा, ककड़ी, सब्जियाँ।</p>
+</div>
+<div class="card">
+<h3>🗺️ मध्य प्रदेश के 5 मुख्य कृषि जलवायु / फसल क्षेत्र</h3>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>फसल क्षेत्र</th>
+<th>अंतर्गत जिले / क्षेत्र</th>
+<th>मुख्य फसल</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1. चावल (धान) क्षेत्र</td><td>पूर्वी MP (बघेलखंड - बालाघाट, रीवा, सीधी)</td><td>धान (चावल)</td></tr>
+<tr><td>2. गेहूं और चावल क्षेत्र</td><td>मध्य-पूर्वी क्षेत्र (जबलपुर, कटनी, उमरिया)</td><td>गेहूं एवं धान</td></tr>
+<tr><td>3. गेहूं क्षेत्र</td><td>मध्य MP (मालवा, नर्मदापुरम घाटी, भोपाल)</td><td>गेहूं (शरबती गेहूं प्रसिद्ध)</td></tr>
+<tr><td>4. कपास और ज्वार क्षेत्र</td><td>पश्चिमी व दक्षिणी MP (निमाड़ - खरगोन, खंडवा, बुरहानपुर)</td><td>कपास व ज्वार (सफेद सोना क्षेत्र)</td></tr>
+<tr><td>5. फसल/सरसों क्षेत्र</td><td>उत्तरी MP (चंबल संभाग - भिंड, मुरैना, ग्वालियर)</td><td>सरसों एवं तिलहन</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="grid">
+<div class="fact">
+<h3>सरसों की डलिया</h3>
+<p>चंबल संभाग (भिंड-मुरैना)
+<strong>सरसों के सर्वाधिक उत्पादन हेतु प्रसिद्ध।</strong></p>
+</div>
+<div class="fact">
+<h3>सफेद सोना (White Gold)</h3>
+<p>पश्चिम निमाड़ (खरगोन-खंडवा)
+<strong>उत्कृष्ट कपास उत्पादन के कारण।</strong></p>
+</div>
+<div class="fact">
+<h3>धान का कटोरा (MP)</h3>
+<p>बालाघाट जिला
+<strong>चिन्नौर चावल को GI Tag प्राप्त है।</strong></p>
+</div>
+<div class="fact">
+<h3>अफीम उत्पादक जिले</h3>
+<p>मंदसौर एवं नीमच
+<strong>लीगल अफीम खेती हेतु प्रसिद्ध।</strong></p>
+</div>
+<div class="fact">
+<h3>गांजा उत्पादक जिला</h3>
+<p>खंडवा (पूर्वी निमाड़)
+<strong>गांजा उत्पादन का प्रमुख केंद्र।</strong></p>
+</div>
+<div class="fact">
+<h3>आँवला जिला</h3>
+<p>पन्ना जिला
+<strong>'आँवला जिला' के रूप में घोषित।</strong></p>
+</div>
+</div>
+</section>
+<!-- RIVER ONE LINER REVISION TABLE -->
+<section id="rivers-table">
+<h2 class="section-title">⭐ MP Rivers & Top Facts — Quick One-Line Revision</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>विषय / नदी</th>
+<th>सबसे जरूरी पहचान / One-Liner</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>नर्मदा नदी</td><td>MP की जीवन रेखा • 1,077 km (MP) • अमरकंटक से उद्गम • पूर्व से पश्चिम प्रवाह</td></tr>
+<tr><td>चंबल नदी</td><td>जानापाव (महू) • यमुना की सहायक • बीहड़ एवं अवनालिका अपरदन</td></tr>
+<tr><td>सोन नदी</td><td>स्वर्ण नदी • अमरकंटक • पटना के पास गंगा में विलय • बाणसागर परियोजना</td></tr>
+<tr><td>ताप्ती नदी</td><td>मुल्ताई (बैतूल) • सूर्यपुत्री • पूर्व से पश्चिम प्रवाह • एस्टुअरी निर्माण</td></tr>
+<tr><td>बेतवा नदी</td><td>वेत्रवती • बुंदेलखंड की जीवन रेखा • MP की गंगा • ओरछा तट पर</td></tr>
+<tr><td>शिप्रा नदी</td><td>मालवा की गंगा • काकरी बरडी (इंदौर) • उज्जैन में सिंहस्थ कुंभ</td></tr>
+<tr><td>माही नदी</td><td>सरदारपुर (धार) • कर्क रेखा को 2 बार काटने वाली नदी</td></tr>
+<tr><td>वैनगंगा नदी</td><td>पारसवाड़ा (सिवनी) • दक्षिणमुखी प्रवाह • भीमगढ़ मिट्टी का बाँध</td></tr>
+<tr><td>धूपगढ़ चोटी</td><td>1,352 m • पचमढ़ी • MP का सर्वोच्च बिंदु (सतपुड़ा श्रेणी)</td></tr>
+<tr><td>सद्भावना शिखर</td><td>752 m • दमोह • विंध्याचल (भांडेर) श्रेणी की सर्वोच्च चोटी</td></tr>
+<tr><td>काली मिट्टी</td><td>MP में सर्वाधिक (47%) • मालवा पठार • रेगुर/कपासी मृदा</td></tr>
+<tr><td>बहुती जलप्रपात</td><td>~198 m • मऊगंज/रीवा • MP का सबसे ऊँचा जलप्रपात</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- FINAL MEMORY MAP -->
+<section id="memory-map">
+<h2 class="section-title">🔥 इस पूरे Topic की Final Memory Map</h2>
+<div class="card">
+<h3>Rivers Origin Quick Recall</h3>
+<div class="memory">
+<span>अमरकंटक → नर्मदा, सोन, जोहिला</span>
+<span>जानापाव (महू) → चंबल</span>
+<span>मुल्ताई (बैतूल) → ताप्ती</span>
+<span>कुमरागाँव (रायसेन) → बेतवा</span>
+<span>काकरी बरडी → शिप्रा</span>
+<span>मिंडा (धार) → माही</span>
+<span>पारसवाड़ा (सिवनी) → वैनगंगा</span>
+</div>
+</div>
+<div class="card">
+<h3>Peaks & Ranges Quick Recall</h3>
+<div class="memory">
+<span>धूपगढ़ (1,352m) → पचमढ़ी (सतपुड़ा)</span>
+<span>सद्भावना शिखर (752m) → दमोह (विंध्याचल)</span>
+<span>सिगार (881m) → मालवा पठार</span>
+<span>सिद्धबाबा (1,172m) → बुंदेलखंड</span>
+</div>
+</div>
+<div class="card">
+<h3>Soils & Agriculture Quick Recall</h3>
+<div class="memory">
+<span>काली मिट्टी (47%) → मालवा / सोयाबीन + कपास</span>
+<span>लाल-पीली (37%) → बघेलखंड / धान</span>
+<span>जलोढ़ (3%) → चंबल / सरसों + गेहूं</span>
+<span>सोया प्रदेश → MP (सोयाबीन प्रथम)</span>
+<span>चिन्नौर चावल GI Tag → बालाघाट</span>
+<span>सफेद सोना → निमाड़ (कपास)</span>
+</div>
+</div>
+</section>
+<!-- FAQ / ACCORDION -->
+<section id="faq">
+<h2 class="section-title">❓ परीक्षा उपयोगी बार-बार पूछे जाने वाले प्रश्न (FAQ)</h2>
+<details>
+<summary>1. मध्य प्रदेश की कौन सी नदियाँ पूर्व से पश्चिम दिशा की ओर बहती हैं?</summary>
+<div>
+नर्मदा और ताप्ती नदियाँ पूर्व से पश्चिम दिशा में भ्रंश घाटी (Rift Valley) से होकर बहती हैं और अरब सागर (खंभात की खाड़ी) में गिरती हैं।
+</div>
+</details>
+<details>
+<summary>2. मध्य प्रदेश की सबसे ऊँची पर्वत चोटी कौन सी है और यह कहाँ स्थित है?</summary>
+<div>
+धूपगढ़ चोटी (ऊँचाई: 1,352 मीटर)। यह पचमढ़ी (नर्मदापुरम जिला) में सतपुड़ा पर्वत श्रेणी की महादेव पहाड़ी पर स्थित है।
+</div>
+</details>
+<details>
+<summary>3. भारत की कौन सी नदी कर्क रेखा (Tropic of Cancer) को दो बार काटती है?</summary>
+<div>
+माही नदी, जिसका उद्गम मध्य प्रदेश के धार जिले (सरदारपुर) से होता है।
+</div>
+</details>
+<details>
+<summary>4. मध्य प्रदेश में किस प्रकार की मिट्टी सर्वाधिक क्षेत्रफल पर पाई जाती है?</summary>
+<div>
+काली मिट्टी (Black Soil), जो राज्य के कुल क्षेत्रफल के लगभग 47% भाग (विशेषकर मालवा के पठार और नर्मदा घाटी) पर पाई जाती है।
+</div>
+</details>
+<details>
+<summary>5. 'मालवा की गंगा' और 'बुंदेलखंड की जीवन रेखा' किन नदियों को कहा जाता है?</summary>
+<div>
+'मालवा की गंगा' शिप्रा नदी को और 'बुंदेलखंड की जीवन रेखा' बेतवा नदी को कहा जाता है।
+</div>
+</details>
+<details>
+<summary>6. मध्य प्रदेश का सबसे ऊँचा जलप्रपात कौन सा है?</summary>
+<div>
+बहुती जलप्रपात (लगभग 198 मीटर ऊँचा), जो मऊगंज/रीवा क्षेत्र में स्थित है।
+</div>
+</details>
+<details>
+<summary>7. मध्य प्रदेश के किस चावल को भौगोलिक संकेत (GI Tag) मिला हुआ है?</summary>
+<div>
+बालाघाट जिले के 'चिन्नौर चावल' को GI Tag प्राप्त है।
+</div>
+</details>
+</section>
+<!-- MINI QUIZ -->
+<section id="quiz">
+<h2 class="section-title">🎯 Quick Quiz Challenge</h2>
+<div class="card">
+<div class="quiz-question">
+<strong>Q1. मध्य प्रदेश में नर्मदा नदी की कुल लंबाई कितनी है?</strong>
+<label class="option"><input type="radio" name="q1"> 1,312 किमी</label>
+<label class="option"><input type="radio" name="q1"> 1,077 किमी</label>
+<label class="option"><input type="radio" name="q1"> 965 किमी</label>
+<button onclick="showAnswer('a1')">उत्तर देखें</button>
+<div id="a1" class="answer">✅ सही उत्तर: 1,077 किमी (कुल लंबाई 1,312 किमी है, जिसमें से 1,077 किमी MP में है)।</div>
+</div>
+<div class="quiz-question">
+<strong>Q2. अवनालिका अपरदन (Gully Erosion) और बीहड़ों के निर्माण के लिए कौन सी नदी कुख्यात है?</strong>
+<label class="option"><input type="radio" name="q2"> बेतवा नदी</label>
+<label class="option"><input type="radio" name="q2"> चंबल नदी</label>
+<label class="option"><input type="radio" name="q2"> ताप्ती नदी</label>
+<button onclick="showAnswer('a2')">उत्तर देखें</button>
+<div id="a2" class="answer">✅ सही उत्तर: चंबल नदी (भिंड-मुरैना क्षेत्र में)।</div>
+</div>
+<div class="quiz-question">
+<strong>Q3. विंध्याचल पर्वत श्रेणी की सबसे ऊँची चोटी सद्भावना शिखर (Goodwill Peak) किस जिले में है?</strong>
+<label class="option"><input type="radio" name="q3"> नर्मदापुरम</label>
+<label class="option"><input type="radio" name="q3"> दमोह</label>
+<label class="option"><input type="radio" name="q3"> अनूपपुर</label>
+<button onclick="showAnswer('a3')">उत्तर देखें</button>
+<div id="a3" class="answer">✅ सही उत्तर: दमोह (सिग्रामपुर के पास, भांडेर श्रेणी)।</div>
+</div>
+<div class="quiz-question">
+<strong>Q4. मध्य प्रदेश में कपास उत्पादन के लिए प्रसिद्ध 'सफेद सोना क्षेत्र' कौन सा है?</strong>
+<label class="option"><input type="radio" name="q4"> चंबल संभाग</label>
+<label class="option"><input type="radio" name="q4"> निमाड़ क्षेत्र (खरगोन-खंडवा)</label>
+<label class="option"><input type="radio" name="q4"> बघेलखंड क्षेत्र</label>
+<button onclick="showAnswer('a4')">उत्तर देखें</button>
+<div id="a4" class="answer">✅ सही उत्तर: निमाड़ क्षेत्र (खरगोन-खंडवा)।</div>
+</div>
+</div>
+</section>
+<!-- SOURCES -->
+<section>
+<h2 class="section-title">📚 जानकारी का आधार</h2>
+<div class="card">
+<p class="source">
+इस Topic में तथ्य एवं आँकड़े मध्य प्रदेश जल संसाधन विभाग (MP WRD), कृषि विभाग (Department of Farmers Welfare & Agriculture Development, MP), MP Geological Survey, EPCO तथा Mogli Bal Utsav Study Guide से संकलित किए गए हैं।
+</p>
+</div>
+</section>
+</main>
+<footer>
+<div class="channel">📚 BACKSHEETARS</div>
+<p>Mogli Bal Utsav 2026–27 • Topic 4 Complete Study File</p>
+<p style="color:#849b88;margin-top:8px">मध्य प्रदेश की नदियाँ, पर्वत, मिट्टी, फसलें एवं कृषि क्षेत्र</p>
+</footer>
+<script>
+function showAnswer(id){
+document.getElementById(id).classList.toggle("show");
+}
+</script>
+  <!-- Full Screen Button -->
+<button id="fullscreenBtn" onclick="toggleFullscreen()" title="Full Screen">
+    ⛶
+</button>
+
+<style>
+#fullscreenBtn{
+    position:fixed;
+    top:12px;
+    right:12px;
+    z-index:99999;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:rgba(0,0,0,0.75);
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+
+#fullscreenBtn:active{
+    transform:scale(0.92);
+}
+</style>
+
+<script>
+function toggleFullscreen(){
+    if(!document.fullscreenElement){
+        document.documentElement.requestFullscreen().catch(err=>{
+            console.log("Fullscreen error:", err);
+        });
+    }else{
+        document.exitFullscreen();
+    }
+}
+
+document.addEventListener("fullscreenchange",()=>{
+    const btn=document.getElementById("fullscreenBtn");
+
+    if(document.fullscreenElement){
+        btn.innerHTML="⛶";
+        btn.title="Exit Full Screen";
+    }else{
+        btn.innerHTML="⛶";
+        btn.title="Full Screen";
+    }
+});
+</script>
+</body>
+</html>
