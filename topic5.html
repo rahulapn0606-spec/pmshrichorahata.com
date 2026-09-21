@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOPIC 5 — जैव-विविधता (Biodiversity)</title>
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+body{
+font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+background:
+radial-gradient(circle at top,#173f25 0,#07150d 45%,#020806 100%);
+color:#f5f5f5;
+line-height:1.75;
+}
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.08;
+background-image:
+linear-gradient(45deg,#fff 25%,transparent 25%),
+linear-gradient(-45deg,#fff 25%,transparent 25%);
+background-size:60px 60px;
+z-index:-1;
+}
+.container{
+width:min(1100px,94%);
+margin:auto;
+}
+/* HEADER */
+.hero{
+min-height:400px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:55px 15px;
+position:relative;
+overflow:hidden;
+background:
+linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+radial-gradient(circle at 50% 20%,#397b35,#0a2915 55%,#020806);
+border-bottom:2px solid #e1b84b;
+}
+.hero:before,
+.hero:after{
+position:absolute;
+font-size:90px;
+opacity:.13;
+}
+.hero:before{
+content:"🌊";
+left:2%;
+bottom:0;
+}
+.hero:after{
+content:"🌾";
+right:3%;
+bottom:10px;
+}
+.badge{
+display:inline-block;
+padding:7px 17px;
+border:1px solid #e4bd4e;
+border-radius:30px;
+color:#ffd75c;
+background:rgba(0,0,0,.35);
+font-weight:bold;
+letter-spacing:1px;
+}
+.hero h1{
+font-size:clamp(28px,5vw,55px);
+color:#ffd85b;
+margin:18px 0 8px;
+text-shadow:0 4px 15px #000;
+}
+.hero h2{
+font-size:clamp(16px,2.5vw,24px);
+color:#d9f4dc;
+}
+.hero p{
+max-width:850px;
+margin:20px auto 0;
+color:#cbdccc;
+}
+/* NAV */
+.nav{
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(3,12,7,.94);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #345b3e;
+}
+.nav .container{
+display:flex;
+gap:7px;
+overflow-x:auto;
+padding:9px 0;
+}
+.nav a{
+white-space:nowrap;
+color:#fff;
+text-decoration:none;
+background:#16341f;
+padding:8px 13px;
+border-radius:20px;
+font-size:14px;
+}
+.nav a:hover{
+background:#d4a93c;
+color:#111;
+}
+/* GENERAL */
+section{
+margin:32px 0;
+}
+.section-title{
+color:#ffd45a;
+font-size:29px;
+margin-bottom:18px;
+border-left:5px solid #d7ae3e;
+padding-left:12px;
+}
+.card{
+background:linear-gradient(145deg,rgba(22,54,32,.94),rgba(8,24,14,.96));
+border:1px solid #315d3b;
+border-radius:18px;
+padding:22px;
+margin:15px 0;
+box-shadow:0 12px 35px rgba(0,0,0,.3);
+}
+.card h3{
+color:#ffe17b;
+margin-bottom:12px;
+font-size:1.3rem;
+}
+.card h4{
+color:#ffd85b;
+margin:10px 0;
+font-size:1.1rem;
+}
+.highlight{
+border-left:5px solid #e4bb45;
+background:rgba(228,187,69,.09);
+padding:16px;
+border-radius:10px;
+margin:15px 0;
+}
+.warning{
+border-left:5px solid #e06b5f;
+background:rgba(180,50,40,.13);
+padding:17px;
+border-radius:10px;
+margin:15px 0;
+}
+.good{
+border-left:5px solid #5bd47a;
+background:rgba(60,180,90,.10);
+padding:17px;
+border-radius:10px;
+margin:15px 0;
+}
+strong{
+color:#ffe083;
+}
+/* FACT GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+.fact{
+background:#0d2516;
+border:1px solid #315b39;
+border-radius:16px;
+padding:20px;
+transition:.25s;
+}
+.fact:hover{
+transform:translateY(-3px);
+border-color:#e3ba45;
+}
+.fact h3{
+color:#ffd45a;
+margin-bottom:8px;
+}
+/* TABLES */
+.table-container{
+overflow-x:auto;
+margin:20px 0;
+}
+table{
+width:100%;
+border-collapse:collapse;
+background:#0b2112;
+border:1px solid #315b39;
+border-radius:12px;
+overflow:hidden;
+}
+th, td{
+padding:12px 15px;
+text-align:left;
+border-bottom:1px solid #23482d;
+font-size:15px;
+}
+th{
+background:#143820;
+color:#ffd85b;
+font-weight:bold;
+}
+tr:nth-child(even){
+background:#08180d;
+}
+tr:hover{
+background:#173d23;
+}
+/* ACCORDION */
+details{
+background:#0b2112;
+border:1px solid #315b39;
+border-radius:14px;
+margin:12px 0;
+overflow:hidden;
+}
+summary{
+cursor:pointer;
+padding:16px;
+font-weight:bold;
+color:#ffe17b;
+background:#102b18;
+}
+details div{
+padding:18px;
+}
+/* MEMORY */
+.memory{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:flex-start;
+gap:8px;
+}
+.memory span{
+padding:8px 12px;
+border-radius:8px;
+background:#173b22;
+border:1px solid #4d704f;
+color:#ffe27b;
+font-size:14px;
+font-weight:bold;
+}
+.arrow{
+color:#d9ae3f;
+font-size:18px;
+}
+/* QUIZ */
+.quiz-question{
+background:#10291a;
+border:1px solid #345f3e;
+padding:20px;
+border-radius:15px;
+margin:15px 0;
+}
+.option{
+display:block;
+padding:11px;
+margin:7px 0;
+background:#17351f;
+border-radius:9px;
+cursor:pointer;
+}
+.option:hover{
+background:#244c2c;
+}
+.answer{
+display:none;
+margin-top:12px;
+color:#76e88d;
+font-weight:bold;
+}
+.show{
+display:block;
+}
+button{
+border:0;
+padding:10px 18px;
+border-radius:25px;
+cursor:pointer;
+background:#e1b643;
+color:#101010;
+font-weight:bold;
+}
+/* SOURCES */
+.source{
+font-size:14px;
+color:#b8cbb9;
+}
+/* FOOTER */
+footer{
+margin-top:50px;
+padding:30px 15px;
+text-align:center;
+border-top:1px solid #315b39;
+background:#030b06;
+}
+.channel{
+color:#ffd45a;
+font-weight:bold;
+font-size:21px;
+}
+@media(max-width:600px){
+.hero{ min-height:360px; }
+.card{ padding:16px; }
+.section-title{ font-size:22px; }
+}
+
+</style>
+</head>
+
+<header class="hero">
+<div class="container">
+<span class="badge">🌿 EXAM ORIENTED STUDY MATERIAL</span>
+<h1>TOPIC 5 — जैव-विविधता (Biodiversity)</h1>
+<h2>विस्तृत अध्ययन • Biodiversity, Species, Conservation, IUCN, MP Wildlife एवं Protected Areas</h2>
+<p>जैव-विविधता के तीन स्तर, महत्व, खतरे, Hotspots, Endemic/Rare/Endangered/Extinct species, IUCN Red List, In-situ/Ex-situ conservation और मध्य प्रदेश की biodiversity का complete study material।</p>
+</div>
+</header>
+
+<nav class="nav">
+<div class="container">
+<a href="#definition">1. परिभाषा</a>
+<a href="#levels">2. तीन स्तर</a>
+<a href="#importance">3. महत्व</a>
+<a href="#threats">4. खतरे</a>
+<a href="#hotspot">5. Hotspots</a>
+<a href="#species">6. Species Status</a>
+<a href="#iucn">7. IUCN</a>
+<a href="#conservation">8. Conservation</a>
+<a href="#mp">9. MP Biodiversity</a>
+<a href="#protected">10. Protected Areas</a>
+<a href="#services">11. Ecosystem Services</a>
+<a href="#memory-map">Memory Map</a>
+<a href="#faq">FAQ</a>
+<a href="#quiz">Quiz</a>
+</div>
+</nav>
+
+<main class="container">
+
+<section id="definition">
+<h2 class="section-title">1. जैव-विविधता क्या है?</h2>
+<div class="good">
+<h3>🌿 Biodiversity — जैव-विविधता</h3>
+<p><strong>जैव-विविधता (Biodiversity)</strong> का अर्थ पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों, उनकी प्रजातियों, उनके आनुवंशिक अंतर तथा विभिन्न पारिस्थितिक तंत्रों की विविधता से है।</p>
+<p><strong>सरल भाषा में:</strong> जीवों में पाई जाने वाली विविधता = जैव-विविधता</p>
+</div>
+<div class="card">
+<h3>जैव-विविधता में क्या-क्या शामिल है?</h3>
+<p>इसमें केवल जानवर शामिल नहीं हैं, बल्कि:</p>
+<div class="memory">
+<span>🌱 वनस्पतियाँ</span><span>🐾 पशु</span><span>🦜 पक्षी</span><span>🐟 मछलियाँ</span>
+<span>🦎 सरीसृप</span><span>🐸 उभयचर</span><span>🦠 सूक्ष्मजीव</span><span>🌳 Ecosystems</span>
+</div>
+<p style="margin-top:15px;">अर्थात जीवों की विविधता के साथ-साथ उनसे जुड़े पारिस्थितिक तंत्र भी biodiversity की व्यापक अवधारणा का हिस्सा हैं।</p>
+</div>
+</section>
+
+<section id="levels">
+<h2 class="section-title">2. जैव-विविधता के तीन प्रमुख स्तर</h2>
+<div class="highlight">🧠 <strong>Topic 5 का सबसे महत्वपूर्ण concept:</strong> Genetic → Species → Ecosystem</div>
+<div class="grid">
+<div class="card">
+<h3>① आनुवंशिक विविधता — Genetic Diversity</h3>
+<p>एक ही species के अलग-अलग individuals में पाए जाने वाले <strong>genes के अंतर</strong> को आनुवंशिक विविधता कहते हैं।</p>
+<p><strong>उदाहरण:</strong> एक ही फसल की अलग-अलग varieties में रंग, आकार, स्वाद या रोग-प्रतिरोधक क्षमता अलग हो सकती है।</p>
+<div class="highlight">याद रखो: <strong>एक ही प्रजाति के अंदर का variation = Genetic Diversity</strong></div>
+</div>
+<div class="card">
+<h3>② प्रजातीय विविधता — Species Diversity</h3>
+<p>किसी क्षेत्र में पाई जाने वाली <strong>अलग-अलग species की विविधता</strong> को प्रजातीय विविधता कहते हैं।</p>
+<p><strong>उदाहरण:</strong> किसी जंगल में बाघ, तेंदुआ, चीतल, सांभर, भालू, पक्षी और पेड़-पौधों आदि अनेक species का होना।</p>
+<div class="highlight">याद रखो: <strong>अलग-अलग species की variety = Species Diversity</strong></div>
+</div>
+<div class="card">
+<h3>③ पारिस्थितिक तंत्र विविधता — Ecosystem Diversity</h3>
+<p>किसी क्षेत्र या पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के <strong>ecosystems की विविधता</strong> को ecosystem diversity कहते हैं।</p>
+<p><strong>उदाहरण:</strong> जंगल, घासभूमि, नदी, झील, wetlands, मरुस्थल और पर्वतीय क्षेत्र।</p>
+<div class="highlight">याद रखो: <strong>अलग-अलग ecosystems की variety = Ecosystem Diversity</strong></div>
+</div>
+</div>
+<div class="card">
+<h3>🧠 तीनों को एक लाइन में याद करो</h3>
+<div class="memory">
+<span>Genetic → एक species के अंदर</span><span>Species → अलग-अलग species</span><span>Ecosystem → अलग-अलग ecosystems</span>
+</div>
+<p style="margin-top:15px;"><strong>यही तीनों Topic 5 की foundation हैं।</strong></p>
+</div>
+</section>
+
+<section id="importance">
+<h2 class="section-title">3. जैव-विविधता का महत्व</h2>
+<p>जैव-विविधता केवल wildlife के लिए नहीं बल्कि मानव जीवन के लिए भी बहुत महत्वपूर्ण है।</p>
+<div class="grid">
+<div class="fact"><h3>① पारिस्थितिक महत्व</h3><p>जैव-विविधता ecosystem को संतुलित रखने में मदद करती है। हर organism की ecosystem में कोई न कोई भूमिका होती है।</p><div class="memory"><span>पौधे</span><span>→</span><span>शाकाहारी</span><span>→</span><span>मांसाहारी</span><span>→</span><span>अपघटक</span></div><p style="margin-top:10px;">इस प्रकार food chain और food web चलती रहती हैं।</p></div>
+<div class="fact"><h3>② खाद्य सुरक्षा</h3><p>मनुष्य को भोजन प्रदान करने वाली अनेक फसलें, फल, सब्जियाँ और पशु जैव-विविधता से जुड़े हैं। अलग-अलग varieties भविष्य में बदलते वातावरण और रोगों के प्रति उपयोगी हो सकती हैं।</p></div>
+<div class="fact"><h3>③ औषधीय महत्व</h3><p>अनेक पौधों और अन्य जीवों से औषधीय पदार्थ प्राप्त होते हैं। biodiversity का संरक्षण भविष्य की medicines और research के लिए महत्वपूर्ण है।</p></div>
+<div class="fact"><h3>④ आर्थिक महत्व</h3><p>वन उत्पाद, औषधीय पौधे, कृषि, मत्स्य पालन, पर्यटन और लघु वनोपज जैसी आर्थिक गतिविधियों में biodiversity से जुड़े संसाधनों का योगदान है।</p></div>
+<div class="fact"><h3>⑤ वैज्ञानिक एवं शैक्षणिक महत्व</h3><p>विभिन्न species का अध्ययन biology, ecology, medicine, agriculture और biotechnology जैसे क्षेत्रों के लिए महत्वपूर्ण है।</p></div>
+<div class="fact"><h3>⑥ सांस्कृतिक महत्व</h3><p>कई पशु-पक्षी, पेड़-पौधे और प्राकृतिक क्षेत्र स्थानीय संस्कृति और परंपराओं से जुड़े होते हैं।</p></div>
+</div>
+</section>
+
+<section id="threats">
+<h2 class="section-title">4. जैव-विविधता के प्रमुख खतरे</h2>
+<div class="grid">
+<div class="fact"><h3>1. Habitat Loss</h3><p>प्राकृतिक आवास का नष्ट होना। उदाहरण: जंगल काटना, बड़े construction projects, mining और agricultural expansion।</p></div>
+<div class="fact"><h3>2. Habitat Fragmentation</h3><p>एक बड़े continuous habitat का छोटे-छोटे अलग हिस्सों में टूट जाना। इससे wildlife movement और populations के बीच संपर्क प्रभावित हो सकता है।</p></div>
+<div class="fact"><h3>3. वनों की कटाई — Deforestation</h3><p>Habitat कम होता है, species प्रभावित होती हैं, soil erosion बढ़ सकता है और ecological balance प्रभावित होता है।</p></div>
+<div class="fact"><h3>4. अवैध शिकार — Poaching</h3><p>वन्यजीवों का अवैध शिकार biodiversity के लिए बड़ा खतरा है।</p></div>
+<div class="fact"><h3>5. अवैध वन्यजीव व्यापार</h3><p>वन्यजीवों, उनके अंगों या उनसे बने products का illegal trade species populations को नुकसान पहुँचा सकता है।</p></div>
+<div class="fact"><h3>6. प्रदूषण</h3><p>मुख्य प्रकार: वायु प्रदूषण, जल प्रदूषण, मृदा प्रदूषण और ध्वनि प्रदूषण। इनका wildlife और ecosystems पर प्रभाव पड़ सकता है।</p></div>
+<div class="fact"><h3>7. Climate Change</h3><p>तापमान, वर्षा, जल उपलब्धता और habitat conditions में बदलाव species को प्रभावित कर सकते हैं।</p></div>
+<div class="fact"><h3>8. Invasive Species</h3><p>बाहरी/आक्रामक species कई बार स्थानीय species के संसाधनों पर दबाव डाल सकती हैं।</p></div>
+<div class="fact"><h3>9. मानव-वन्यजीव संघर्ष</h3><p>जब wildlife और human activities के बीच overlap बढ़ता है तो conflict हो सकता है।</p></div>
+</div>
+</section>
+
+<section id="hotspot">
+<h2 class="section-title">5. Biodiversity Hotspot</h2>
+<div class="card">
+<p><strong>Biodiversity hotspot</strong> ऐसा क्षेत्र है जहाँ जैव-विविधता और विशेष रूप से <strong>स्थानिक species की समृद्धि अधिक</strong> होती है तथा habitat पर <strong>गंभीर खतरे</strong> भी मौजूद होते हैं।</p>
+<p>इस concept का उपयोग biodiversity conservation priorities तय करने में किया जाता है।</p>
+</div>
+<div class="card">
+<h3>🇮🇳 भारत से जुड़े महत्वपूर्ण Biodiversity Hotspots</h3>
+<p>भारत के क्षेत्र <strong>चार global biodiversity hotspots</strong> से जुड़े माने जाते हैं:</p>
+<div class="memory">
+<span>Himalaya</span><span>Indo-Burma</span><span>Western Ghats–Sri Lanka</span><span>Sundaland</span>
+</div>
+<p style="margin-top:15px;">इनमें भारत के कुछ क्षेत्र आते हैं।</p>
+<div class="warning">⚠️ <strong>महत्वपूर्ण:</strong> मध्य प्रदेश स्वयं एक अलग global biodiversity hotspot नहीं है, लेकिन MP की forests और ecosystems भारत की overall biodiversity में महत्वपूर्ण योगदान देते हैं।</div>
+</div>
+</section>
+
+<section id="species">
+<h2 class="section-title">6. Endemic, Rare, Endangered एवं Extinct Species</h2>
+<div class="grid">
+<div class="card"><h3>📍 Endemic Species — स्थानिक प्रजाति</h3><p>वह species जो प्राकृतिक रूप से किसी विशिष्ट भौगोलिक क्षेत्र तक सीमित होती है। उदाहरण के लिए कोई species केवल किसी विशेष पर्वतीय या द्वीपीय क्षेत्र में प्राकृतिक रूप से मिल सकती है।</p><div class="highlight"><strong>Endemic = किसी विशेष क्षेत्र तक सीमित</strong></div></div>
+<div class="card"><h3>🔎 Rare Species — दुर्लभ प्रजातियाँ</h3><p>जिनकी संख्या या distribution बहुत कम हो अथवा जो सीमित क्षेत्रों में पाई जाती हों, उन्हें सामान्यतः दुर्लभ species कहा जाता है।</p><div class="warning">दुर्लभ होना हमेशा यह नहीं बताता कि species निश्चित रूप से endangered ही है।</div></div>
+<div class="card"><h3>🚨 Endangered Species — संकटग्रस्त प्रजाति</h3><p>ऐसी species जिनके विलुप्त होने का जोखिम अधिक हो, उन्हें संकटग्रस्त (Endangered) कहा जाता है। इनकी स्थिति का आकलन विभिन्न वैज्ञानिक conservation assessments में किया जाता है।</p><p><strong>प्रमुख खतरे:</strong> habitat loss, poaching, pollution, climate change, population decline</p></div>
+<div class="card"><h3>❌ Extinct — विलुप्त</h3><p>जब किसी species का कोई जीवित individual शेष नहीं रहता, तो उसे विलुप्त (Extinct) माना जाता है।</p><div class="warning">याद रखने का क्रम: Rare → Threatened → Endangered → Extinction का खतरा → Extinct</div><p>लेकिन इन categories को हमेशा एक सीधी universal ladder न समझें; conservation classifications अलग-अलग systems में अलग हो सकती हैं।</p></div>
+</div>
+</section>
+
+<section id="iucn">
+<h2 class="section-title">7. IUCN Red List</h2>
+<div class="good">
+<h3>🌍 IUCN</h3>
+<p><strong>IUCN = International Union for Conservation of Nature</strong></p>
+<p>IUCN की Red List species की conservation status को समझने का महत्वपूर्ण international reference है।</p>
+</div>
+<div class="table-container">
+<table>
+<thead><tr><th>Category</th><th>Code</th><th>अर्थ</th></tr></thead>
+<tbody>
+<tr><td>Least Concern</td><td><strong>LC</strong></td><td>कम चिंता</td></tr>
+<tr><td>Near Threatened</td><td><strong>NT</strong></td><td>निकट संकटग्रस्त</td></tr>
+<tr><td>Vulnerable</td><td><strong>VU</strong></td><td>असुरक्षित / संकट की ओर</td></tr>
+<tr><td>Endangered</td><td><strong>EN</strong></td><td>संकटग्रस्त</td></tr>
+<tr><td>Critically Endangered</td><td><strong>CR</strong></td><td>अति संकटग्रस्त</td></tr>
+<tr><td>Extinct in the Wild</td><td><strong>EW</strong></td><td>वन्य अवस्था में विलुप्त</td></tr>
+<tr><td>Extinct</td><td><strong>EX</strong></td><td>विलुप्त</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight">🔥 <strong>बहुत महत्वपूर्ण:</strong> CR → EN → VU = Critically Endangered → Endangered → Vulnerable</div>
+</section>
+
+<section id="conservation">
+<h2 class="section-title">8. Biodiversity Conservation</h2>
+<div class="card">
+<h3>🇮🇳 भारत में Biodiversity Conservation</h3>
+<p>भारत में biodiversity conservation के लिए अलग-अलग प्रकार के protected areas और conservation mechanisms हैं।</p>
+<div class="memory">
+<span>National Parks</span><span>Wildlife Sanctuaries</span><span>Biosphere Reserves</span>
+<span>Tiger Reserves</span><span>Conservation Reserves</span><span>Community Reserves</span>
+</div>
+<p style="margin-top:15px;">इनका उद्देश्य habitat और wildlife को संरक्षण देना है।</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<h3>🌳 14. In-situ Conservation</h3>
+<p>In-situ conservation का अर्थ है species को उसके <strong>प्राकृतिक habitat में ही</strong> संरक्षण देना।</p>
+<p><strong>उदाहरण:</strong> National Park, Wildlife Sanctuary, Biosphere Reserve</p>
+<div class="highlight"><strong>In-situ = वहीं संरक्षण जहाँ species प्राकृतिक रूप से रहती है।</strong></div>
+</div>
+<div class="card">
+<h3>🏞️ 15. Ex-situ Conservation</h3>
+<p>Ex-situ conservation में species को उसके <strong>natural habitat के बाहर</strong> संरक्षण दिया जाता है।</p>
+<p><strong>उदाहरण:</strong> Zoo, Botanical Garden, Seed Bank, Gene Bank, Captive breeding centres</p>
+<div class="highlight"><strong>Ex-situ = प्राकृतिक habitat के बाहर संरक्षण।</strong></div>
+</div>
+</div>
+
+<div class="card">
+<h3>🧠 In-situ vs Ex-situ</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>In-situ</th><th>Ex-situ</th></tr></thead>
+<tbody>
+<tr><td>Natural habitat में</td><td>Natural habitat के बाहर</td></tr>
+<tr><td>National Park</td><td>Zoo</td></tr>
+<tr><td>Wildlife Sanctuary</td><td>Botanical Garden</td></tr>
+<tr><td>Biosphere Reserve</td><td>Seed Bank</td></tr>
+<tr><td>Natural ecosystem के साथ</td><td>Controlled conditions में</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section id="mp">
+<h2 class="section-title">9. मध्य प्रदेश की Biodiversity</h2>
+<div class="card">
+<p>मध्य प्रदेश को अक्सर <strong>“Heart of India”</strong> कहा जाता है और इसकी भौगोलिक स्थिति तथा बड़े forest landscapes के कारण यहाँ विभिन्न प्रकार के habitats पाए जाते हैं।</p>
+<p><strong>इन habitats में:</strong> वन, घासभूमि, नदियाँ, wetlands और पहाड़ी क्षेत्र आदि शामिल हैं।</p>
+<p>इसी कारण यहाँ अनेक प्रकार के <strong>mammals, birds, reptiles, fish और plants</strong> पाए जाते हैं।</p>
+</div>
+
+<section>
+<h2 class="section-title">10. MP की Biodiversity से जुड़े प्रमुख Wildlife</h2>
+<div class="table-container">
+<table>
+<thead><tr><th>Wildlife</th><th>Biodiversity Context / पहचान</th></tr></thead>
+<tbody>
+<tr><td>Tiger 🐅</td><td>प्रमुख predator</td></tr>
+<tr><td>Barasingha 🦌</td><td>MP State Animal</td></tr>
+<tr><td>Dhole</td><td>Wild Dog</td></tr>
+<tr><td>Gharial</td><td>River ecosystem</td></tr>
+<tr><td>Chital</td><td>Herbivore</td></tr>
+<tr><td>Sambar</td><td>Herbivore</td></tr>
+<tr><td>Gaur</td><td>Large herbivore</td></tr>
+<tr><td>Blackbuck</td><td>Grassland/open habitat</td></tr>
+<tr><td>Chousingha</td><td>Four-horned antelope</td></tr>
+<tr><td>Pangolin</td><td>Conservation concern</td></tr>
+<tr><td>Caracal</td><td>Important/rare wildlife</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<div class="good">
+<h3>🐅 18. मध्य प्रदेश — Tiger State</h3>
+<p>मध्य प्रदेश को <strong>Tiger State</strong> के रूप में जाना जाता है। Guide में भी MP में बाघों की स्थिति को अलग अध्ययन बिंदु के रूप में रखा गया है।</p>
+<p><strong>MP के महत्वपूर्ण Tiger Reserves:</strong></p>
+<div class="memory">
+<span>Kanha</span><span>Bandhavgarh</span><span>Pench</span><span>Panna</span><span>Satpura</span><span>Sanjay-Dubri</span><span>Madhav</span>
+</div>
+<p style="margin-top:15px;">NTCA की current tiger-reserve information में MP के tiger reserves की विस्तृत सूची उपलब्ध है।</p>
+</div>
+
+<div class="card">
+<h3>🦌 19. Barasingha Conservation</h3>
+<p>बारहसिंगा biodiversity conservation का MP में एक बहुत महत्वपूर्ण उदाहरण है।</p>
+<p><strong>मुख्य association:</strong> Hard-ground Barasingha → Kanha</p>
+<p>इस species की population conservation management के कारण बेहतर हुई और Kanha इसकी conservation success story के लिए प्रसिद्ध है।</p>
+<div class="highlight">🔥 याद करो: <strong>बारहसिंगा + संरक्षण + कान्हा = बहुत महत्वपूर्ण combination</strong></div>
+</div>
+</section>
+
+<section id="protected">
+<h2 class="section-title">11. Protected Areas की भूमिका</h2>
+<div class="grid">
+<div class="card">
+<h3>🏞️ National Parks</h3>
+<p>प्राकृतिक habitats को सुरक्षित रखने में मदद करते हैं। इससे wildlife habitat सुरक्षित रहता है, species populations को protection मिलता है, food chains बनी रहती हैं, biodiversity conserve होती है, scientific research और monitoring संभव होती है तथा ecological processes को संरक्षण मिलता है।</p>
+</div>
+<div class="card">
+<h3>🐾 Wildlife Sanctuary</h3>
+<p>Wildlife और उनके habitats के संरक्षण के लिए महत्वपूर्ण protected area है। यहाँ conservation के साथ कुछ regulated human activities के नियम National Park से अलग हो सकते हैं।</p>
+</div>
+<div class="card">
+<h3>🌍 Biosphere Reserve</h3>
+<p>Biosphere Reserve का उद्देश्य केवल एक species को बचाना नहीं है। यह बड़े landscape में <strong>Conservation + Sustainable use + Research/Education</strong> के बीच संतुलन स्थापित करने की अवधारणा से जुड़ा है।</p>
+</div>
+</div>
+
+<div class="card">
+<h3>🌿 MP के 3 Biosphere Reserves</h3>
+<div class="memory">
+<span>Pachmarhi</span><span>Achanakmar-Amarkantak</span><span>Panna</span>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2 class="section-title">12. Biodiversity और Ecosystem Services</h2>
+<div class="card">
+<p>Biodiversity हमें कई प्राकृतिक सेवाएँ प्रदान करती है। इन्हें broadly <strong>ecosystem services</strong> कहा जाता है।</p>
+<div class="memory">
+<span>Pollination</span><span>जल चक्र में सहायता</span><span>Soil Formation</span><span>Nutrient Cycling</span>
+<span>Carbon Storage</span><span>Climate Regulation</span><span>Food Resources</span><span>Medicinal Resources</span>
+</div>
+</div>
+
+<div class="card">
+<h3>🐝 24. Pollination</h3>
+<p>कई flowering plants के reproduction में pollinators की भूमिका होती है।</p>
+<p><strong>मुख्य pollinators:</strong> मधुमक्खियाँ, तितलियाँ, कुछ पक्षी और चमगादड़ आदि शामिल हो सकते हैं।</p>
+<div class="highlight">इसलिए pollinators की biodiversity कृषि और प्राकृतिक ecosystems दोनों के लिए महत्वपूर्ण है।</div>
+</div>
+
+<div class="card">
+<h3>🕸️ 25. Biodiversity और Food Web</h3>
+<p><strong>Food chain</strong> एक सरल linear sequence हो सकती है। लेकिन प्राकृतिक ecosystem में कई food chains आपस में जुड़ती हैं। इसे <strong>Food Web</strong> कहते हैं।</p>
+<div class="memory">
+<span>घास</span><span>→</span><span>चीतल</span><span>→</span><span>बाघ</span>
+<span>घास</span><span>→</span><span>सांभर</span><span>→</span><span>बाघ</span>
+</div>
+<p style="margin-top:15px;">कई chains के जुड़ने से food web बनती है। इसलिए biodiversity अधिक होने पर ecosystem में अनेक ecological interactions हो सकते हैं।</p>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">13. Biodiversity Conservation के उपाय</h2>
+<div class="grid">
+<div class="fact"><h3>🌳 Habitat Protection</h3><p>प्राकृतिक habitats की रक्षा और habitat restoration।</p></div>
+<div class="fact"><h3>🚫 Deforestation Control</h3><p>वनों की कटाई कम करना।</p></div>
+<div class="fact"><h3>🏞️ Protected Areas</h3><p>National Parks और Sanctuaries को प्रभावी बनाना।</p></div>
+<div class="fact"><h3>🛤️ Wildlife Corridors</h3><p>Wildlife corridors सुरक्षित रखना।</p></div>
+<div class="fact"><h3>🚨 Wildlife Protection</h3><p>Poaching और illegal wildlife trade रोकना।</p></div>
+<div class="fact"><h3>🦌 Species Conservation</h3><p>Endangered species का संरक्षण।</p></div>
+<div class="fact"><h3>🤝 Community Participation</h3><p>स्थानीय समुदायों की भागीदारी।</p></div>
+<div class="fact"><h3>🧬 Ex-situ Conservation</h3><p>उपयुक्त species के लिए ex-situ conservation।</p></div>
+<div class="fact"><h3>🔬 Scientific Monitoring</h3><p>वैज्ञानिक monitoring और research।</p></div>
+<div class="fact"><h3>📚 Environmental Education</h3><p>पर्यावरण शिक्षा और जागरूकता।</p></div>
+<div class="fact"><h3>♻️ Sustainable Use</h3><p>प्राकृतिक संसाधनों का sustainable use।</p></div>
+<div class="fact"><h3>💧 Pollution Control</h3><p>प्रदूषण नियंत्रण।</p></div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">14. World Biodiversity Day</h2>
+<div class="good">
+<h3>🌍 International Day for Biological Diversity</h3>
+<p style="font-size:1.3rem;"><strong>📅 22 मई</strong></p>
+<p>तुम्हारी Guide में भी: <strong>जैव-विविधता दिवस → 22 मई</strong> दिया गया है।</p>
+<div class="highlight"><strong>याद रखने का तरीका: 22 May = Biodiversity</strong></div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">15. बहुत महत्वपूर्ण अंतर</h2>
+<div class="table-container">
+<table>
+<thead><tr><th>तुलना</th><th>अर्थ</th></tr></thead>
+<tbody>
+<tr><td><strong>Biodiversity vs Ecosystem</strong></td><td>Biodiversity = जीवों और ecosystems की विविधता; Ecosystem = जीवित और अजैविक घटकों के बीच interactions वाली ecological system</td></tr>
+<tr><td><strong>Species vs Genetic Diversity</strong></td><td>Species Diversity = अलग-अलग species की विविधता; Genetic Diversity = एक species के अंदर genetic variation</td></tr>
+<tr><td><strong>In-situ vs Ex-situ</strong></td><td>In-situ = Natural habitat में; Ex-situ = Natural habitat के बाहर</td></tr>
+<tr><td><strong>Rare vs Endangered</strong></td><td>Rare = संख्या/वितरण कम; Endangered = extinction का अधिक जोखिम</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="memory-map">
+<h2 class="section-title">🔥 Topic 5 की MASTER REVISION CHAIN</h2>
+<div class="card">
+<div class="memory">
+<span>Biodiversity</span><span>↓</span><span>3 Levels</span><span>Genetic → Species → Ecosystem</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>Importance</span><span>Ecological</span><span>Economic</span><span>Food</span><span>Medicine</span><span>Scientific</span><span>Cultural</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>Threats</span><span>Habitat Loss</span><span>Fragmentation</span><span>Poaching</span><span>Illegal Trade</span><span>Pollution</span><span>Climate Change</span><span>Invasive Species</span><span>Conflict</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>Species Categories</span><span>Rare</span><span>Threatened</span><span>Endangered</span><span>Extinct</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>Conservation</span><span>In-situ → Natural Habitat</span><span>Ex-situ → Outside Natural Habitat</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>Protected Areas</span><span>National Park</span><span>Sanctuary</span><span>Biosphere Reserve</span><span>Tiger Reserve</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>MP</span><span>Tiger State</span><span>Tiger Conservation</span><span>Barasingha → State Animal → Kanha Conservation</span>
+</div>
+<div class="memory" style="margin-top:12px;">
+<span>Important Day</span><span>22 May → International Day for Biological Diversity</span>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">⭐ सबसे जरूरी Facts</h2>
+<div class="card">
+<div class="grid">
+<div class="fact"><h3>Biodiversity</h3><p>जैव-विविधता</p></div>
+<div class="fact"><h3>3 Levels</h3><p>Genetic, Species, Ecosystem</p></div>
+<div class="fact"><h3>Genetic Diversity</h3><p>एक species के भीतर variation</p></div>
+<div class="fact"><h3>Species Diversity</h3><p>अलग-अलग species की विविधता</p></div>
+<div class="fact"><h3>Ecosystem Diversity</h3><p>अलग-अलग ecosystems की विविधता</p></div>
+<div class="fact"><h3>In-situ</h3><p>Natural habitat में conservation</p></div>
+<div class="fact"><h3>Ex-situ</h3><p>Natural habitat के बाहर conservation</p></div>
+<div class="fact"><h3>IUCN</h3><p>International Union for Conservation of Nature</p></div>
+<div class="fact"><h3>CR</h3><p>Critically Endangered</p></div>
+<div class="fact"><h3>EN</h3><p>Endangered</p></div>
+<div class="fact"><h3>VU</h3><p>Vulnerable</p></div>
+<div class="fact"><h3>22 May</h3><p>International Day for Biological Diversity</p></div>
+<div class="fact"><h3>MP State Animal</h3><p>Barasingha</p></div>
+<div class="fact"><h3>Barasingha Conservation</h3><p>Kanha</p></div>
+<div class="fact"><h3>MP</h3><p>Tiger State</p></div>
+<div class="fact"><h3>MP के 3 Biosphere Reserves</h3><p>Pachmarhi, Achanakmar-Amarkantak, Panna</p></div>
+</div>
+<div class="warning" style="margin-top:18px;"><strong>प्रमुख threats:</strong> habitat loss, fragmentation, poaching, pollution, climate change आदि।</div>
+</div>
+</section>
+
+<section id="faq">
+<h2 class="section-title">❓ परीक्षा उपयोगी बार-बार पूछे जाने वाले प्रश्न (FAQ)</h2>
+<details><summary>1. जैव-विविधता के तीन प्रमुख स्तर कौन से हैं?</summary><div>आनुवंशिक विविधता (Genetic Diversity), प्रजातीय विविधता (Species Diversity) और पारिस्थितिक तंत्र विविधता (Ecosystem Diversity)।</div></details>
+<details><summary>2. Genetic Diversity क्या है?</summary><div>एक ही species के अलग-अलग individuals में पाए जाने वाले genes के अंतर को Genetic Diversity कहते हैं।</div></details>
+<details><summary>3. Endemic species किसे कहते हैं?</summary><div>जो species प्राकृतिक रूप से किसी विशिष्ट भौगोलिक क्षेत्र तक सीमित होती है, उसे Endemic species कहते हैं।</div></details>
+<details><summary>4. Rare और Endangered में क्या अंतर है?</summary><div>Rare = संख्या/वितरण कम; Endangered = extinction का अधिक जोखिम। Rare होना हमेशा Endangered होने का अर्थ नहीं है।</div></details>
+<details><summary>5. IUCN का पूरा नाम क्या है?</summary><div>International Union for Conservation of Nature.</div></details>
+<details><summary>6. IUCN Red List में CR, EN और VU क्या हैं?</summary><div>CR = Critically Endangered, EN = Endangered, VU = Vulnerable.</div></details>
+<details><summary>7. In-situ conservation क्या है?</summary><div>Species को उसके प्राकृतिक habitat में ही संरक्षण देना। उदाहरण: National Park, Wildlife Sanctuary, Biosphere Reserve.</div></details>
+<details><summary>8. Ex-situ conservation क्या है?</summary><div>Species को उसके natural habitat के बाहर संरक्षण देना। उदाहरण: Zoo, Botanical Garden, Seed Bank, Gene Bank, Captive breeding centres.</div></details>
+<details><summary>9. भारत से जुड़े चार Biodiversity Hotspots कौन से हैं?</summary><div>Himalaya, Indo-Burma, Western Ghats–Sri Lanka और Sundaland.</div></details>
+<details><summary>10. मध्य प्रदेश स्वयं global biodiversity hotspot है क्या?</summary><div>नहीं। मध्य प्रदेश स्वयं एक अलग global biodiversity hotspot नहीं है, लेकिन इसकी forests और ecosystems भारत की overall biodiversity में महत्वपूर्ण योगदान देते हैं।</div></details>
+<details><summary>11. MP का State Animal क्या है और Barasingha का प्रमुख conservation association किससे है?</summary><div>MP State Animal = Barasingha. Hard-ground Barasingha का प्रमुख association Kanha से है।</div></details>
+<details><summary>12. MP को Tiger State क्यों कहा जाता है?</summary><div>मध्य प्रदेश को Tiger State के रूप में जाना जाता है; guide में MP में बाघों की स्थिति को अलग अध्ययन बिंदु के रूप में रखा गया है।</div></details>
+<details><summary>13. MP के 3 Biosphere Reserves कौन से हैं?</summary><div>Pachmarhi, Achanakmar-Amarkantak और Panna.</div></details>
+<details><summary>14. International Day for Biological Diversity कब मनाया जाता है?</summary><div>22 मई। याद रखो: 22 May = Biodiversity.</div></details>
+<details><summary>15. Food Web क्या है?</summary><div>जब प्राकृतिक ecosystem में कई food chains आपस में जुड़ती हैं, तो Food Web बनती है।</div></details>
+</section>
+
+<section id="quiz">
+<h2 class="section-title">🎯 Quick Quiz Challenge</h2>
+<div class="card">
+<div class="quiz-question"><strong>Q1. जैव-विविधता का कौन सा स्तर एक ही species के अंदर genetic variation को दर्शाता है?</strong>
+<label class="option"><input type="radio" name="q1"> Species Diversity</label>
+<label class="option"><input type="radio" name="q1"> Genetic Diversity</label>
+<label class="option"><input type="radio" name="q1"> Ecosystem Diversity</label>
+<button onclick="showAnswer('a1')">उत्तर देखें</button><div id="a1" class="answer">✅ सही उत्तर: Genetic Diversity</div></div>
+
+<div class="quiz-question"><strong>Q2. अलग-अलग ecosystems की variety को क्या कहते हैं?</strong>
+<label class="option"><input type="radio" name="q2"> Genetic Diversity</label>
+<label class="option"><input type="radio" name="q2"> Species Diversity</label>
+<label class="option"><input type="radio" name="q2"> Ecosystem Diversity</label>
+<button onclick="showAnswer('a2')">उत्तर देखें</button><div id="a2" class="answer">✅ सही उत्तर: Ecosystem Diversity</div></div>
+
+<div class="quiz-question"><strong>Q3. In-situ conservation का सही अर्थ क्या है?</strong>
+<label class="option"><input type="radio" name="q3"> Natural habitat के बाहर संरक्षण</label>
+<label class="option"><input type="radio" name="q3"> Natural habitat में संरक्षण</label>
+<label class="option"><input type="radio" name="q3"> केवल Seed Bank में संरक्षण</label>
+<button onclick="showAnswer('a3')">उत्तर देखें</button><div id="a3" class="answer">✅ सही उत्तर: Natural habitat में संरक्षण</div></div>
+
+<div class="quiz-question"><strong>Q4. International Day for Biological Diversity कब मनाया जाता है?</strong>
+<label class="option"><input type="radio" name="q4"> 5 जून</label>
+<label class="option"><input type="radio" name="q4"> 22 मई</label>
+<label class="option"><input type="radio" name="q4"> 2 अक्टूबर</label>
+<button onclick="showAnswer('a4')">उत्तर देखें</button><div id="a4" class="answer">✅ सही उत्तर: 22 मई</div></div>
+
+<div class="quiz-question"><strong>Q5. MP State Animal कौन सा है?</strong>
+<label class="option"><input type="radio" name="q5"> Tiger</label>
+<label class="option"><input type="radio" name="q5"> Barasingha</label>
+<label class="option"><input type="radio" name="q5"> Gaur</label>
+<button onclick="showAnswer('a5')">उत्तर देखें</button><div id="a5" class="answer">✅ सही उत्तर: Barasingha</div></div>
+
+<div class="quiz-question"><strong>Q6. Hard-ground Barasingha का प्रमुख conservation association किससे है?</strong>
+<label class="option"><input type="radio" name="q6"> Panna</label>
+<label class="option"><input type="radio" name="q6"> Kanha</label>
+<label class="option"><input type="radio" name="q6"> Satpura</label>
+<button onclick="showAnswer('a6')">उत्तर देखें</button><div id="a6" class="answer">✅ सही उत्तर: Kanha</div></div>
+
+<div class="quiz-question"><strong>Q7. IUCN का पूरा नाम क्या है?</strong>
+<label class="option"><input type="radio" name="q7"> International Union for Conservation of Nature</label>
+<label class="option"><input type="radio" name="q7"> Indian Union for Conservation of Nature</label>
+<label class="option"><input type="radio" name="q7"> International Unit for Climate and Nature</label>
+<button onclick="showAnswer('a7')">उत्तर देखें</button><div id="a7" class="answer">✅ सही उत्तर: International Union for Conservation of Nature</div></div>
+
+<div class="quiz-question"><strong>Q8. IUCN Red List में CR का अर्थ क्या है?</strong>
+<label class="option"><input type="radio" name="q8"> Conservation Required</label>
+<label class="option"><input type="radio" name="q8"> Critically Endangered</label>
+<label class="option"><input type="radio" name="q8"> Commonly Rare</label>
+<button onclick="showAnswer('a8')">उत्तर देखें</button><div id="a8" class="answer">✅ सही उत्तर: Critically Endangered</div></div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">📚 जानकारी का आधार</h2>
+<div class="card">
+<p class="source">यह Topic 5 file आपके दिए गए complete Topic 5 theory और उपलब्ध study-guide सामग्री के terminology, organization और exam-oriented framing के आधार पर तैयार की गई है। बाहरी तथ्य जानबूझकर जोड़कर मूल सामग्री को replace नहीं किया गया है।</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="channel">📚 BACKSHEETARS</div>
+<p>Mogli Bal Utsav 2026–27 • Topic 5 Complete Study File</p>
+<p style="color:#849b88;margin-top:8px">जैव-विविधता • Biodiversity • Conservation • MP Wildlife</p>
+</footer>
+
+<script>
+function showAnswer(id){
+document.getElementById(id).classList.toggle("show");
+}
+</script>
+
+<button id="fullscreenBtn" onclick="toggleFullscreen()" title="Full Screen">⛶</button>
+
+<style>
+#fullscreenBtn{
+    position:fixed;
+    top:12px;
+    right:12px;
+    z-index:99999;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:rgba(0,0,0,0.75);
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+#fullscreenBtn:active{ transform:scale(0.92); }
+</style>
+
+<script>
+function toggleFullscreen(){
+    if(!document.fullscreenElement){
+        document.documentElement.requestFullscreen().catch(err=>{
+            console.log("Fullscreen error:", err);
+        });
+    }else{
+        document.exitFullscreen();
+    }
+}
+document.addEventListener("fullscreenchange",()=>{
+    const btn=document.getElementById("fullscreenBtn");
+    if(document.fullscreenElement){
+        btn.innerHTML="⛶";
+        btn.title="Exit Full Screen";
+    }else{
+        btn.innerHTML="⛶";
+        btn.title="Full Screen";
+    }
+});
+</script>
+</body>
+</html>
+
